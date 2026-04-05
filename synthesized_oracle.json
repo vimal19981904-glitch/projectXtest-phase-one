@@ -1,0 +1,884 @@
+[
+  {
+    "id": "oracle-enterprise-support-recommendations-on-enterprise-support-courses-support",
+    "title": "Oracle Enterprise Support - Recommendations on Oracle Enterprise Support courses",
+    "category": "Oracle Technologies",
+    "overview": "Oracle enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirements. And can arrange these Oracle enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-demantra-enterprise-support-demantra-corporate-enterprise-support-support",
+    "title": "Oracle Demantra Enterprise Support - Oracle Demantra Corporate Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Demantra enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Demantra enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "25-30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-goldengate-enterprise-support-goldengate-online-enterprise-support-support",
+    "title": "Oracle GoldenGate Enterprise Support - Oracle GoldenGate Online Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle GoldenGate enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle GoldenGate enterprise architectural support and job assistance as per your pace. High-performance database infrastructure, Real-time data replication (GoldenGate), and Always-On Availability clusters.",
+    "courseContent": [
+      "Advanced Database Architecture & Storage Management",
+      "GoldenGate Real-Time Data Replication & Monitoring",
+      "Performance Tuning & SQL Execution Plan Analysis",
+      "High Availability (RAC) & Disaster Recovery (Data Guard)"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-adf-enterprise-support-adf-corporate-enterprise-support-support",
+    "title": "Oracle ADF Enterprise Support - Oracle ADF Corporate Enterprise Support -",
+    "category": "Oracle Technologies",
+    "overview": "Oracle ADF enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle ADF enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-oaf-enterprise-support-oaf-online-enterprise-support-application-framework-enterprise-support-support",
+    "title": "Oracle OAF Enterprise Support - Oracle OAF Online Enterprise Support - Oracle Application Framework Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle OAF enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle OAF enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "25 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-mdm-enterprise-support-mdm-online-enterprise-support-support",
+    "title": "Oracle MDM Enterprise Support Oracle MDM Online Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle MDM enterprise architectural support and job assistance will cover MDM Justification, MDM Architecture, Master Data, Data Quality, MDM Tool Selection, MDM Project Phases. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "25 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-procurement-cloud-enterprise-support-fusion-support",
+    "title": "Oracle Procurement Cloud Enterprise Support - Fusion",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Procurement Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Procurement Cloud enterprise architectural support and job assistance at your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Oracle Fusion Cloud Infrastructure (OCI) Deployment",
+      "Complex Integration Patterns (OIC / FBDI / HDL)",
+      "Application Security & Lifecycle Management",
+      "Cross-Module Workflow Engineering & Reporting (BI Publisher)"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-service-cloud-enterprise-support-support",
+    "title": "Oracle Service Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Service Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Service Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-social-cloud-enterprise-support-support",
+    "title": "Oracle Social Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Social Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Social Cloud enterprise architectural support and job assistance at your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-order-management-cloud-enterprise-support-fusion-course-support",
+    "title": "Oracle Order Management Cloud Enterprise Support - Fusion Course",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Order Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Order Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Oracle Fusion Cloud Infrastructure (OCI) Deployment",
+      "Complex Integration Patterns (OIC / FBDI / HDL)",
+      "Application Security & Lifecycle Management",
+      "Cross-Module Workflow Engineering & Reporting (BI Publisher)"
+    ],
+    "duration": "20 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-wms-enterprise-support-warehouse-management-enterprise-support-support",
+    "title": "Oracle WMS Enterprise Support - Oracle Warehouse Management Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle WMS enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle WMS enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 -35 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-commerce-enterprise-support-support",
+    "title": "Oracle Commerce Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Commerce enterprise architectural support and job assistance will help you learn how to design, develop, customize and personalize the online buying experience of your Oracle Commerce solution to help increase conversions and order value and ensure ongoing customer loyalty. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "20-25 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-cloud-infrastructure-enterprise-support-support",
+    "title": "Oracle Cloud Infrastructure Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "After the completion of this Oracle Cloud Infrastructure enterprise architectural support and job assistance you will strength your knowledge with insights into the Oracle Cloud Infrastructure components and services. You can able to determine who has access to your cloud resources using your knowledge of IAM service. Aftre the completion of Oracle Cloud Infrastructure enterprise architectural support and job assistance you will able to launch your first compute instance, define storage volumes, and deploy Oracle databases quickly and easily in a highly-available cloud environment. You can able to extend your IT infrastructure with highly customizable Virtual Cloud Networks (VCN) and connectivity services, ensuring high availability with Load Balancers. High-performance database infrastructure, Real-time data replication (GoldenGate), and Always-On Availability clusters.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "20-25 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-exadata-enterprise-support-exadata-online-enterprise-support-support",
+    "title": "Oracle Exadata Enterprise Support Oracle Exadata Online Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Exadata enterprise architectural support and job assistance introduces you to Oracle Exadata Database Machine, where you will be able to explore the various Exadata Database Machine features and configurations, with emphasis on the unique capabilities delivered by Exadata Storage Server. High-performance database infrastructure, Real-time data replication (GoldenGate), and Always-On Availability clusters.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-flexcube-enterprise-support-support",
+    "title": "Oracle Flexcube Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Flexcube enterprise architectural support and job assistance gives you an in-depth understanding of the core modules in Oracle FLEXCUBE Universal Banking. This Oracle Flexcube enterprise architectural support and job assistance guides you through the essential set-ups required to deploy the bank's offerings in Oracle FLEXCUBE. It also gives you the knowledge of the capabilities of Oracle FLEXCUBE. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "24 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-revenue-and-management-billing-enterprise-support-ormb-enterprise-support-support",
+    "title": "Oracle Revenue and Management Billing Enterprise Support - ORMB Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Revenue Management Billing enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Revenue Management Billing enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-otbi-enterprise-support-corporate-otbi-enterprise-support-tip-support",
+    "title": "Oracle OTBI Enterprise Support - Corporate OTBI Enterprise Support tip",
+    "category": "Oracle Technologies",
+    "overview": "OTBI is Oracle Fusion Transactional Business Intelligence. It provides a full range of BI capabilities it helps in collecting data within your organization. Data and reports will be well in time and easy to understand with the help of graph and tablets. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "24 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-advance-pricing-enterprise-support-support",
+    "title": "Oracle Advance Pricing Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Advance pricing provide flexible price engine which helps in pricing and promotional calculation for oracle applications like Oracle Order Management etc. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-online-field-service-cloud-enterprise-support-certified-expert-support",
+    "title": "Online Oracle Field Service Cloud Enterprise Support Certified Expert",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Field Service Cloud enterprise architectural support and job assistance covers concepts from Basic level to advance level. Whether you are individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Field Service Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-incentive-compensation-enterprise-support-oic-enterprise-support-support",
+    "title": "Oracle Incentive Compensation Enterprise Support Oracle OIC Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Incentive Compensation enterprise architectural support and job assistance covers concepts from Basic level to advance level. Whether you are individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Incentive Compensation enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-knowledge-management-enterprise-support-online-enterprise-support-support",
+    "title": "Oracle Knowledge Management Enterprise Support Online Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "This Oracle Knowledge Management enterprise architectural support and job assistance covers concepts from Basic level to advance level. Whether you are individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Knowledge Management enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-c2m-enterprise-support-c2m-support",
+    "title": "Oracle c2m Enterprise Support Oracle c2m",
+    "category": "Oracle Technologies",
+    "overview": "Oracle c2m enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle c2m enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "25-30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-epm-cloud-enterprise-support-epm-enterprise-support-support",
+    "title": "Oracle EPM Cloud Enterprise Support Oracle EPM Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle epm cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle epm cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-narrative-reporting-enterprise-support-eprcs-enterprise-support-support",
+    "title": "Oracle Narrative Reporting Enterprise Support Oracle EPRCS Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Narrative Reporting enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Narrative Reporting enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-revenue-management-cloud-service-enterprise-support-rmcs-support",
+    "title": "Oracle Revenue Management Cloud Service Enterprise Support (Oracle RMCS)",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Revenue Management Cloud Service enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Revenue Management Cloud Service enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "20 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-b2b-service-enterprise-support-support",
+    "title": "Oracle B2B Service Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle B2B Service enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle B2B Service enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-cost-management-cloud-enterprise-support-support",
+    "title": "Oracle Cost Management Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Cost Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Cost Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "20 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-customer-data-management-cloud-enterprise-support-cmd-support",
+    "title": "Oracle Customer Data Management Cloud Enterprise Support Oracle CMD",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Customer Data Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Customer Data Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-bluekai-data-management-platform-enterprise-support-dmp-support",
+    "title": "Oracle BlueKai Data Management Platform Enterprise Support Oracle DMP",
+    "category": "Oracle Technologies",
+    "overview": "Oracle BlueKai Data Management Platform enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle BlueKai Data Management Platform enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-inventory-management-cloud-enterprise-support-support",
+    "title": "Oracle Inventory Management Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Inventory Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Inventory Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-manufacturing-cloud-enterprise-support-online-support",
+    "title": "Oracle Manufacturing Cloud Enterprise Support Online",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Manufacturing Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Manufacturing Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-pricing-cloud-enterprise-support-online-support",
+    "title": "Oracle Pricing Cloud Enterprise Support Online",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Pricing Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Pricing Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-sales-force-automation-enterprise-support-sfa-enterprise-support-support",
+    "title": "Oracle Sales Force Automation Enterprise Support Oracle SFA Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Sales Force Automation enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Sales Force Automation enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-channel-revenue-management-cloud-enterprise-support-support",
+    "title": "Oracle Channel Revenue Management Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Channel Revenue Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Channel Revenue Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-service-center-enterprise-support-online-support",
+    "title": "Oracle Service Center Enterprise Support Online",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Service Center enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Service Center enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-supply-chain-collaboration-and-visibility-cloud-enterprise-support-support",
+    "title": "Oracle Supply Chain Collaboration and Visibility Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Supply Chain Collaboration and Visibility Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Supply Chain Collaboration and Visibility Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-supply-chain-planning-cloud-enterprise-support-support",
+    "title": "Oracle Supply Chain Planning Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Supply Chain Planning Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Supply Chain Planning Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-account-reconciliation-cloud-enterprise-support-arcs-enterprise-support-support",
+    "title": "Oracle Account Reconciliation Cloud Enterprise Support ARCS Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Account Reconciliation Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Account Reconciliation Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-fusion-hcm-enterprise-support-online-fusion-hcm-certificaiton-support",
+    "title": "Oracle Fusion HCM Enterprise Support Online Fusion HCM Certificaiton",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Fusion HCM enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Fusion HCM enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Oracle Fusion Cloud Infrastructure (OCI) Deployment",
+      "Complex Integration Patterns (OIC / FBDI / HDL)",
+      "Application Security & Lifecycle Management",
+      "Cross-Module Workflow Engineering & Reporting (BI Publisher)"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-pbcs-enterprise-support-pbcs-enterprise-support-courses-support",
+    "title": "Oracle PBCS Enterprise Support - PBCS Enterprise Support Courses",
+    "category": "Oracle Technologies",
+    "overview": "Oracle PBCS enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle PBCS enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-wms-cloud-enterprise-support-warehouse-management-enterprise-support-support",
+    "title": "Oracle WMS Cloud Enterprise Support - Warehouse Management Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle WMS Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle WMS Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 -35 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-product-lifecycle-management-cloud-enterprise-support-plm-support",
+    "title": "Oracle Product Lifecycle Management Cloud Enterprise Support Oracle PLM",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Product Lifecycle Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Product Lifecycle Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-ascp-enterprise-support-advanced-supply-chain-planning-enterprise-support-support",
+    "title": "Oracle ASCP Enterprise Support Advanced Supply Chain Planning Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle ASCP enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Advanced Supply Chain Planning enterprise architectural support and job assistance at your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-hcm-cloud-enterprise-support-hcm-cloud-support",
+    "title": "Oracle HCM Cloud Enterprise Support Oracle HCM Cloud",
+    "category": "Oracle Technologies",
+    "overview": "Oracle HCM Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle HCM Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Oracle Fusion Cloud Infrastructure (OCI) Deployment",
+      "Complex Integration Patterns (OIC / FBDI / HDL)",
+      "Application Security & Lifecycle Management",
+      "Cross-Module Workflow Engineering & Reporting (BI Publisher)"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-enterprise-data-management-cloud-enterprise-support-edmcs-support",
+    "title": "Oracle Enterprise Data Management cloud Enterprise Support (EDMCS)",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Enterprise Data Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Enterprise Data Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-logfire-enterprise-support-logfire-corporate-enterprise-support-support",
+    "title": "Oracle Logfire Enterprise Support Oracle Logfire Corporate Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Logfire enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Logfire enterprise architectural support and job assistance as per your pace. We ensure end-to-end operational stability and seamless migration to the modern Oracle cloud and on-premise ecosystem.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "32 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-sales-cloud-enterprise-support-sales-cloud-online-enterprise-support-support",
+    "title": "Oracle Sales Cloud Enterprise Support - Oracle Sales Cloud Online Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Sales Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Sales Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-fusion-financials-enterprise-support-online-support",
+    "title": "Oracle Fusion Financials Enterprise Support Online",
+    "category": "Oracle Technologies",
+    "overview": "Oracle fusion financials enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle fusion financials enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Oracle Fusion Cloud Infrastructure (OCI) Deployment",
+      "Complex Integration Patterns (OIC / FBDI / HDL)",
+      "Application Security & Lifecycle Management",
+      "Cross-Module Workflow Engineering & Reporting (BI Publisher)"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "oracle-project-portfolio-management-cloud-enterprise-support-ppm-cloud-enterprise-support-support",
+    "title": "Oracle Project Portfolio Management Cloud Enterprise Support - Oracle PPM Cloud Enterprise Support",
+    "category": "Oracle Technologies",
+    "overview": "Oracle Project Portfolio Management Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Project Portfolio Management Cloud enterprise architectural support and job assistance as per your pace. Experts in Oracle Fusion Cloud integration, cross-module configuration (HCM/FIN/SCM), and OCI (Oracle Cloud Infrastructure) optimization.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "32 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  }
+]

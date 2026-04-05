@@ -1,0 +1,128 @@
+[
+  {
+    "id": "devops-enterprise-support-enterprise-support-support",
+    "title": "DevOps Enterprise Support DevOps Enterprise Support",
+    "category": "DevOps & Automation",
+    "overview": "DevOps is a software development method that emphasizes communication, collaboration (information sharing and web service usage), integration, automation and measurement of cooperation between software developers and other IT professionals. The method acknowledges the interdependence of software development, quality assurance, and IT operations, and aims to help an organization rapidly produce software products and services and to improve operations performance. Focused on end-to-end CI/CD pipeline automation, DevSecOps integration, and automated quality gate configuration.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "42 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-foundation-enterprise-support-certificiation-course-bangalore-india-support",
+    "title": "DevOps Foundation Enterprise Support DevOps Certificiation Course Bangalore, India",
+    "category": "DevOps & Automation",
+    "overview": "DevOps is a software development method that emphasizes communication, collaboration (information sharing and web service usage), integration, automation and measurement of cooperation between software developers and other IT professionals. The method acknowledges the interdependence of software development, quality assurance, and IT operations, and aims to help an organization rapidly produce software products and services and to improve operations performance. Focused on end-to-end CI/CD pipeline automation, DevSecOps integration, and automated quality gate configuration.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "32 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-enterprise-support-enterprise-support-support",
+    "title": "Docker Enterprise Support Docker Enterprise Support",
+    "category": "DevOps & Automation",
+    "overview": "Docker is a container management system that virtualizes application environments, allowing for higher density server usage without the need for additional hardware virtualization. Specializing in container orchestration, microservices service mesh (Istio), and immutable infrastructure deployment.",
+    "courseContent": [
+      "Container Runtime Configuration & Image Optimization",
+      "Kubernetes Cluster Design & High Availability Setup",
+      "Service Mesh (Istio/Linkerd) & Network Policy Engineering",
+      "Storage Orchestration (CSI) & State Management in K8s"
+    ],
+    "duration": "14 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-enterprise-support-course-support",
+    "title": "Kubernetes Enterprise Support Kubernetes Course",
+    "category": "DevOps & Automation",
+    "overview": "Docker is the world’s leading software containerization platform. It packages your application into one standardised unit, wrapping it into a complete file system that contains everything needed to run on a server. Kubernetes is a system created by Google to automate the deployment, scaling and management of containerized applications (like the ones Docker creates). The two combined make life a breeze for anyone needing to transport, install and maintain complex software applications anywhere. Specializing in container orchestration, microservices service mesh (Istio), and immutable infrastructure deployment.",
+    "courseContent": [
+      "Container Runtime Configuration & Image Optimization",
+      "Kubernetes Cluster Design & High Availability Setup",
+      "Service Mesh (Istio/Linkerd) & Network Policy Engineering",
+      "Storage Orchestration (CSI) & State Management in K8s"
+    ],
+    "duration": "14 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-ansible-enterprise-support-ansible-enterprise-support-support",
+    "title": "Ansible Enterprise Support Ansible Enterprise Support",
+    "category": "DevOps & Automation",
+    "overview": "Mastering Ansible is a step-by-step journey of learning Ansible for configuration management and orchestration. Experts in Infrastructure as Code (IaC), automated configuration management, and idempotent delivery pipelines.",
+    "courseContent": [
+      "Infrastructure as Code (IaC) Design Patterns",
+      "Automated Provisioning & State Management Strategies",
+      "Ansible Playbook Engineering & Modular Configuration",
+      "Terraform Provider Integration & Multi-Cloud Provisioning"
+    ],
+    "duration": "14 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-chef-enterprise-support-online-chef-support",
+    "title": "DevOps Chef Enterprise Support Online Devops Chef",
+    "category": "DevOps & Automation",
+    "overview": "DevOps Chef enterprise architectural support and job assistance enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this DevOps Chef enterprise architectural support and job assistance enterprise architectural support and job assistance as per your pace. Experts in Infrastructure as Code (IaC), automated configuration management, and idempotent delivery pipelines.",
+    "courseContent": [
+      "Infrastructure as Code (IaC) Design Patterns",
+      "Automated Provisioning & State Management Strategies",
+      "Ansible Playbook Engineering & Modular Configuration",
+      "Terraform Provider Integration & Multi-Cloud Provisioning"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "devops-azure-enterprise-support-learn-azure-course-online-support",
+    "title": "Azure DevOps Enterprise Support - Learn Azure DevOps Course Online",
+    "category": "DevOps & Automation",
+    "overview": "Azure DevOps enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Azure DevOps enterprise architectural support and job assistance as per your pace. Focused on end-to-end CI/CD pipeline automation, DevSecOps integration, and automated quality gate configuration.",
+    "courseContent": [
+      "Core Module Configuration & Advanced Setup",
+      "Enterprise Integration Strategies (API / EDI / MFT)",
+      "Production Support Best Practices & Log Analysis",
+      "Performance Tuning & Database Administration"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  }
+]

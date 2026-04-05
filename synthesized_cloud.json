@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cloud--support",
+    "title": "",
+    "category": "Cloud & Infrastructure",
+    "overview": "The certification names are the trademarks of their respective owners, who are not affiliated with Project X. We ensure end-to-end operational stability and seamless migration to the modern hybrid-cloud landscape.",
+    "courseContent": [
+      "Multi-Cloud Governance & Compliance Standards",
+      "Cloud Migration (6R) Strategy & Execution Plans",
+      "DevSecOps Integration & Automated Deployment",
+      "Cloud Financial Management (FinOps) & Reporting"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-online-enterprise-support-course-support",
+    "title": "Online Salesforce Enterprise Support Salesforce Course",
+    "category": "Cloud & Infrastructure",
+    "overview": "This Salesforce enterprise architectural support and job assistance covers concepts from the Basic level to advance level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Salesforce enterprise architectural support and job assistance as per your pace. Focused on multi-cloud implementations, Lightning migration strategies, and complex AppExchange integrations.",
+    "courseContent": [
+      "Apex/LWC Development for Enterprise CRM",
+      "Sales & Service Cloud Implementation Workflows",
+      "MuleSoft Integration & Event-Driven Architecture",
+      "Marketing Cloud Personalized Customer Journeys"
+    ],
+    "duration": "60 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-microsoft-enterprise-support-microsoft-support",
+    "title": "Microsoft Azure Enterprise Support Microsoft Azure",
+    "category": "Cloud & Infrastructure",
+    "overview": "Project X’s Microsoft Azure Infrastructure Solutions enterprise architectural support and job assistance is designed to help you pass the 70-533-Implementing Microsoft Azure Infrastructure Solutions , 70-534: Architecting Microsoft Azure Solutions and 70-535: Architecting Microsoft Azure Solutions Certification Exams. This Microsoft Azure enterprise architectural support and job assistance will make you an expert in Azure AD, Azure PowerShell, Azure Storage, Azure App Service, Azure Site Recovery, Azure SQL Database, Azure Cloud Service, Azure Automation, Azure resource Manage and Azure Virtual network using real life case studies. Experts in Azure Landing Zones, Enterprise Scale Architecture, and Sentinel-driven security operations.",
+    "courseContent": [
+      "Azure Governance, Policy & Blueprint Management",
+      "Hybrid Cloud Identity Management (Entra ID/AD Connect)",
+      "Azure Kubernetes Service (AKS) Operations & Scaling",
+      "Data Factory & Synapse Analytics Integration Patterns"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-cloud-enterprise-support-cloud-support",
+    "title": "Google Cloud Enterprise Support Google Cloud",
+    "category": "Cloud & Infrastructure",
+    "overview": "Project X's Google Cloud enterprise architectural support and job assistance help you to make the most of Google Cloud technologies. The course covers the Introducing of Google Cloud Platform, difference between Infrastructure-as-a- Service (IaaS) and Platform-as-a-Service (PaaS). It will also help you to understand the purpose of and use cases for Identity and Access Management. Virtual Machines and Networks in the Cloud will be covered in depth along with Storage, Container and Application of GCP. This course will also help you to do hands on during lab sessions, which will help you to learn the topics in a practical way. Deep expertise in Anthos hybrid-cloud, BigQuery data warehousing, and Kubernetes (GKE) orchestration.",
+    "courseContent": [
+      "Infrastructure as Code (Terraform) on GCP",
+      "Advanced Data Modeling on BigQuery & Looker",
+      "Apigee API Management & Connectivity Strategies",
+      "Vertex AI & Machine Learning Pipeline Integration"
+    ],
+    "duration": "20-25 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-data-factory-enterprise-support-learn-data-factory-course-support",
+    "title": "Azure Data Factory Enterprise Support - Learn Azure Data Factory Course",
+    "category": "Cloud & Infrastructure",
+    "overview": "Azure data factory enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Azure data factory enterprise architectural support and job assistance at your pace. Experts in Azure Landing Zones, Enterprise Scale Architecture, and Sentinel-driven security operations.",
+    "courseContent": [
+      "Azure Governance, Policy & Blueprint Management",
+      "Hybrid Cloud Identity Management (Entra ID/AD Connect)",
+      "Azure Kubernetes Service (AKS) Operations & Scaling",
+      "Data Factory & Synapse Analytics Integration Patterns"
+    ],
+    "duration": "25-30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-enterprise-support-enterprise-support-support",
+    "title": "AWS Enterprise Support AWS Enterprise Support",
+    "category": "Cloud & Infrastructure",
+    "overview": "Amazon Web Services (AWS) is a secure cloud services platform, providing calculate power, info storage, content delivery and other functionality to assist businesses scale and grow. Explore however millions of customers square measure presently leverage AWS cloud products and solutions to make sophisticated applications with accumulated flexibility, quantifiability and reliability. Specialized in AWS Multi-Account Strategy (Control Tower), Serverless Architecture, and Cost Optimization Frameworks.",
+    "courseContent": [
+      "Advanced VPC Design & Hybrid Connectivity (Direct Connect)",
+      "Serverless (Lambda/Step Functions) Workflow Engineering",
+      "EKS/ECS Container Orchestration & CI/CD Pipelines",
+      "Security, Identity & Compliance (IAM/KMS/GuardDuty)"
+    ],
+    "duration": "40 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-portal-enterprise-support-learn-portal-course-get-support",
+    "title": "azure portal Enterprise Support - Learn azure portal Course Get",
+    "category": "Cloud & Infrastructure",
+    "overview": "Azure portal enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Azure portal enterprise architectural support and job assistance as per your pace. Experts in Azure Landing Zones, Enterprise Scale Architecture, and Sentinel-driven security operations.",
+    "courseContent": [
+      "Azure Governance, Policy & Blueprint Management",
+      "Hybrid Cloud Identity Management (Entra ID/AD Connect)",
+      "Azure Kubernetes Service (AKS) Operations & Scaling",
+      "Data Factory & Synapse Analytics Integration Patterns"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "cloud-oracle-cloud-enterprise-support-learn-oracle-cloud-online-enterprise-support-course-get-support",
+    "title": "Oracle Cloud Enterprise Support - Learn Oracle Cloud online Enterprise Support Course Get",
+    "category": "Cloud & Infrastructure",
+    "overview": "Oracle Cloud enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Oracle Cloud enterprise architectural support and job assistance at your pace. We ensure end-to-end operational stability and seamless migration to the modern hybrid-cloud landscape.",
+    "courseContent": [
+      "Multi-Cloud Governance & Compliance Standards",
+      "Cloud Migration (6R) Strategy & Execution Plans",
+      "DevSecOps Integration & Automated Deployment",
+      "Cloud Financial Management (FinOps) & Reporting"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  }
+]

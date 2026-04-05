@@ -1,26 +1,298 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== APPLE STORE DESIGN SYSTEM ===== */
+@theme {
+  --color-primary-bg: #FFFFFF;
+  --color-secondary-bg: #F5F5F7;
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-accent: #0071E3;
+  --color-accent-hover: #0077ED;
+  --color-border: #D2D2D7;
+  --color-hero-bg: #1D1D1F;
+  --color-hero-text: #F5F5F7;
+  --color-accent-red: #FF3B30;
+  --color-card-shadow: rgba(0, 0, 0, 0.08);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== BASE STYLES ===== */
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sf);
+  color: var(--color-text-primary);
+  background: var(--color-primary-bg);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ===== APPLE PILL BUTTON ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 980px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  border-radius: 980px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 980px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.btn-white:hover {
+  background: #fff;
+  color: var(--color-text-primary);
+}
+
+/* ===== APPLE CARD ===== */
+.apple-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px var(--color-card-shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.apple-card:hover {
+  box-shadow: 0 8px 24px var(--color-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== APPLE INPUT ===== */
+.apple-input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: var(--font-sf);
+  color: var(--color-text-primary);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.apple-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
+}
+
+.apple-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* ===== NAVBAR ===== */
+.nav-glass {
+  background: var(--color-nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* ===== STAR RATING ===== */
+.star {
+  color: #FF9500;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== MODAL OVERLAY ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ===== CHAT WIDGET ===== */
+.chat-bubble {
+  animation: pulse 2s infinite;
+}
+
+.chat-bubble:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+/* ===== GEOMETRIC SHAPES ===== */
+.geo-shape {
+  position: absolute;
+  opacity: 0.15;
+  animation: float 6s ease-in-out infinite;
+}
+
+.geo-shape:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.geo-shape:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* ===== ACCORDION ===== */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-content.open {
+  max-height: 1000px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-white {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

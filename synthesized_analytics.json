@@ -1,0 +1,110 @@
+[
+  {
+    "id": "analytics-enterprise-support-online-enterprise-support-support",
+    "title": "Tableau Enterprise Support Tableau Online Enterprise Support",
+    "category": "Data & Analytics",
+    "overview": "This Tableau Desktop enterprise architectural support and job assistance will cover all the topics in detail and with lots of hands on practical sessions. Specializing in advanced data visualization, self-service BI governance, and complex dashboard performance optimization.",
+    "courseContent": [
+      "Advanced Data Modeling & Calculation Engineering",
+      "Enterprise Dashboard Design & Storytelling Best Practices",
+      "Server Architecture, Security, and Governance Frameworks",
+      "Performance Tuning for Large-Scale Data Visualizations"
+    ],
+    "duration": "35 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "analytics-view-enterprise-support-view-online-enterprise-support-certified-expert-support",
+    "title": "Qlikview Enterprise Support Qlikview Online Enterprise Support Certified Expert",
+    "category": "Data & Analytics",
+    "overview": "This Qlikview enterprise architectural support and job assistance will teach you about system management data visualization and design best practices for building better experiences with guided analytics. Specializing in advanced data visualization, self-service BI governance, and complex dashboard performance optimization.",
+    "courseContent": [
+      "Advanced Data Modeling & Calculation Engineering",
+      "Enterprise Dashboard Design & Storytelling Best Practices",
+      "Server Architecture, Security, and Governance Frameworks",
+      "Performance Tuning for Large-Scale Data Visualizations"
+    ],
+    "duration": "25-30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "analytics-sense-enterprise-support-sense-online-enterprise-support-support",
+    "title": "QlikSense Enterprise Support QlikSense Online Enterprise Support",
+    "category": "Data & Analytics",
+    "overview": "This QlikSense enterprise architectural support and job assistance will help you enhance your ability to design and share visualizations, create data models and administer. Specializing in advanced data visualization, self-service BI governance, and complex dashboard performance optimization.",
+    "courseContent": [
+      "Advanced Data Modeling & Calculation Engineering",
+      "Enterprise Dashboard Design & Storytelling Best Practices",
+      "Server Architecture, Security, and Governance Frameworks",
+      "Performance Tuning for Large-Scale Data Visualizations"
+    ],
+    "duration": "25-30 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "analytics-enterprise-support-admin-enterprise-support-support",
+    "title": "Tableau Enterprise Support Tableau Admin Enterprise Support",
+    "category": "Data & Analytics",
+    "overview": "This Tableau Admin enterprise architectural support and job assistance will help you become master Tableau Administration. This course will give you a brief about Data visualization, how to install and configure Tableau server with lots and lots of practical sessions and hands on. It will also cover User Experience, Security, Data Sources and Performance, Utilities and Log files Administration(Trouble Shooting), Monitoring and Upgrade Server, SSO Authentication and Embedding, Process Flows and Performance, Automating Server Tasks and a detailed case study to understand all the concepts. Specializing in advanced data visualization, self-service BI governance, and complex dashboard performance optimization.",
+    "courseContent": [
+      "Advanced Data Modeling & Calculation Engineering",
+      "Enterprise Dashboard Design & Storytelling Best Practices",
+      "Server Architecture, Security, and Governance Frameworks",
+      "Performance Tuning for Large-Scale Data Visualizations"
+    ],
+    "duration": "35 Hours",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "analytics-enterprise-support-learn-enterprise-support-get-support",
+    "title": "pentaho Enterprise Support - Learn pentaho Enterprise Support Get",
+    "category": "Data & Analytics",
+    "overview": "PENTAHO enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. Focused on enterprise data integration (ETL), master data management (MDM), and automated data quality validation.",
+    "courseContent": [
+      "Complex ETL Workflow Design & Transformation Logic",
+      "Metadata Management & Data Lineage Configuration",
+      "Incremental Loading & Performance Tuning Strategies",
+      "Automated Data Quality & Validation Engineering"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  },
+  {
+    "id": "analytics-server-enterprise-support-learn-online-server-support",
+    "title": "Tableau Server Enterprise Support learn online Tableau Server",
+    "category": "Data & Analytics",
+    "overview": "Tableau Server enterprise architectural support and job assistance covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize enterprise architectural support and job assistance course content as per your requirement. And can arrange this Tableau Server enterprise architectural support and job assistance as per your pace. Specializing in advanced data visualization, self-service BI governance, and complex dashboard performance optimization.",
+    "courseContent": [
+      "Advanced Data Modeling & Calculation Engineering",
+      "Enterprise Dashboard Design & Storytelling Best Practices",
+      "Server Architecture, Security, and Governance Frameworks",
+      "Performance Tuning for Large-Scale Data Visualizations"
+    ],
+    "duration": "Flexible / Custom (Typically 30-40 Hours)",
+    "supportFeatures": [
+      "Customized Corporate Curriculum",
+      "Real-time scenario-based architecture",
+      "Live Video Support Sessions"
+    ]
+  }
+]
