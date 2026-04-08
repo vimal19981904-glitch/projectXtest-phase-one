@@ -13,28 +13,38 @@ export default function BookingForm({ defaultService = 'Training' }) {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const update = (field) => (e) =>
+  const update = (field) => (e) => {
     setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    if (error) setError(null); // Clear error when typing
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
-      await saveBooking(form);
+      // 1. Try to save to Supabase
+      const { error: supabaseError } = await saveBooking(form);
+      if (supabaseError) throw new Error(`Database Error: ${supabaseError.message}`);
 
+      // 2. Try to send email notification
       if (form.serviceType === 'Job Support') {
         await sendJobSupportRequest(form);
       } else {
         await sendTrainingRequest(form);
       }
-    } catch (err) {
-      console.error('Booking error:', err);
-    }
 
-    setLoading(false);
-    setSubmitted(true);
+      // If we reach here, both succeeded
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Booking submission failed:', err);
+      setError(err.message || 'Something went wrong. Please try again or contact us via WhatsApp.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -103,6 +113,12 @@ export default function BookingForm({ defaultService = 'Training' }) {
           className="apple-input resize-none"
           rows={3}
         />
+        {error && (
+          <div className="p-4 bg-red-50 border border-red-200 rounded-xl animate-[slideUp_0.3s_ease]">
+             <p className="text-[13px] text-red-600 font-medium">{error}</p>
+             <p className="text-[11px] text-red-400 mt-1 italic">Please check if your EmailJS Template ID is correctly set in Vercel.</p>
+          </div>
+        )}
         <button
           type="submit"
           disabled={loading}
