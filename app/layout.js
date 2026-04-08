@@ -1,7 +1,21 @@
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import NavMegaMenu from '@/components/NavMegaMenu';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
 
 export const metadata = {
   title: 'Project X — Online Training & Job Support Platform',
@@ -14,7 +28,7 @@ import PageTransition from '@/components/PageTransition';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className="antialiased">
         <NavMegaMenu />
         <PageTransition>

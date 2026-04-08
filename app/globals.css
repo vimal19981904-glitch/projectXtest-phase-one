@@ -12,10 +12,10 @@
   --color-hero-bg: #1D1D1F;
   --color-hero-text: #F5F5F7;
   --color-accent-red: #FF3B30;
-  --color-card-shadow: rgba(0, 0, 0, 0.08);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
-  --color-nav-bg: rgba(255, 255, 255, 0.85);
-  --font-sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --color-card-shadow: rgba(0, 0, 0, 0.05); /* Softer shadows for premium feel */
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.1);
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-poppins), sans-serif;
 }
 
 /* ===== BASE STYLES ===== */
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sf);
+  font-family: var(--font-body);
   color: var(--color-text-primary);
   background: var(--color-primary-bg);
   line-height: 1.6;
@@ -37,16 +37,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== TYPOGRAPHY ===== */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 /* ===== APPLE PILL BUTTON ===== */
@@ -116,18 +116,18 @@ h6 {
   color: var(--color-text-primary);
 }
 
-/* ===== APPLE CARD ===== */
 .apple-card {
   background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px var(--color-card-shadow);
-  transition: all 0.3s ease;
+  border-radius: 12px; /* Slightly more modern than the extreme 18px */
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 20px var(--color-card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
 .apple-card:hover {
-  box-shadow: 0 8px 24px var(--color-card-shadow-hover);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 30px var(--color-card-shadow-hover);
+  transform: translateY(-4px);
 }
 
 /* ===== APPLE INPUT ===== */

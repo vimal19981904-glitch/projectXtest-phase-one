@@ -1,0 +1,7 @@
+{
+  "title": "SIEM Tools Training",
+  "description": "Software product and services come together and form security information management (SIM). On the other hand, we have Security event management services (SEM). SIM & SEM club together themselves and form SIEM (security information and event management). SIEM do real-time analysis of threat detected by application and network hardware.\n\nNormally SIEM have compliances modules, data retention modules, log ingestion and aggregation module, an analysis engine and alerting module.\n\nThe goal of SIEM Software delivery is to prepare a report for security-related events and incident eg failed login, malware activity and send alerts if data analysis shows that an activity is deviating from predetermined rules.",
+  "curriculum": [],
+  "url": "https://www.maxmunus.com/page/Online-Training/SIEM-Tools-Training",
+  "category": "Microsoft Courses"
+}

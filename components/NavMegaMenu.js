@@ -79,18 +79,18 @@ export default function NavMegaMenu() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || megaMenuOpen ? 'bg-white/90 backdrop-blur-xl border-b border-border/50 shadow-sm' : 'bg-white/80 backdrop-blur-md border-b border-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled || megaMenuOpen ? 'bg-white/95 backdrop-blur-2xl border-b border-border/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)]' : 'bg-white/70 backdrop-blur-lg border-b border-transparent'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-[20px] md:text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group">
+          <Link href="/" className="text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group font-heading">
             Project X
             {pathname === '/' && (
               <motion.div 
                 layoutId="nav-glow"
-                className="absolute -inset-x-2 -inset-y-1 bg-accent/5 rounded-lg -z-10"
+                className="absolute -inset-x-3 -inset-y-1.5 bg-accent/5 rounded-lg -z-10"
               />
             )}
           </Link>
@@ -104,16 +104,16 @@ export default function NavMegaMenu() {
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
               <button 
-                className={`text-[15px] font-medium bg-transparent border-none cursor-pointer flex items-center gap-1 transition-all duration-300 relative py-1 ${
-                  megaMenuOpen || isTrainingActive ? 'text-accent' : 'text-text-primary hover:text-accent'
+                className={`text-[14px] font-semibold bg-transparent border-none cursor-pointer flex items-center gap-1 transition-all duration-300 relative py-1 ${
+                  megaMenuOpen || isTrainingActive ? 'text-accent' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
                 }`}
               >
                 Project Training
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${megaMenuOpen ? 'rotate-180' : ''}`} />
                 {isTrainingActive && !megaMenuOpen && (
                    <motion.div 
                      layoutId="nav-underline"
-                     className="absolute -bottom-[21px] left-0 right-0 h-[2px] bg-accent"
+                     className="absolute -bottom-[21px] left-1/2 -translate-x-1/2 w-4 h-[2px] bg-accent"
                    />
                 )}
               </button>
@@ -130,7 +130,7 @@ export default function NavMegaMenu() {
                 <Link
                   key={l.label}
                   href={l.href}
-                  className={`text-[15px] font-medium transition-all duration-300 no-underline relative py-1 ${
+                  className={`text-[14px] font-semibold transition-all duration-300 no-underline relative py-1 opacity-90 hover:opacity-100 ${
                     active ? 'text-accent' : 'text-text-primary hover:text-accent'
                   }`}
                 >

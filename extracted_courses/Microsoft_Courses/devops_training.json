@@ -1,0 +1,12 @@
+{
+  "title": "DevOps Training",
+  "description": "DevOps is a software development method that emphasizes communication, collaboration (information sharing and web service usage), integration, automation and measurement of cooperation between software developers and other IT professionals. The method acknowledges the interdependence of software development, quality assurance, and IT operations, and aims to help an organization rapidly produce software products and services and to improve operations performance.\n\nIn this course, we look at the necessity of Devops and how a DevOps transformation can help focus on value and streamlined delivery. We will also cover concepts like Automation and technology, which play huge roles in DevOps success; in this course, we will analyze the major capability areas and the technologies which can get your team on its way.\n\nThis course is designed mainly for Fresher’s, Developers, QA engineers, Release/Deployment engineers, System admins, Database admins, Technical managers, Technical leads and Operational support staff of software development teams.",
+  "curriculum": [
+    "Understanding Linux Architecture\nOverview of essential Linux commands",
+    "Understanding Build process & Developer workflow\nNeed of Continuous Integration\nUnderstanding Jenkins Architecture \nJenkins Installation\nMaster & Slave configurations\nPlugin Management\nConfiguring different types of Jobs\nSecurity & Authentication in Jenkins\nOverview of popular plugins used in Industry",
+    "Understanding need of Configuration Management\nAnsible Architecture  \nAnsible setup & configuration on different nodes \nIntroduction to YAML\nAnsible command line usage\nAnsible Modules\nAnsible Playbooks\nRoles\nPractical examples of different Ansible Use cases",
+    "Python Overview\nEnvironment setup\nBasic syntax\nVariable types – Numbers, strings, Lists, Tuples\nPython operators \nDecision Making\nLoops\nFunctions\nFiles I/O\nModules"
+  ],
+  "url": "https://www.maxmunus.com/page/Online-Training/DevOps-Training",
+  "category": "Microsoft Courses"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Oracle Demantra Training",
+  "description": "Oracle Demantra training covers concepts from the Basic level to the advanced level.  Whether you are an individual or corporate client we can customize training course content as per your requirement.  And can arrange this Oracle Demantra training as per your pace.\n\nThis Oracle Demantra Training will teach you about Oracle Demantra Demand Management. This Demantra training will first teach you about Demantra concepts then  it will cover Collaborator Workbench and Worksheet Implementation. You will also learn about Demantra Levels, Hierarchies and Dimensions Level Types, you will also learn about Adding a New Level, User Groups and Demantra Predictive Trade Planning (PTP) Overview as well.\n\nOracle's Demantra is a best-in-class provider of demand management, sales & operations planning, and trade promotions management solutions.",
+  "curriculum": [
+    "Demantra Overview\nDemantra - Why Customers Deploy It\nDemantra – History\nDemand Driven Adaptive Planning\nDemantra – Its Modules\nDemantra – Wide Business Needs\nDemantra Differentiators\nDemantra and it’s Competitors\nDemantra Features and Glossary\nDemantra Architecture\nDemantra Demand Management & AFDM Capability\nDemantra Demand Management Process flow",
+    "Demantra Concepts – Overview\nLevels\nSeries\nWorksheets\nNotes and Audit Trail\nCollaborator Workbench\nWorkflows\nMethods\nSecurity – Users, Menus and Methods\nAdmin Tool – Business Modeler",
+    "Demantra Data Model Wizard\nDemantra Data Model\nDemantra Integration Overview\nData Model Creation and Configuration\nStaging Tables Configuration\nDemo on the System",
+    "Demantra Analytical Engine and System Parameters\nOverview of Analytical engine\nDemantra Forecasting Ideology\nCasual Factors Introduction\nAnalytical Engine Modes (DP and PE)\nBatch Engine\nSimulation Engine\nForecasting Models\nNodal Tuning\nForecast Tree\nKey Engine Parameters\nDemo on the System",
+    "Demantra Predictive Trade Planning (PTP) Overview\nIntroduction to PTP\nProcess Flow Diagram\nQuotas, Funds and Promotions\nPlanning Environment \nRunning Simulations"
+  ],
+  "url": "https://www.maxmunus.com/page/Oracle-Demantra-Training",
+  "category": "Oracle Courses"
+}

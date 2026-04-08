@@ -1,0 +1,10 @@
+{
+  "title": "Oracle WMS Training",
+  "description": "Oracle WMS training covers concepts from the Basic level to the advanced level. Whether you are an individual or corporate client we can customize training course content as per your requirement.  And can arrange this Oracle WMS training as per your pace.\n\nIndustry’s best warehouse management system is Oracle Warehouse Management Cloud (WMS). User friendly interface, mobile solution and features of product makes it great in terms of spead and warehouse management and fulfillment capabilities.\n\nThis Oracle WMS training or Oracle Warehouse Management System Cloud training teaches you all about your WMS application, including shipping, fulfillment, order management, inventory control, and inbound configuration.",
+  "curriculum": [
+    "System Overview\n\nParent-Child Company Hierarchy\nUser Menu Configuration\nConfiguring Menus for Users\nSystem Integration Framework\nSupported Formats\nInput Interfaces\nOutput Interfaces\nUploading Interface files with the WMS\nSetting Email Notifications for Failed Interfaces\n\n\nInbound\n\nPurchase Orders (PO)\nManual Purchase Order (PO) creation\nPurchase Orders through Interfaces (UI)\nPurchase Order (PO) Integration into the WMS\nInbound Shipments - Advance Shipment Notifications (ASNs)\nCreating ASNs Manu",
+    "Outbound Orders\nConfiguring Order Types\nCreating Orders in the WMS\nOrder Integration into the WMS\nWaves\nCreating Wave Templates\nExecuting Waves\nWave Inquiry - Viewing Created Waves\nPrinting Pick Tickets\nPicking\nTasks\nNon-Cubed Picking\nPicking\nExceptions\nZone Picking\nCubed Picking\nExceptions While Calculating LPN Types\nCarts\nPut-To-Store (Distribution)\nPacking (Repack Module)\nLTL Load Management and Shipping\nLoad Assignment\nLoading an OBLPN\nUnloading an OBLPN\nPack and Hold functionality\nParcel Co"
+  ],
+  "url": "https://www.maxmunus.com/page/Oracle-WMS-Training",
+  "category": "Oracle Courses"
+}
