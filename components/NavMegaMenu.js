@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { usePathname } from 'next/navigation';
 import { ChevronRight, Search, Menu, X, ChevronDown, User } from 'lucide-react';
+import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -264,7 +265,7 @@ export default function NavMegaMenu() {
                       className="w-full flex items-center justify-between py-4 bg-transparent border-none text-[16px] font-medium text-text-primary relative cursor-pointer"
                     >
                       <span className="flex items-center gap-3 w-[85%] text-left">
-                        <span className="flex-shrink-0">{d.icon}</span> 
+                        <span className="flex-shrink-0 text-[#86868B]">{ (() => { const Icon = getDomainIcon(d.category); return <Icon {...ICON_PROPS} />; })() }</span> 
                         <span className="truncate">{d.category}</span>
                       </span>
                       <ChevronDown className={`w-5 h-5 flex-shrink-0 transition-transform ${mobileAccordion === d.category ? 'rotate-180 text-accent' : 'text-text-secondary'}`} />

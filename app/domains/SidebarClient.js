@@ -3,71 +3,98 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, BookOpen } from 'lucide-react';
+import { ChevronDown, Menu, X, BookOpen, PanelLeftClose, PanelLeft } from 'lucide-react';
+import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 
-
-const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, setMobileSidebarOpen }) => (
-  <div className="py-8 px-4 h-full flex flex-col">
-    <div className="mb-6 px-3">
-      <h2 className="text-[14px] font-bold text-[#86868B] uppercase tracking-wider">Our Domains</h2>
+const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, setMobileSidebarOpen, collapsed, setCollapsed }) => (
+  <div className="sidebar-premium py-6 px-3 h-full flex flex-col">
+    {/* Header */}
+    <div className="flex items-center justify-between mb-6 px-2">
+      {!collapsed && (
+        <h2 className="text-[11px] font-bold text-[#808090] uppercase tracking-[0.15em]">Domains</h2>
+      )}
+      <button
+        onClick={() => setCollapsed(!collapsed)}
+        className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg bg-transparent border-none cursor-pointer text-[#808090] hover:text-white hover:bg-white/5 transition-all duration-200"
+        aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+      >
+        {collapsed ? <PanelLeft size={18} strokeWidth={1.75} /> : <PanelLeftClose size={18} strokeWidth={1.75} />}
+      </button>
     </div>
-    
-    <div className="flex-1 overflow-y-auto hide-scrollbar flex flex-col gap-2">
+
+    {/* Domain list */}
+    <div className="flex-1 overflow-y-auto sidebar-scrollbar flex flex-col gap-1">
       {domainData.map((d) => {
         const isOpen = openCategories[d.category] || false;
-        
+        const IconComponent = getDomainIcon(d.category);
+        const hasActiveSub = d.sub_domains.some(sub => pathname === sub.href);
+
         return (
           <div key={d.category} className="flex flex-col">
             <button
               onClick={() => toggleCategory(d.category)}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg border-none cursor-pointer transition-colors ${
-                isOpen ? 'bg-[#E8E8ED] text-[#1D1D1F]' : 'bg-transparent text-[#1D1D1F] hover:bg-[#E8E8ED]/50'
+              className={`sidebar-category-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border-none cursor-pointer transition-all duration-200 relative group ${
+                isOpen
+                  ? 'bg-white/[0.08] text-white'
+                  : hasActiveSub
+                    ? 'bg-white/[0.04] text-[#c0c0d0]'
+                    : 'bg-transparent text-[#909098] hover:bg-white/[0.05] hover:text-[#d0d0d8]'
               }`}
+              title={collapsed ? d.category : undefined}
             >
-              <span className="flex items-center gap-3 font-semibold text-[15px]">
-                <span>{d.icon}</span> {d.category}
+              {/* Active indicator bar */}
+              {(isOpen || hasActiveSub) && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-[#3b82f6] rounded-r-full" />
+              )}
+
+              <span className={`flex-shrink-0 transition-all duration-200 ${
+                isOpen ? 'text-[#60a5fa]' : hasActiveSub ? 'text-[#60a5fa]/70' : 'text-[#707078] group-hover:text-[#a0a0a8]'
+              }`}>
+                <IconComponent {...ICON_PROPS} />
               </span>
-              <ChevronDown className={`w-4 h-4 text-[#86868B] transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+
+              {!collapsed && (
+                <>
+                  <span className="flex-1 text-left text-[13px] font-semibold truncate">{d.category}</span>
+                  <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'rotate-180 text-[#60a5fa]' : 'text-[#505058]'
+                  }`} />
+                </>
+              )}
             </button>
-            
-            <div 
-              className={`flex-col gap-1 mt-1 mb-3 ${
-                 isOpen ? 'flex' : 'hidden'
-              }`}
-            >
-              {d.sub_domains.map(sub => {
-                const isActive = pathname === sub.href;
-                return (
-                  <Link
-                    key={sub.name}
-                    href={sub.href}
-                    onClick={() => setMobileSidebarOpen(false)}
-                    className={`ml-9 mr-2 px-3 py-2 rounded-md text-[14px] no-underline transition-colors ${
-                      isActive 
-                        ? 'bg-[#0071E3]/10 text-[#0071E3] font-semibold' 
-                        : 'text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/5'
-                    }`}
-                  >
-                    {sub.name}
-                  </Link>
-                );
-              })}
-            </div>
+
+            {/* Expandable subdomain list */}
+            {!collapsed && (
+              <div
+                className={`sidebar-subdomain-list overflow-hidden transition-all duration-300 ease-in-out ${
+                  isOpen ? 'max-h-[2000px] opacity-100 mt-1 mb-2' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="flex flex-col gap-0.5 pl-2 ml-5 border-l border-white/[0.06]">
+                  {d.sub_domains.map(sub => {
+                    const isActive = pathname === sub.href;
+                    return (
+                      <Link
+                        key={sub.name}
+                        href={sub.href}
+                        onClick={() => setMobileSidebarOpen(false)}
+                        className={`sidebar-subdomain-link px-3 py-[7px] rounded-lg text-[13px] no-underline transition-all duration-200 ${
+                          isActive
+                            ? 'bg-[#3b82f6]/15 text-[#60a5fa] font-semibold'
+                            : 'text-[#78787f] hover:text-[#c0c0c8] hover:bg-white/[0.04]'
+                        }`}
+                      >
+                        {sub.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         );
       })}
     </div>
-    
-    {/* Hide scrollbar styles locally */}
-    <style jsx global>{`
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    `}</style>
   </div>
 );
 
@@ -75,6 +102,7 @@ export default function SidebarClient({ domainData }) {
   const pathname = usePathname();
   const [openCategories, setOpenCategories] = useState({});
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   // Auto-expand the category that contains the currently active subdomain
   useEffect(() => {
@@ -87,6 +115,12 @@ export default function SidebarClient({ domainData }) {
   }, [pathname, domainData]);
 
   const toggleCategory = (categoryName) => {
+    // If collapsed, expand first then open category
+    if (collapsed) {
+      setCollapsed(false);
+      setOpenCategories(prev => ({ ...prev, [categoryName]: true }));
+      return;
+    }
     setOpenCategories(prev => ({
       ...prev,
       [categoryName]: !prev[categoryName]
@@ -96,55 +130,64 @@ export default function SidebarClient({ domainData }) {
   return (
     <>
       {/* Mobile Top Bar to Open Sidebar */}
-      <div className="md:hidden w-full bg-white border-b border-[#D2D2D7] p-4 flex items-center justify-between sticky top-[56px] z-30 shadow-sm">
-         <span className="font-bold text-[#1D1D1F] flex items-center gap-2">
-           <BookOpen className="w-5 h-5 text-[#0071E3]" />
-           Domain Directory
-         </span>
-         <button 
-           onClick={() => setMobileSidebarOpen(true)}
-           className="bg-[#F5F5F7] p-2 rounded-md border-none cursor-pointer"
-         >
-           <Menu className="w-5 h-5 text-[#1D1D1F]" />
-         </button>
+      <div className="md:hidden w-full bg-[#0e0e12] border-b border-white/[0.06] p-4 flex items-center justify-between sticky top-[56px] z-30">
+        <span className="font-bold text-white/90 flex items-center gap-2 text-[14px]">
+          <BookOpen className="w-4 h-4 text-[#60a5fa]" />
+          Domain Directory
+        </span>
+        <button
+          onClick={() => setMobileSidebarOpen(true)}
+          className="bg-white/[0.06] p-2.5 rounded-lg border-none cursor-pointer"
+        >
+          <Menu className="w-5 h-5 text-white/80" />
+        </button>
       </div>
 
       {/* Desktop Persistent Sidebar */}
-      <aside className="hidden md:block w-[320px] bg-[#F5F5F7] sticky top-[64px] h-[calc(100vh-64px)] flex-shrink-0 z-10 border-r border-[#D2D2D7]/50">
-         <SidebarContent 
-           domainData={domainData}
-           openCategories={openCategories}
-           toggleCategory={toggleCategory}
-           pathname={pathname}
-           setMobileSidebarOpen={setMobileSidebarOpen}
-         />
+      <aside
+        className={`hidden md:flex flex-col bg-[#0e0e12] sticky top-[64px] h-[calc(100vh-64px)] flex-shrink-0 z-10 border-r border-white/[0.06] transition-all duration-300 ${
+          collapsed ? 'w-[64px]' : 'w-[280px]'
+        }`}
+      >
+        <SidebarContent
+          domainData={domainData}
+          openCategories={collapsed ? {} : openCategories}
+          toggleCategory={toggleCategory}
+          pathname={pathname}
+          setMobileSidebarOpen={setMobileSidebarOpen}
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+        />
       </aside>
 
       {/* Mobile Drawer Overlay */}
       {mobileSidebarOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 md:hidden" onClick={() => setMobileSidebarOpen(false)}>
-           <div 
-             className="absolute top-0 right-0 bottom-0 w-[80%] max-w-[320px] bg-[#F5F5F7] shadow-2xl transition-transform animate-[slideInRight_0.3s_ease]"
-             onClick={e => e.stopPropagation()}
-           >
-             <div className="flex justify-end p-4 border-b border-[#D2D2D7]">
-               <button 
-                 onClick={() => setMobileSidebarOpen(false)}
-                 className="bg-transparent border-none p-2 cursor-pointer rounded-full hover:bg-black/5"
-               >
-                 <X className="w-6 h-6 text-[#1D1D1F]" />
-               </button>
-             </div>
-             <div className="h-[calc(100vh-80px)]">
-               <SidebarContent 
-                 domainData={domainData}
-                 openCategories={openCategories}
-                 toggleCategory={toggleCategory}
-                 pathname={pathname}
-                 setMobileSidebarOpen={setMobileSidebarOpen}
-               />
-             </div>
-           </div>
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden" onClick={() => setMobileSidebarOpen(false)}>
+          <div
+            className="absolute top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-[#0e0e12] shadow-2xl transition-transform animate-[slideInLeft_0.3s_ease]"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between p-4 border-b border-white/[0.06]">
+              <span className="text-[13px] font-bold text-white/70 uppercase tracking-wider">Domains</span>
+              <button
+                onClick={() => setMobileSidebarOpen(false)}
+                className="bg-transparent border-none p-2 cursor-pointer rounded-lg hover:bg-white/[0.06]"
+              >
+                <X className="w-5 h-5 text-white/60" />
+              </button>
+            </div>
+            <div className="h-[calc(100vh-64px)] overflow-y-auto">
+              <SidebarContent
+                domainData={domainData}
+                openCategories={openCategories}
+                toggleCategory={toggleCategory}
+                pathname={pathname}
+                setMobileSidebarOpen={setMobileSidebarOpen}
+                collapsed={false}
+                setCollapsed={setCollapsed}
+              />
+            </div>
+          </div>
         </div>
       )}
     </>

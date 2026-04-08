@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { domainData } from '@/lib/domainData';
+import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
@@ -26,43 +27,53 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
             {/* Left Panel - Categories */}
             <div className="w-[320px] bg-[#F8F9FB] border-r border-border/40 py-8 flex flex-col overflow-y-auto custom-scrollbar">
               <div className="px-8 mb-5 text-[11px] font-bold text-text-secondary tracking-[0.1em] uppercase opacity-60">Training Domains</div>
-              {domainData.map((d) => (
-                <button
-                  key={d.category}
-                  onMouseEnter={() => setActiveCategory(d.category)}
-                  className={`text-left px-8 py-4 border-l-[3px] transition-all duration-300 bg-transparent cursor-pointer flex items-center justify-between group/cat ${
-                    activeCategory === d.category 
-                      ? 'border-accent bg-white text-accent font-bold shadow-[4px_0_15px_rgba(0,0,0,0.02)]' 
-                      : 'border-transparent text-text-primary hover:bg-black/5'
-                  }`}
-                >
-                  <span className="flex items-center gap-4">
-                    <span className={`text-[20px] transition-transform duration-300 ${activeCategory === d.category ? 'scale-110' : 'group-hover/cat:scale-110'}`}>{d.icon}</span>
-                    <span className="text-[14px] font-heading">{d.category}</span>
-                  </span>
-                  <ChevronRight className={`w-4 h-4 transition-all duration-300 ${activeCategory === d.category ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`} />
-                </button>
-              ))}
+              {domainData.map((d) => {
+                const IconComponent = getDomainIcon(d.category);
+                return (
+                  <button
+                    key={d.category}
+                    onMouseEnter={() => setActiveCategory(d.category)}
+                    className={`text-left px-8 py-4 border-l-[3px] transition-all duration-300 bg-transparent cursor-pointer flex items-center justify-between group/cat ${
+                      activeCategory === d.category 
+                        ? 'border-accent bg-white text-accent font-bold shadow-[4px_0_15px_rgba(0,0,0,0.02)]' 
+                        : 'border-transparent text-text-primary hover:bg-black/5'
+                    }`}
+                  >
+                    <span className="flex items-center gap-4">
+                      <span className={`transition-transform duration-300 ${activeCategory === d.category ? 'scale-110 text-accent' : 'text-[#86868B] group-hover/cat:scale-110'}`}>
+                        <IconComponent {...ICON_PROPS} />
+                      </span>
+                      <span className="text-[14px] font-heading">{d.category}</span>
+                    </span>
+                    <ChevronRight className={`w-4 h-4 transition-all duration-300 ${activeCategory === d.category ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`} />
+                  </button>
+                );
+              })}
             </div>
             
             {/* Right Panel - Grid Content */}
             <div className="flex-1 bg-white p-10 overflow-y-auto relative custom-scrollbar">
               <div className="mb-10 flex items-start justify-between border-b border-border/30 pb-6">
-                  {domainData.filter(d => d.category === activeCategory).map(activeData => (
-                    <motion.div 
-                      key={activeData.category}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="max-w-2xl"
-                    >
-                      <h3 className="text-[26px] font-bold text-text-primary flex items-center gap-3 mb-3 font-heading">
-                        <span style={{ color: activeData.color_accent }}>{activeData.icon}</span> 
-                        {activeData.category}
-                      </h3>
-                      <p className="text-[15px] text-text-secondary font-medium leading-relaxed">{activeData.description}</p>
-                    </motion.div>
-                  ))}
+                  {domainData.filter(d => d.category === activeCategory).map(activeData => {
+                    const ActiveIcon = getDomainIcon(activeData.category);
+                    return (
+                      <motion.div 
+                        key={activeData.category}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="max-w-2xl"
+                      >
+                        <h3 className="text-[26px] font-bold text-text-primary flex items-center gap-3 mb-3 font-heading">
+                          <span style={{ color: activeData.color_accent }}>
+                            <ActiveIcon size={28} strokeWidth={1.75} />
+                          </span>
+                          {activeData.category}
+                        </h3>
+                        <p className="text-[15px] text-text-secondary font-medium leading-relaxed">{activeData.description}</p>
+                      </motion.div>
+                    );
+                  })}
                   
                   <div className="hidden xl:block">
                      <Link href="/domains" className="btn-secondary whitespace-nowrap !py-2.5 !px-5 !text-[13px]">
