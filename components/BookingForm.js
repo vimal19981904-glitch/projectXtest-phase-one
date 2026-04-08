@@ -115,8 +115,8 @@ export default function BookingForm({ defaultService = 'Training' }) {
         />
         {error && (
           <div className="p-4 bg-red-50 border border-red-200 rounded-xl animate-[slideUp_0.3s_ease]">
-             <p className="text-[13px] text-red-600 font-medium">{error}</p>
-             <p className="text-[11px] text-red-400 mt-1 italic">Please check if your EmailJS Template ID is correctly set in Vercel.</p>
+            <p className="text-[13px] text-red-600 font-medium">{error}</p>
+            <p className="text-[11px] text-red-400 mt-1 italic">Please check if your EmailJS Template ID is correctly set in Vercel.</p>
           </div>
         )}
         <button
