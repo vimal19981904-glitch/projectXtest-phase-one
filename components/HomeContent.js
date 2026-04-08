@@ -42,9 +42,9 @@ export default function HomeContent() {
 
       {/* ========== TRUST BAR ========== */}
       <section className="bg-white py-12 border-b border-border/30">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
           {/* Reviews */}
-          <div className="flex items-center gap-10">
+          <div className="flex flex-col sm:flex-row items-center gap-10">
             {[
               { name: 'Google', stars: 5 },
               { name: 'Course Report', stars: 5 },

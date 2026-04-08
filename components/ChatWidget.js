@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from 'react';
 import { getBotResponse } from '@/lib/chatbot';
 import { saveChat } from '@/lib/supabase';
 
+import { getWhatsAppUrl } from '@/lib/emailjs';
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -44,7 +46,7 @@ export default function ChatWidget() {
       {/* Floating button */}
       <button
         onClick={() => setOpen(!open)}
-        className="chat-bubble fixed bottom-6 right-6 z-50 w-[56px] h-[56px] rounded-full bg-accent text-white shadow-lg flex items-center justify-center border-none cursor-pointer transition-all duration-200 hover:shadow-xl"
+        className="chat-bubble fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 w-[56px] h-[56px] rounded-full bg-accent text-white shadow-lg flex items-center justify-center border-none cursor-pointer transition-all duration-200 hover:shadow-xl"
         aria-label="Chat with Monalisa"
       >
         {open ? (

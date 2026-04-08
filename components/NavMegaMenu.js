@@ -83,9 +83,9 @@ export default function NavMegaMenu() {
           scrolled || megaMenuOpen ? 'bg-white/90 backdrop-blur-xl border-b border-border/50 shadow-sm' : 'bg-white/80 backdrop-blur-md border-b border-transparent'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 h-[64px] md:h-[64px] h-[56px] flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group">
+          <Link href="/" className="text-[20px] md:text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group">
             Project X
             {pathname === '/' && (
               <motion.div 
@@ -151,7 +151,7 @@ export default function NavMegaMenu() {
               <button 
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Search" 
-                className="text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0"
+                className={`text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0 search-icon-anim ${isSearchOpen ? 'active' : ''}`}
               >
                 <Search className="w-5 h-5" />
               </button>
@@ -199,7 +199,7 @@ export default function NavMegaMenu() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden bg-transparent border-none cursor-pointer p-1 z-50 relative text-text-primary"
+            className="lg:hidden bg-transparent border-none cursor-pointer p-1 touch-target z-50 relative text-text-primary"
             onClick={handleMobileMenuClick}
             aria-label="Toggle menu"
           >
@@ -224,6 +224,16 @@ export default function NavMegaMenu() {
             <div className="flex-1 overflow-y-auto px-6 py-6 pb-24">
               {/* Mobile Links */}
               <div className="flex flex-col gap-5 border-b border-border/60 pb-6 mb-6">
+                <button 
+                  onClick={() => {
+                    setIsSearchOpen(true);
+                    setMobileOpen(false);
+                  }}
+                  className="flex items-center gap-3 text-[18px] font-semibold text-text-primary bg-transparent border-none p-0 cursor-pointer text-left w-full"
+                >
+                  <Search className="w-5 h-5 text-accent search-icon-anim" />
+                  Search Catalog
+                </button>
                 {navLinks.map((l) => {
                   const active = isLinkActive(l.href);
                   return (

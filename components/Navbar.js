@@ -71,7 +71,7 @@ export default function Navbar() {
           ))}
 
           {/* Search icon */}
-          <button aria-label="Search" className="text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0">
+          <button aria-label="Search" className="text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0 search-icon-anim">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8" />
               <path d="m21 21-4.35-4.35" />
@@ -136,7 +136,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden bg-transparent border-none cursor-pointer p-1"
+          className="md:hidden bg-transparent border-none cursor-pointer p-1 touch-target"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >

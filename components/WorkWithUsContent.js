@@ -128,20 +128,7 @@ export default function WorkWithUsContent() {
         </div>
       </section>
 
-      {/* ========== STICKY CONTACT BAR (mobile) ========== */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-border/50 px-4 py-3 flex items-center justify-between shadow-lg">
-        <a href="tel:+919025968918" className="flex items-center gap-2 text-[13px] text-text-primary no-underline">
-          📞 +91 9025968918
-        </a>
-        <a
-          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary !py-2 !px-4 !text-[12px]"
-        >
-          💬 WhatsApp
-        </a>
-      </div>
+
     </>
   );
 }

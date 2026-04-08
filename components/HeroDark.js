@@ -10,7 +10,7 @@ export default function HeroDark() {
   const tickerItems = [...allDomains, ...allDomains, ...allDomains, ...allDomains];
 
   return (
-    <section className="relative w-full bg-[#0a0f1a] overflow-hidden min-h-[600px] flex flex-col justify-center pt-16">
+    <section className="relative w-full bg-[#0a0f1a] overflow-hidden min-h-[400px] md:min-h-[600px] flex flex-col justify-center pt-16">
       
       {/* Background Graphic Element - replacing actual photo with a high quality abstract pattern for now */}
       <div 
