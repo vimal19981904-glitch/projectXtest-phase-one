@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   if (!content) return {};
 
   const seo = content.seo || {
-    metaTitle: `${content.title} | Professional Training & Job Support | Project X`,
+    metaTitle: `${content.title} | Professional Training & Job Support | GapAnchor`,
     metaDescription: content.heroDescription || content.about?.substring(0, 160),
   };
 

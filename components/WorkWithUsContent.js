@@ -3,13 +3,15 @@
 import BookingForm from '@/components/BookingForm';
 import Link from 'next/link';
 
+import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
+
 const courseCategories = [
-  { name: 'AI & ML Courses', icon: '🤖', count: '15+ Courses' },
-  { name: 'Cloud Computing', icon: '☁️', count: '12+ Courses' },
-  { name: 'ERP & Supply Chain', icon: '📦', count: '10+ Courses' },
-  { name: 'Data Analytics', icon: '📊', count: '8+ Courses' },
-  { name: 'DevOps & Automation', icon: '⚙️', count: '10+ Courses' },
-  { name: 'Cybersecurity', icon: '🔒', count: '6+ Courses' },
+  { name: 'AI & Machine Learning', category: 'AI & Machine Learning' },
+  { name: 'Cloud & Infrastructure', category: 'Cloud & Infrastructure' },
+  { name: 'ERP & Supply Chain', category: 'ERP & Supply Chain' },
+  { name: 'Data & Analytics', category: 'Data & Analytics' },
+  { name: 'DevOps & Automation', category: 'DevOps & Automation' },
+  { name: 'Cybersecurity', category: 'Cybersecurity' },
 ];
 
 export default function WorkWithUsContent() {
@@ -32,7 +34,7 @@ export default function WorkWithUsContent() {
               Talent <span className="text-accent-red">Solutions</span>
             </h1>
             <p className="text-[17px] text-hero-text/70 mb-8 max-w-[480px]">
-              Project X offers comprehensive upskilling and talent solutions to organizations across the globe — small to big and across various industries.
+              GapAnchor offers comprehensive upskilling and talent solutions to organizations across the globe — small to big and across various industries.
             </p>
             <a href="#contact" className="btn-white">
               Connect with us
@@ -110,16 +112,23 @@ export default function WorkWithUsContent() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {courseCategories.map((cat) => (
-              <div key={cat.name} className="apple-card p-6 text-center">
-                <span className="text-[40px] block mb-4">{cat.icon}</span>
-                <h3 className="text-[17px] font-semibold text-text-primary mb-2">{cat.name}</h3>
-                <p className="text-[14px] text-accent font-medium">{cat.count}</p>
-              </div>
-            ))}
+            {courseCategories.map((cat) => {
+              const Icon = getDomainIcon(cat.category);
+              return (
+                <div key={cat.name} className="apple-card p-10 text-center flex flex-col items-center">
+                  <div className="mb-6 p-4 rounded-2xl bg-accent/5 text-accent">
+                    <Icon {...ICON_PROPS} size={32} />
+                  </div>
+                  <h3 className="text-[18px] font-bold text-text-primary mb-2">{cat.name}</h3>
+                  <p className="text-[14px] text-text-secondary mb-4 font-light">Industry-standard curriculum with expert mentors.</p>
+                  <p className="text-[13px] text-accent font-bold tracking-wider uppercase">View Programs</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
+
 
       {/* ========== CONTACT FORM ========== */}
       <section id="contact" className="bg-white py-16">

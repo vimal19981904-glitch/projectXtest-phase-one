@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import ManhattanWMSContent from '@/components/ManhattanWMSContent';
 
 export const metadata = {
-  title: 'Manhattan WMS Training — Project X',
+  title: 'Manhattan WMS Training — GapAnchor',
   description: 'Master Manhattan WMS with our expert-led certification program. Detailed modules on Inbound, Outbound, Inventory, and Labor Management.',
 };
 

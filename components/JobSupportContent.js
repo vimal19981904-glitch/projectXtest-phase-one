@@ -18,7 +18,7 @@ export default function JobSupportContent() {
             </div>
 
             <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.1] mb-5">
-              Project X{' '}
+              GapAnchor{' '}
               <span className="text-accent-red">On-Job</span> / Work
               <br />
               <span className="text-accent-red">Support</span>
@@ -102,7 +102,7 @@ export default function JobSupportContent() {
             Who We <span className="text-accent">Are?</span>
           </h2>
           <p className="text-[16px] text-text-secondary leading-relaxed">
-            Project X is a premier online training and on-job support platform dedicated to bridging the gap between learning and real-world application. Our expert trainers — working professionals with years of industry experience — provide hands-on support that empowers you to tackle complex tasks with confidence. Whether you need daily guidance or help with a specific assignment, we&apos;re here to accelerate your career growth.
+            GapAnchor is a premier online training and on-job support platform dedicated to bridging the gap between learning and real-world application. Our expert trainers — working professionals with years of industry experience — provide hands-on support that empowers you to tackle complex tasks with confidence. Whether you need daily guidance or help with a specific assignment, we&apos;re here to accelerate your career growth.
           </p>
         </div>
       </section>
@@ -115,8 +115,8 @@ export default function JobSupportContent() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto">
             <div className="apple-card p-8">
-              <div className="w-[48px] h-[48px] bg-accent/10 rounded-2xl flex items-center justify-center mb-5">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071E3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-[48px] h-[48px] bg-accent/10 rounded-2xl flex items-center justify-center mb-5 text-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
                   <line x1="16" x2="16" y1="2" y2="6" />
                   <line x1="8" x2="8" y1="2" y2="6" />
@@ -135,8 +135,8 @@ export default function JobSupportContent() {
             </div>
 
             <div className="apple-card p-8">
-              <div className="w-[48px] h-[48px] bg-accent/10 rounded-2xl flex items-center justify-center mb-5">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0071E3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-[48px] h-[48px] bg-accent/10 rounded-2xl flex items-center justify-center mb-5 text-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>

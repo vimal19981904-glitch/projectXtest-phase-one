@@ -6,8 +6,8 @@ export async function generateMetadata({ params }) {
   const post = blogPosts.find((p) => p.slug === slug);
   
   return {
-    title: post ? `${post.title} — Project X Blog` : 'Article Not Found',
-    description: post?.excerpt || 'Read the latest insights from Project X.',
+    title: post ? `${post.title} — GapAnchor Blog` : 'Article Not Found',
+    description: post?.excerpt || 'Read the latest insights from GapAnchor.',
   };
 }
 

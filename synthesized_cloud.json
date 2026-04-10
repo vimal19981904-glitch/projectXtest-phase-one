@@ -3,7 +3,7 @@
     "id": "cloud--support",
     "title": "",
     "category": "Cloud & Infrastructure",
-    "overview": "The certification names are the trademarks of their respective owners, who are not affiliated with Project X. We ensure end-to-end operational stability and seamless migration to the modern hybrid-cloud landscape.",
+    "overview": "The certification names are the trademarks of their respective owners, who are not affiliated with GapAnchor. We ensure end-to-end operational stability and seamless migration to the modern hybrid-cloud landscape.",
     "courseContent": [
       "Multi-Cloud Governance & Compliance Standards",
       "Cloud Migration (6R) Strategy & Execution Plans",
@@ -39,7 +39,7 @@
     "id": "cloud-microsoft-enterprise-support-microsoft-support",
     "title": "Microsoft Azure Enterprise Support Microsoft Azure",
     "category": "Cloud & Infrastructure",
-    "overview": "Project X’s Microsoft Azure Infrastructure Solutions enterprise architectural support and job assistance is designed to help you pass the 70-533-Implementing Microsoft Azure Infrastructure Solutions , 70-534: Architecting Microsoft Azure Solutions and 70-535: Architecting Microsoft Azure Solutions Certification Exams. This Microsoft Azure enterprise architectural support and job assistance will make you an expert in Azure AD, Azure PowerShell, Azure Storage, Azure App Service, Azure Site Recovery, Azure SQL Database, Azure Cloud Service, Azure Automation, Azure resource Manage and Azure Virtual network using real life case studies. Experts in Azure Landing Zones, Enterprise Scale Architecture, and Sentinel-driven security operations.",
+    "overview": "GapAnchor’s Microsoft Azure Infrastructure Solutions enterprise architectural support and job assistance is designed to help you pass the 70-533-Implementing Microsoft Azure Infrastructure Solutions , 70-534: Architecting Microsoft Azure Solutions and 70-535: Architecting Microsoft Azure Solutions Certification Exams. This Microsoft Azure enterprise architectural support and job assistance will make you an expert in Azure AD, Azure PowerShell, Azure Storage, Azure App Service, Azure Site Recovery, Azure SQL Database, Azure Cloud Service, Azure Automation, Azure resource Manage and Azure Virtual network using real life case studies. Experts in Azure Landing Zones, Enterprise Scale Architecture, and Sentinel-driven security operations.",
     "courseContent": [
       "Azure Governance, Policy & Blueprint Management",
       "Hybrid Cloud Identity Management (Entra ID/AD Connect)",
@@ -57,7 +57,7 @@
     "id": "cloud-cloud-enterprise-support-cloud-support",
     "title": "Google Cloud Enterprise Support Google Cloud",
     "category": "Cloud & Infrastructure",
-    "overview": "Project X's Google Cloud enterprise architectural support and job assistance help you to make the most of Google Cloud technologies. The course covers the Introducing of Google Cloud Platform, difference between Infrastructure-as-a- Service (IaaS) and Platform-as-a-Service (PaaS). It will also help you to understand the purpose of and use cases for Identity and Access Management. Virtual Machines and Networks in the Cloud will be covered in depth along with Storage, Container and Application of GCP. This course will also help you to do hands on during lab sessions, which will help you to learn the topics in a practical way. Deep expertise in Anthos hybrid-cloud, BigQuery data warehousing, and Kubernetes (GKE) orchestration.",
+    "overview": "GapAnchor's Google Cloud enterprise architectural support and job assistance help you to make the most of Google Cloud technologies. The course covers the Introducing of Google Cloud Platform, difference between Infrastructure-as-a- Service (IaaS) and Platform-as-a-Service (PaaS). It will also help you to understand the purpose of and use cases for Identity and Access Management. Virtual Machines and Networks in the Cloud will be covered in depth along with Storage, Container and Application of GCP. This course will also help you to do hands on during lab sessions, which will help you to learn the topics in a practical way. Deep expertise in Anthos hybrid-cloud, BigQuery data warehousing, and Kubernetes (GKE) orchestration.",
     "courseContent": [
       "Infrastructure as Code (Terraform) on GCP",
       "Advanced Data Modeling on BigQuery & Looker",

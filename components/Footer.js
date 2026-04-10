@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="text-[22px] font-bold mb-4 text-white font-heading">Project X</h3>
+            <h3 className="text-[22px] font-bold mb-4 text-white font-heading">GapAnchor</h3>
             <p className="text-[14px] text-text-secondary leading-relaxed font-body">
               The unified Skill Training & On-Job Support Platform. Building careers, one skill at a time.
             </p>
@@ -75,7 +75,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-[12px] text-text-secondary m-0">
-            © {new Date().getFullYear()} Project X. All rights reserved.
+            © {new Date().getFullYear()} GapAnchor. All rights reserved.
           </p>
           <div className="flex gap-4">
             <span className="text-[12px] text-text-secondary hover:text-white cursor-pointer transition-colors">Privacy Policy</span>

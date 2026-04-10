@@ -34,7 +34,7 @@ export default function HeroDark() {
           </div>
           
           <h1 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.05] tracking-tight text-white m-0">
-            Train for the Project That Changes Your Course
+            Train for the Career That Changes Your Course
           </h1>
           
           <p className="text-[17px] md:text-[19px] leading-relaxed text-[#86868B] max-w-[480px]">
@@ -46,7 +46,7 @@ export default function HeroDark() {
               href="/domains" 
               className="bg-white hover:bg-white/90 text-[#1D1D1F] px-8 py-3.5 rounded-full font-semibold text-[15px] transition-all shadow-lg w-full sm:w-auto text-center"
             >
-              Explore Project Training
+              Explore Training Programs
             </Link>
             <Link 
               href="/job-support" 

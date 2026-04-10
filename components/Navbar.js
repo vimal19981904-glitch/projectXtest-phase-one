@@ -55,7 +55,7 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 h-[48px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-[20px] font-bold tracking-tight text-text-primary no-underline">
-          Project X
+          GapAnchor
         </Link>
 
         {/* Desktop Links */}

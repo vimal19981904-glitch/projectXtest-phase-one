@@ -8,9 +8,26 @@ export default function SignInContent() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleMagicLink = (e) => {
+  const handleMagicLink = async (e) => {
     e.preventDefault();
-    alert('Magic link coming soon! For now, please use Continue with Google.');
+    if (!supabase) return;
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email: email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+      if (error) throw error;
+      alert('Success! Please check your email for the magic login link.');
+      setEmail('');
+    } catch (error) {
+      console.error('Error sending magic link:', error.message);
+      alert(`Error: ${error.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleGoogleSignIn = async () => {

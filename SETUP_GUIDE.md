@@ -1,4 +1,4 @@
-# Project X — Setup & Deployment Guide
+# GapAnchor — Setup & Deployment Guide
 
 ## 1. Prerequisites
 - Node.js 18+ installed

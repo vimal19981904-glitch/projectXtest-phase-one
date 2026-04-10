@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Project X — Online Training & Job Support Platform',
+  title: 'GapAnchor — Online Training & Job Support Platform',
   description:
     'The unified Skill Training & On-Job Support Platform. Manhattan WMS, SAP, Oracle, Cloud Computing courses with expert trainers and 24/7 support.',
   keywords: 'online training, job support, Manhattan WMS, SAP training, Oracle, cloud computing, corporate training',
