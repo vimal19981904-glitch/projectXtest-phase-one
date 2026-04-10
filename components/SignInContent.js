@@ -1,17 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function SignInContent() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(null);
+  const router = useRouter();
+
+  // On mount, check if user is already signed in (handles back-navigation from Google)
+  useEffect(() => {
+    if (!supabase) return;
+    
+    const checkUser = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        // User is already logged in, redirect them home
+        router.replace('/');
+      }
+    };
+    checkUser();
+
+    // Listen for auth state changes (handles the OAuth redirect case)
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (event === 'SIGNED_IN' && session) {
+          router.replace('/');
+        }
+      }
+    );
+
+    return () => subscription?.unsubscribe();
+  }, [router]);
 
   const handleMagicLink = async (e) => {
     e.preventDefault();
     if (!supabase) return;
     setLoading(true);
+    setMessage(null);
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email: email,
@@ -20,11 +49,11 @@ export default function SignInContent() {
         },
       });
       if (error) throw error;
-      alert('Success! Please check your email for the magic login link.');
+      setMessage({ type: 'success', text: 'Check your email for the magic login link!' });
       setEmail('');
     } catch (error) {
       console.error('Error sending magic link:', error.message);
-      alert(`Error: ${error.message}`);
+      setMessage({ type: 'error', text: error.message });
     } finally {
       setLoading(false);
     }
@@ -33,6 +62,7 @@ export default function SignInContent() {
   const handleGoogleSignIn = async () => {
     if (!supabase) return;
     setLoading(true);
+    setMessage(null);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
@@ -41,8 +71,10 @@ export default function SignInContent() {
         },
       });
       if (error) throw error;
+      // The browser will redirect to Google – loading stays true
     } catch (error) {
       console.error('Error signing in with Google:', error.message);
+      setMessage({ type: 'error', text: `Google Sign-In failed: ${error.message}` });
       setLoading(false);
     }
   };
@@ -52,11 +84,20 @@ export default function SignInContent() {
       <div className="w-full max-w-[420px] bg-white rounded-[12px] p-[48px] shadow-[0_8px_40px_rgba(0,0,0,0.18)] animate-[slideUp_0.4s_ease]">
         <h1 className="text-[32px] font-bold text-[#1D1D1F] mb-2">Sign in</h1>
         <p className="text-[14px] text-[#6E6E73] mb-8">
-          New user?{' '}
-          <Link href="#" className="text-[#0071E3] hover:underline no-underline">
-            Create an account
-          </Link>
+          Welcome to{' '}
+          <span className="text-[#0071E3] font-semibold">GapAnchor</span>
         </p>
+
+        {/* Status Messages */}
+        {message && (
+          <div className={`mb-6 p-4 rounded-xl text-[14px] font-medium animate-[slideUp_0.3s_ease] ${
+            message.type === 'success' 
+              ? 'bg-green-50 text-green-700 border border-green-200' 
+              : 'bg-red-50 text-red-600 border border-red-200'
+          }`}>
+            {message.text}
+          </div>
+        )}
 
         <form onSubmit={handleMagicLink} className="space-y-6">
           <div className="space-y-2">
@@ -65,17 +106,20 @@ export default function SignInContent() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 h-[44px] border border-[#D2D2D7] rounded-[8px] outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/10 transition-all"
+              className="w-full px-4 h-[44px] border border-[#D2D2D7] rounded-[8px] outline-none focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/10 transition-all text-[15px]"
+              placeholder="you@example.com"
               required
+              disabled={loading}
             />
           </div>
 
           <div className="flex justify-end">
             <button
               type="submit"
-              className="bg-[#0071E3] text-white rounded-full px-[24px] h-[40px] text-[15px] font-medium hover:bg-[#0077ED] transition-colors border-none cursor-pointer"
+              disabled={loading}
+              className="bg-[#0071E3] text-white rounded-full px-[24px] h-[40px] text-[15px] font-medium hover:bg-[#0077ED] transition-colors border-none cursor-pointer disabled:opacity-50"
             >
-              Continue
+              {loading ? 'Sending...' : 'Continue'}
             </button>
           </div>
         </form>
@@ -112,13 +156,13 @@ export default function SignInContent() {
               fill="#EA4335"
             />
           </svg>
-          <span className="text-[15px] font-medium text-[#1D1D1F]">Continue with Google</span>
+          <span className="text-[15px] font-medium text-[#1D1D1F]">
+            {loading ? 'Redirecting...' : 'Continue with Google'}
+          </span>
         </button>
 
         <div className="mt-8 flex justify-center gap-3 text-[13px] text-[#6E6E73]">
-          <Link href="#" className="hover:text-[#0071E3] no-underline">More sign-in options</Link>
-          <span>·</span>
-          <Link href="#" className="hover:text-[#0071E3] no-underline">Get help signing in</Link>
+          <Link href="/" className="hover:text-[#0071E3] no-underline">← Back to Home</Link>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { domainData } from '@/lib/domainData';
-import { ArrowRight, ChevronRight, Play, Pause } from 'lucide-react';
+import { ArrowRight, ChevronRight, Play, Pause, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ParallaxCard from '@/components/ParallaxCard';
 import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
@@ -255,7 +255,4 @@ export default function DomainGrid() {
     </section>
   );
 }
-
-// Added missing Search icon import internally
-import { Search } from 'lucide-react';
 
