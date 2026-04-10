@@ -26,9 +26,12 @@ export default function BookingForm({ defaultService = 'Training' }) {
     setError(null);
 
     try {
-      // 1. Try to save to Supabase
+      // 1. Try to save to Supabase (Non-blocking)
       const { error: supabaseError } = await saveBooking(form);
-      if (supabaseError) throw new Error(`Database Error: ${supabaseError.message}`);
+      if (supabaseError) {
+        console.warn(`Supabase insert failed (likely RLS policy): ${supabaseError.message}`);
+        // We do NOT throw here, we still want to send the email!
+      }
 
       // 2. Try to send email notification
       if (form.serviceType === 'Job Support') {
