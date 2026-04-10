@@ -10,7 +10,6 @@ import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Logo from '@/components/Logo';
 
 const MegaMenuDropdown = dynamic(() => import('./MegaMenuDropdown'), { ssr: false });
 const MegaMenuSearch = dynamic(() => import('./MegaMenuSearch'), { ssr: false });
@@ -87,7 +86,15 @@ export default function NavMegaMenu() {
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
           {/* Logo */}
-          <Logo className="z-50 relative" size={38} />
+          <Link href="/" className="text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group font-heading">
+            GapAnchor
+            {pathname === '/' && (
+              <motion.div 
+                layoutId="nav-glow"
+                className="absolute -inset-x-3 -inset-y-1.5 bg-accent/5 rounded-lg -z-10"
+              />
+            )}
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8 h-full">
