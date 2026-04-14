@@ -1,4 +1,4 @@
-import { Inter, Poppins } from 'next/font/google';
+import { Inter, Poppins, Outfit } from 'next/font/google';
 import './globals.css';
 import NavMegaMenu from '@/components/NavMegaMenu';
 import Footer from '@/components/Footer';
@@ -17,6 +17,12 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
+
 export const metadata = {
   title: 'GapAnchor — Online Training & Job Support Platform',
   description:
@@ -28,7 +34,7 @@ import PageTransition from '@/components/PageTransition';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${outfit.variable}`}>
       <body className="antialiased">
         <NavMegaMenu />
         <PageTransition>

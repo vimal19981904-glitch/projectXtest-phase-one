@@ -6,17 +6,36 @@ const vm = require('vm');
 const maxmunusPath = path.resolve('maxmunus_domains.json');
 const newDomainsSource = JSON.parse(fs.readFileSync(maxmunusPath, 'utf8'));
 
+// Load external subdomain files to satisfy domainData.js dependencies
+const ibmRaw = fs.readFileSync(path.resolve('src/data/domains/ibm.js'), 'utf8')
+  .replace('export const ibmSubDomains = ', '');
+const scmRaw = fs.readFileSync(path.resolve('src/data/domains/supplychain.js'), 'utf8')
+  .replace('export const supplyChainSubDomains = ', '');
+
+const ibmSubDomains = JSON.parse(ibmRaw.replace(/;\s*$/, ''));
+const supplyChainSubDomains = JSON.parse(scmRaw.replace(/;\s*$/, ''));
+
+// Load supplemental content map
+const supplementalRaw = fs.readFileSync(path.resolve('lib/supplementalContentMap.js'), 'utf8')
+  .replace('export const supplementalContentMap = ', '');
+const supplementalContentMap = JSON.parse(supplementalRaw.replace(/;\s*$/, ''));
+
 // To safely eval domainData.js and domainContentMap
-const domainDataRaw = fs.readFileSync(path.resolve('lib/domainData.js'), 'utf8');
-const domainContentRaw = fs.readFileSync(path.resolve('lib/domainContentMap.js'), 'utf8');
+const domainDataRaw = fs.readFileSync(path.resolve('lib/domainData.js'), 'utf8')
+  .replace(/^import.*$/gm, '') // Remove ESM imports
+  .replace('export const domainData = ', 'var domainData = ');
 
-const ctx1 = { exports: {} };
-vm.runInNewContext(domainDataRaw.replace('export const domainData = ', 'exports.domainData = '), ctx1);
-let domainData = ctx1.exports.domainData;
+const domainContentRaw = fs.readFileSync(path.resolve('lib/domainContentMap.js'), 'utf8')
+  .replace(/^import.*$/gm, '') // Remove ESM imports
+  .replace('export const domainContentMap = ', 'var domainContentMap = ');
 
-const ctx2 = { exports: {} };
-vm.runInNewContext(domainContentRaw.replace('export const domainContentMap = ', 'exports.domainContentMap = '), ctx2);
-let domainContentMap = ctx2.exports.domainContentMap;
+const ctx1 = { ibmSubDomains, supplyChainSubDomains };
+vm.runInNewContext(domainDataRaw + '\nthis.domainData = domainData;', ctx1);
+let domainData = ctx1.domainData;
+
+const ctx2 = { supplementalContentMap };
+vm.runInNewContext(domainContentRaw + '\nthis.domainContentMap = domainContentMap;', ctx2);
+let domainContentMap = ctx2.domainContentMap;
 
 // Category mappings (map maxmunus categories to internal ones)
 const categoryMap = {

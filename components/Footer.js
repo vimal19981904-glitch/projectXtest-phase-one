@@ -37,11 +37,11 @@ export default function Footer() {
           <div>
             <h4 className="text-[14px] font-semibold mb-6 text-white uppercase tracking-wider font-heading opacity-80">Courses</h4>
             <ul className="space-y-1 list-none p-0 m-0">
-              {['Manhattan WMS', 'SAP Training', 'Oracle Cloud', 'Cloud Computing'].map((c) => (
+              {['Manhattan WMS', 'Oracle Cloud', 'IBM technologies', 'Salesforce', 'DevOps & Cloud'].map((c) => (
                 <li key={c}>
-                  <span className="inline-flex items-center min-h-[44px] text-[15px] md:text-[14px] text-text-secondary hover:text-white transition-colors cursor-pointer">
+                  <Link href="/domains" className="inline-flex items-center min-h-[44px] text-[15px] md:text-[14px] text-text-secondary hover:text-white transition-colors cursor-pointer no-underline">
                     {c}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>

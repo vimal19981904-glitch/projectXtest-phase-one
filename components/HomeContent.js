@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
 import EmailGateModal from '@/components/EmailGateModal';
-import HeroDark from '@/components/HeroDark';
+import HeroSection from '@/components/HeroSection/HeroSection';
 import DomainGrid from '@/components/DomainGrid';
 import { motion } from 'framer-motion';
 import { Users, CheckCircle, Activity } from 'lucide-react';
@@ -38,7 +38,7 @@ export default function HomeContent() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <HeroDark />
+      <HeroSection />
 
       {/* ========== TRUST BAR ========== */}
       <section className="bg-white py-12 border-b border-border/30">
