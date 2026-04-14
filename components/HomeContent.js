@@ -41,10 +41,10 @@ export default function HomeContent() {
       <HeroSection />
 
       {/* ========== TRUST BAR ========== */}
-      <section className="bg-white py-12 border-b border-border/30">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+      <section className="bg-white py-12 border-b border-border/30 overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center gap-10 text-center">
           {/* Reviews */}
-          <div className="flex flex-col sm:flex-row items-center gap-10">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {[
               { name: 'Google', stars: 5 },
               { name: 'Course Report', stars: 5 },
@@ -52,27 +52,27 @@ export default function HomeContent() {
             ].map((r) => (
               <motion.div 
                 key={r.name} 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-center gap-2"
+                className="flex flex-col items-center gap-1"
               >
-                <span className="text-[14px] font-bold text-text-primary tracking-tight">{r.name}</span>
-                <div className="flex gap-1">
+                <span className="text-[13px] font-bold text-text-primary tracking-tight">{r.name}</span>
+                <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className={`text-[16px] ${i < r.stars ? 'star' : 'text-border'}`}>★</span>
+                    <span key={i} className={`text-[14px] ${i < r.stars ? 'star' : 'text-border'}`}>★</span>
                   ))}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Company logos */}
-          <div className="flex items-center gap-6">
-            <span className="text-[14px] text-text-secondary font-medium italic">Trusted by industry leaders</span>
-            <div className="flex items-center gap-8">
+          {/* Company logos - Simplified for mobile */}
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-[13px] text-text-secondary font-medium italic opacity-70">Trusted by industry leaders</span>
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
               {['Infosys', 'Gartner', 'Pfizer', 'TCS'].map((c) => (
-                <span key={c} className="text-[18px] font-black text-text-primary/40 tracking-tighter hover:text-accent transition-colors cursor-default">
+                <span key={c} className="text-[16px] md:text-[18px] font-black text-text-primary/30 tracking-tighter">
                   {c}
                 </span>
               ))}
@@ -82,13 +82,13 @@ export default function HomeContent() {
       </section>
 
       {/* ========== STATS BAR ========== */}
-      <section className="bg-secondary-bg py-20">
+      <section className="bg-secondary-bg py-16 md:py-20">
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8"
+          viewport={{ once: true, amount: 0.1 }}
+          className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {[
             { num: '500+', label: 'Happy Clients', icon: <Users className="w-8 h-8 text-accent" /> },
@@ -96,12 +96,12 @@ export default function HomeContent() {
             { num: '24/7', label: 'Support', icon: <Activity className="w-8 h-8 text-accent" /> },
           ].map((s) => (
             <motion.div key={s.label} variants={itemVariants}>
-              <ParallaxCard className="apple-card p-10 text-center flex flex-col items-center justify-center h-full group hover:shadow-xl transition-all duration-500">
-                <div className="mb-6 p-4 rounded-2xl bg-accent/5 group-hover:bg-accent/10 transition-colors transform group-hover:scale-110 transition-transform">
+              <ParallaxCard className="apple-card p-8 md:p-10 text-center flex flex-col items-center justify-center h-full group">
+                <div className="mb-4 p-4 rounded-2xl bg-accent/5 group-hover:bg-accent/10 transition-colors">
                   {s.icon}
                 </div>
-                <p className="text-[36px] font-black text-text-primary mb-2 tracking-tighter">{s.num}</p>
-                <p className="text-[15px] text-text-secondary font-medium uppercase tracking-widest">{s.label}</p>
+                <p className="text-[32px] md:text-[36px] font-black text-text-primary mb-1 tracking-tighter">{s.num}</p>
+                <p className="text-[13px] md:text-[15px] text-text-secondary font-medium uppercase tracking-widest">{s.label}</p>
               </ParallaxCard>
             </motion.div>
           ))}

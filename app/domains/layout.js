@@ -3,7 +3,7 @@ import SidebarClient from './SidebarClient';
 
 export default function DomainsLayout({ children }) {
   return (
-    <div className="bg-[#F5F5F7] min-h-screen pt-[64px] flex flex-col md:flex-row">
+    <div className="bg-[#F5F5F7] min-h-screen flex flex-col md:flex-row">
       {/* Sidebar - persists across route changes */}
       <SidebarClient domainData={domainData} />
       

@@ -109,47 +109,46 @@ export default function DomainGrid() {
         </div>
 
         {/* Categorized Tabs UI & Search */}
-        <div className="mb-14 flex flex-col items-center gap-10">
-          <div className="flex flex-wrap justify-center gap-3 max-w-[1100px]">
+        <div className="mb-10 flex flex-col items-center gap-8">
+          <div className="flex flex-wrap justify-center gap-2 max-w-full px-2">
              {domainData.map((domain) => {
                const Icon = getDomainIcon(domain.category);
                return (
                 <button
                   key={domain.category}
                   onClick={() => handleTabClick(domain.category)}
-                  className={`px-5 py-3 rounded-2xl text-[14px] font-bold transition-all duration-300 border cursor-pointer flex items-center gap-3 backdrop-blur-sm ${
+                  className={`px-4 py-2.5 rounded-xl text-[13px] font-bold transition-all duration-300 border cursor-pointer flex items-center gap-2 backdrop-blur-sm ${
                     activeCategory === domain.category 
-                      ? 'bg-text-primary text-white border-text-primary shadow-[0_10px_30px_rgba(0,0,0,0.15)] scale-105 z-10'
-                      : 'bg-white/60 text-text-secondary border-border/40 hover:border-accent/40 hover:bg-white hover:shadow-md'
+                      ? 'bg-text-primary text-white border-text-primary shadow-lg scale-105 z-10'
+                      : 'bg-white/60 text-text-secondary border-border/40 hover:border-accent/40 hover:bg-white hover:shadow-sm'
                   }`}
                 >
-                  <Icon size={18} strokeWidth={activeCategory === domain.category ? 2.5 : 2} />
+                  <Icon size={16} strokeWidth={activeCategory === domain.category ? 2.5 : 2} />
                   {domain.category}
                 </button>
                );
              })}
           </div>
           
-          <div className="w-full max-w-[600px] group">
+          <div className="w-full max-w-[500px] px-4">
              <div className="relative">
                <input 
                  type="text" 
-                 placeholder="Search over 250+ specialized domains..."
+                 placeholder="Search programs..."
                  value={searchTerm}
                  onChange={(e) => {
                     setSearchTerm(e.target.value);
                     setVisibleCount(12);
                     setIsAutoPlaying(false);
                  }}
-                 className="w-full px-6 py-4 pl-14 rounded-2xl border border-border/80 bg-white/80 backdrop-blur-md text-[16px] shadow-sm focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent transition-all group-hover:shadow-md"
+                 className="w-full px-5 py-3.5 pl-12 rounded-2xl border border-border/80 bg-white/80 backdrop-blur-md text-[16px] shadow-sm focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent transition-all"
                />
-               <Search className="w-5 h-5 text-text-secondary absolute left-5 top-1/2 -translate-y-1/2 transition-colors group-hover:text-accent" />
+               <Search className="w-5 h-5 text-text-secondary absolute left-4 top-1/2 -translate-y-1/2" />
                
                {/* Auto Play Toggle */}
                <button 
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-xl hover:bg-secondary-bg transition-colors border-none bg-transparent cursor-pointer"
-                title={isAutoPlaying ? "Pause Auto-Rotation" : "Resume Auto-Rotation"}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-xl border-none bg-transparent cursor-pointer"
                >
                  {isAutoPlaying ? <Pause size={18} className="text-accent" /> : <Play size={18} className="text-text-secondary" />}
                </button>

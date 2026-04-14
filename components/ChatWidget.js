@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { getBotResponse } from '@/lib/chatbot';
 import { saveChat } from '@/lib/supabase';
+import Image from 'next/image';
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -69,7 +70,7 @@ export default function ChatWidget() {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         aria-label="Chat with Catalina"
-        className="fixed z-50 flex items-center justify-center border-none cursor-pointer outline-none overflow-hidden"
+        className="fixed z-50 flex items-center justify-center border-none cursor-pointer outline-none overflow-hidden chat-btn"
         style={{
           bottom: 24,
           right: 24,
@@ -130,7 +131,7 @@ export default function ChatWidget() {
       {/* ── Chat Window ── */}
       {open && (
         <div
-          className="fixed z-50 flex flex-col overflow-hidden"
+          className="fixed z-50 flex flex-col overflow-hidden chat-window"
           style={{
             bottom: 96,
             right: 24,
@@ -165,11 +166,16 @@ export default function ChatWidget() {
                 justifyContent: 'center',
                 overflow: 'hidden',
                 flexShrink: 0,
+                position: 'relative'
               }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-              </svg>
+              <Image 
+                src="/images/catalina.png" 
+                alt="Catalina profile" 
+                fill 
+                className="object-cover scale-[1.3] object-[center_15%]"
+                sizes="40px"
+              />
             </div>
             <div>
               <p className="text-white font-semibold text-[15px] m-0 leading-tight">Catalina</p>
@@ -260,6 +266,18 @@ export default function ChatWidget() {
         @keyframes slideUpFade {
           from { opacity: 0; transform: translateY(16px); }
           to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 767px) {
+          .chat-window {
+            width: 320px !important;
+            right: 12px !important;
+            bottom: 84px !important;
+            max-width: calc(100vw - 24px) !important;
+          }
+          .chat-btn {
+            right: 12px !important;
+            bottom: 12px !important;
+          }
         }
       `}</style>
     </>

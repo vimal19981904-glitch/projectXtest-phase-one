@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, BookOpen, PanelLeftClose, PanelLeft } from 'lucide-react';
+import { ChevronDown, LayoutList, X, BookOpen, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 
 const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, setMobileSidebarOpen, collapsed, setCollapsed }) => (
@@ -139,7 +139,7 @@ export default function SidebarClient({ domainData }) {
           onClick={() => setMobileSidebarOpen(true)}
           className="bg-white/[0.06] p-2.5 rounded-lg border-none cursor-pointer"
         >
-          <Menu className="w-5 h-5 text-white/80" />
+          <LayoutList className="w-5 h-5 text-white/80" />
         </button>
       </div>
 

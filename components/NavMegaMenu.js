@@ -86,7 +86,7 @@ export default function NavMegaMenu() {
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-[22px] font-bold tracking-tight text-text-primary no-underline z-50 relative group font-heading">
+          <Link href="/" className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline z-50 relative group font-heading">
             GapAnchor
             {pathname === '/' && (
               <motion.div 
