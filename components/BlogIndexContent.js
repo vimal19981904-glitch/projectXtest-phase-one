@@ -69,6 +69,60 @@ export default function BlogIndexContent() {
         }} 
       />
 
+      {/* High-Demand Programs Section */}
+      <section className="py-12 px-6 lg:px-12 max-w-7xl mx-auto overflow-hidden">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-[20px] font-bold tracking-tight text-[#1D1D1F] uppercase opacity-50">Most Demanded Programs</h2>
+          <Link href="/domains" className="text-[14px] font-bold text-[#0071E3] no-underline hover:underline">View All Domains →</Link>
+        </div>
+        
+        <div className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide -mx-6 px-6 snap-x">
+          {[
+            { name: 'Claude Code', category: 'AI & Engineering', icon: '🤖' },
+            { name: 'Manhattan WMS', category: 'Supply Chain', icon: '🔗' },
+            { name: 'Zscaler SASE', category: 'Cybersecurity', icon: '🛡️' },
+            { name: 'SailPoint', category: 'Identity Management', icon: '👤' },
+            { name: 'Duck Creek', category: 'Insurance Tech', icon: '🛡️' },
+            { name: 'Oracle EPM', category: 'Finance ERP', icon: '📊' },
+            { name: 'WindSurf', category: 'AI Learning', icon: '🌊' }
+          ].map((program, idx) => {
+            const slugMap = {
+              'Claude Code': 'claude-code',
+              'Manhattan WMS': 'manhattan-wms-training',
+              'Zscaler SASE': 'zscaler-sase',
+              'SailPoint': 'sailpoint-administration',
+              'Duck Creek': 'duck-creek-policy',
+              'Oracle EPM': 'oracle-epm-cloud',
+              'WindSurf': 'windsurf-ai'
+            };
+            const slug = slugMap[program.name] || program.name.toLowerCase().replace(/\s+/g, '-');
+            
+            return (
+              <motion.div 
+                key={program.name}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                className="snap-start flex-shrink-0 w-[240px]"
+              >
+                <Link href={`/domains/${slug}`} className="no-underline group">
+                  <ParallaxCard className="p-8 h-[160px] bg-white border border-[#D2D2D7]/40 rounded-3xl flex flex-col justify-between group-hover:border-[#0071E3] transition-colors">
+                    <div className="flex items-center justify-between">
+                      <span className="text-2xl">{program.icon}</span>
+                      <ArrowRight className="w-5 h-5 text-[#0071E3] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </div>
+                    <div>
+                      <h4 className="text-[17px] font-bold text-[#1D1D1F] mb-1 line-clamp-1">{program.name}</h4>
+                      <p className="text-[12px] text-[#86868B] font-medium uppercase tracking-wider">{program.category}</p>
+                    </div>
+                  </ParallaxCard>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Grid Section */}
       <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="mb-16">

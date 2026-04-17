@@ -112,7 +112,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
               </div>
               
               <div className="mt-12 pt-8 border-t border-border/30 flex items-center justify-between">
-                  <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-')}`} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
+                  <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
                     Explore all {activeCategory} courses <ChevronRight className="w-4 h-4" />
                   </Link>
                   <p className="text-[12px] text-text-secondary italic">Trusted by 500+ corporate clients worldwide</p>

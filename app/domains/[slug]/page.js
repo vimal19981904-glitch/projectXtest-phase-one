@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { domainContentMap } from '@/lib/domainContentMap';
+import domainContentMap from '@/lib/domainContentMap';
 import DomainClient from './DomainClient';
 
 export async function generateMetadata({ params }) {

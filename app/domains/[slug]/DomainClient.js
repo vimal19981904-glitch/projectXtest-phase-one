@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Users, ChevronDown, ChevronRight, HelpCircle, BookOpen, Star, Mail, LayoutGrid, Table2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Users, ChevronDown, ChevronRight, HelpCircle, BookOpen, Star, Mail, LayoutGrid, Table2, Award } from 'lucide-react';
 import PageTransition from '@/components/PageTransition';
 import ParallaxCard from '@/components/ParallaxCard';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,9 +24,52 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 }
 };
 
+// Synthesize a curriculum from legacy features/plans when curriculum is absent
+function buildCurriculum(content) {
+  if (content.curriculum && content.curriculum.length > 0) return content.curriculum;
+
+  const levels = ['Foundation', 'Intermediate', 'Advanced', 'Expert'];
+  const durations = ['2 Weeks', '3 Weeks', '4 Weeks', '2 Weeks'];
+
+  // Prefer features → one module per feature
+  if (content.features && content.features.length > 0) {
+    return content.features.map((f, i) => ({
+      id: i + 1,
+      name: typeof f === 'string' ? f.split(':')[0] : f.title,
+      level: levels[i % levels.length],
+      duration: durations[i % durations.length],
+      topics: typeof f === 'string'
+        ? [f]
+        : [f.desc || f.title, `${f.title} configuration`, `${f.title} best practices`],
+    }));
+  }
+
+  // Fallback: use plan names
+  if (content.plans && content.plans.length > 0) {
+    return content.plans.map((p, i) => ({
+      id: i + 1,
+      name: p.name || `Module ${i + 1}`,
+      level: levels[i % levels.length],
+      duration: durations[i % durations.length],
+      topics: Array.isArray(p.features) ? p.features : [p.name],
+    }));
+  }
+
+  // Last resort: single generic module
+  return [{
+    id: 1,
+    name: `${content.title} Core Training`,
+    level: 'Foundation',
+    duration: '4 Weeks',
+    topics: ['Platform fundamentals', 'Configuration & setup', 'Enterprise integration', 'Best practices & production support'],
+  }];
+}
+
 export default function DomainClient({ content }) {
   const [activeFaq, setActiveFaq] = useState(null);
   const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table'
+
+  const curriculum = buildCurriculum(content);
 
   return (
     <PageTransition>
@@ -168,7 +211,7 @@ export default function DomainClient({ content }) {
                   exit={{ opacity: 0, y: -20 }}
                   className="grid grid-cols-1 gap-6"
                 >
-                  {content.curriculum?.map((item) => (
+                  {curriculum.map((item) => (
                     <div 
                       key={item.id}
                       className="group relative bg-[#F5F5F7]/50 hover:bg-white rounded-[2rem] p-8 border border-[#D2D2D7]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-black/5 flex flex-col lg:flex-row gap-8 items-start lg:items-center"
@@ -189,15 +232,22 @@ export default function DomainClient({ content }) {
                         <h3 className="text-[22px] font-bold text-[#1D1D1F] mb-4 group-hover:text-accent transition-colors">
                           {item.name}
                         </h3>
-                        <p className="text-[16px] text-[#424245] leading-relaxed mb-4 max-w-3xl">
-                          {item.detailedDesc || item.topics}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {item.topics.split(',').map((tag, i) => (
-                            <span key={i} className="text-[13px] text-[#6E6E73] bg-white border border-[#D2D2D7]/50 px-3 py-1 rounded-lg">
-                              {tag.trim()}
-                            </span>
-                          ))}
+                        <div className="space-y-2 mb-6">
+                          {Array.isArray(item.topics) ? (
+                             item.topics.map((topic, idx) => (
+                               <div key={idx} className="flex items-center gap-2 text-[15px] text-[#424245]">
+                                 <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+                                 {topic}
+                               </div>
+                             ))
+                          ) : (
+                            item.topics.split(',').map((topic, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-[15px] text-[#424245]">
+                                <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+                                {topic.trim()}
+                              </div>
+                            ))
+                          )}
                         </div>
                       </div>
 
@@ -230,17 +280,17 @@ export default function DomainClient({ content }) {
                       </tr>
                     </thead>
                     <tbody>
-                      {content.curriculum?.map((item) => (
+                      {curriculum.map((item) => (
                         <tr key={item.id} className="border-b border-[#D2D2D7]/20 hover:bg-[#F5F5F7]/30 transition-colors">
                           <td className="px-8 py-8 align-top">
                             <span className="text-[18px] font-black text-[#86868B]">{item.id.toString().padStart(2, '0')}</span>
                           </td>
                           <td className="px-8 py-8 align-top">
                             <h4 className="text-[19px] font-bold text-[#1D1D1F] mb-3">{item.name}</h4>
-                            <p className="text-[15px] text-[#424245] leading-relaxed mb-4 max-w-2xl">{item.detailedDesc || item.topics}</p>
+                            <p className="text-[15px] text-[#424245] leading-relaxed mb-4 max-w-2xl">{item.detailedDesc || (Array.isArray(item.topics) ? item.topics.join(', ') : item.topics)}</p>
                             <div className="flex flex-wrap gap-2">
-                              {item.topics.split(',').map((tag, i) => (
-                                <span key={i} className="text-[12px] text-[#6E6E73] bg-[#F5F5F7] px-2 py-1 rounded-md border border-[#D2D2D7]/30">{tag.trim()}</span>
+                              {(Array.isArray(item.topics) ? item.topics : item.topics.split(',')).map((tag, i) => (
+                                <span key={i} className="text-[12px] text-[#6E6E73] bg-[#F5F5F7] px-2 py-1 rounded-md border border-[#D2D2D7]/30">{typeof tag === 'string' ? tag.trim() : tag}</span>
                               ))}
                             </div>
                           </td>
@@ -271,7 +321,7 @@ export default function DomainClient({ content }) {
           <section className="py-24 bg-[#F5F5F7] -mx-8 px-16 rounded-[4rem] mb-24">
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight mb-16 text-center">Platform Benefits</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {(content.benefits || content.features).map((benefit, i) => (
+              {(content.benefits || content.features || curriculum.map(m => ({ title: m.name, desc: Array.isArray(m.topics) ? m.topics[0] : m.topics }))).map((benefit, i) => (
                 <div key={i} className="bg-white p-8 rounded-3xl border border-[#D2D2D7]/20 shadow-sm hover:shadow-lg transition-all duration-500 group">
                   <div className="w-12 h-12 rounded-xl bg-accent/5 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
                     <CheckCircle2 className="w-6 h-6" />
@@ -319,6 +369,39 @@ export default function DomainClient({ content }) {
               ))}
             </div>
           </section>
+          
+          {/* Section E: Trainer Spotlight */}
+          {content.trainer && (
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="py-24 border-t border-[#D2D2D7]/30"
+            >
+              <div className="bg-white p-12 rounded-[3rem] border border-[#D2D2D7]/30 flex flex-col md:flex-row items-center gap-12">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-[#60a5fa] flex items-center justify-center text-white text-[48px] font-bold shadow-xl shadow-accent/20 shrink-0">
+                  {content.trainer.name[0]}
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[13px] font-bold text-accent uppercase tracking-widest bg-accent/5 px-3 py-1 rounded-full border border-accent/10">Expert Lead</span>
+                    <span className="text-[14px] text-[#86868B] font-medium flex items-center gap-1"><Award className="w-4 h-4" /> {content.trainer.experience} Experience</span>
+                  </div>
+                  <h3 className="text-[32px] font-bold text-[#1D1D1F] mb-4">Meet {content.trainer.name}</h3>
+                  <p className="text-[18px] text-[#424245] leading-relaxed mb-6 max-w-2xl">
+                    {content.trainer.bio}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {content.trainer.expertise?.map((skill, i) => (
+                      <span key={i} className="px-4 py-1.5 bg-[#F5F5F7] text-[#1D1D1F] text-[14px] font-semibold rounded-full border border-[#D2D2D7]/50">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+          )}
 
           {/* Related Paths */}
           <section className="py-24 border-t border-[#D2D2D7]/30 text-center">

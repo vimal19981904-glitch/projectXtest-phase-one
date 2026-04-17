@@ -2,6 +2,7 @@
 
 import BookingForm from '@/components/BookingForm';
 import Link from 'next/link';
+import { Zap, GraduationCap, Anchor, Star, Quote, ChevronRight } from 'lucide-react';
 
 export default function JobSupportContent() {
   return (
@@ -14,20 +15,19 @@ export default function JobSupportContent() {
             <div className="flex items-center gap-2 text-[13px] text-hero-text/50 mb-6">
               <Link href="/" className="hover:text-white transition-colors no-underline text-hero-text/50">Home</Link>
               <span>/</span>
-              <span className="text-hero-text/80">On Job Support</span>
+              <span className="text-hero-text/80">Consulting Firm Support</span>
             </div>
 
-            <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.1] mb-5">
-              GapAnchor{' '}
-              <span className="text-accent-red">On-Job</span> / Work
+            <h1 className="text-[36px] md:text-[56px] font-bold leading-[1.1] mb-6">
+              GapAnchor <span className="text-red-500">Consulting</span> /
               <br />
-              <span className="text-accent-red">Support</span>
+              Firm <span className="text-red-500">Support</span>
             </h1>
-            <p className="text-[17px] text-hero-text/70 mb-8 max-w-[480px]">
-              Expert trainers and working professionals help you with on-the-job tasks and teach you to handle similar tasks in the future.
+            <p className="text-[18px] text-hero-text/70 mb-8 max-w-[540px] leading-relaxed">
+              Active industry practitioners step into your project alongside you — resolving on-the-job tasks, overcoming work crises, and coaching you to handle the same situations confidently in the future.
             </p>
-            <a href="#booking" className="btn-white">
-              Connect with us
+            <a href="#booking" className="btn-white px-8 py-4">
+              Get Consulting Firm Support
             </a>
           </div>
 
@@ -95,6 +95,181 @@ export default function JobSupportContent() {
         </div>
       </section>
 
+      {/* ========== HOW IT WORKS ========== */}
+      <section className="bg-white py-20">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-red-500">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">You raise the task. We step in.</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Facing an escalation, a deadline you don't own yet, or a tool you've never touched? Connect with a practitioner who has solved this exact problem — live, today.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-blue-500">
+                <GraduationCap className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">We resolve it with you, not for you.</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Our experts work through the task alongside you, explaining every decision so you understand the why — not just the fix. You walk away with the answer and the skill.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-6 text-green-500">
+                <Anchor className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">You'll never hit this wall again.</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                After each session, you get a tailored action guide — a reference you own — so the next time this situation arises, you're the expert in the room.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== TESTIMONIALS ========== */}
+      <section className="bg-gray-50/50 py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16 underline-offset-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Trusted by IT Professionals Across Industries
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Our clients work inside consulting firms and enterprise IT teams spanning these domains. Here's what they say.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                domain: "SAP / ERP",
+                badgeColor: "bg-blue-100 text-blue-800",
+                quote: "I was two days into a go-live support role and had never touched SAP MM config before. GapAnchor had a live practitioner walking me through it within the hour. My client never knew there was a gap.",
+                author: "Rajan Pillai",
+                role: "SAP Functional Consultant",
+                firm: "Mid-size ERP Consulting Firm, Bangalore",
+                stars: 5,
+              },
+              {
+                domain: "Warehouse & WMS",
+                badgeColor: "bg-green-100 text-green-800",
+                quote: "We were implementing Blue Yonder WMS for a 3PL client and hit a wave allocation issue none of us had seen. The GapAnchor expert not only fixed it — they trained our whole team on the root cause.",
+                author: "Priya Menon",
+                role: "WMS Implementation Lead",
+                firm: "Logistics Tech Consultancy, Chennai",
+                stars: 5,
+              },
+              {
+                domain: "Cloud Infrastructure",
+                badgeColor: "bg-purple-100 text-purple-800",
+                quote: "I was a junior DevOps engineer put on a production incident. GapAnchor's support call was the most practical help I've received — not generic docs, actual hands-on guidance for my exact AWS setup.",
+                author: "Sathish Kumar",
+                role: "Cloud Engineer",
+                firm: "IT Services Firm, Hyderabad",
+                stars: 5,
+              },
+              {
+                domain: "Supply Chain",
+                badgeColor: "bg-orange-100 text-orange-800",
+                quote: "Our consulting team was stuck on a demand planning model for a FMCG client. The practitioner from GapAnchor didn't just help with the model — they helped us document the approach for future engagements.",
+                author: "Divya Suresh",
+                role: "Supply Chain Analyst",
+                firm: "Big 4 Advisory Practice, Mumbai",
+                stars: 5,
+              },
+              {
+                domain: "Data & Analytics",
+                badgeColor: "bg-teal-100 text-teal-800",
+                quote: "I was building a Power BI dashboard for a client I'd never worked with before. The GapAnchor session gave me not just the DAX fix but a pattern I've reused in three projects since.",
+                author: "Karthik Ramesh",
+                role: "BI Developer",
+                firm: "Analytics Consulting Startup, Coimbatore",
+                stars: 4,
+              },
+              {
+                domain: "ITSM / ServiceNow",
+                badgeColor: "bg-red-100 text-red-800",
+                quote: "I was deployed on a ServiceNow implementation with almost no prior experience. GapAnchor became my silent co-consultant. My client rated that project as one of their best deliveries.",
+                author: "Lakshmi Narayanan",
+                role: "ServiceNow Consultant",
+                firm: "IT Staffing & Consulting Firm, Pune",
+                stars: 5,
+              },
+            ].map((t, idx) => (
+              <div key={idx} className="bg-gray-50 p-8 rounded-2xl relative border border-gray-100 shadow-sm">
+                <span className={`absolute top-6 right-8 text-[11px] font-bold px-3 py-1 rounded-full ${t.badgeColor} uppercase tracking-tight`}>
+                  {t.domain}
+                </span>
+                <Quote className="text-gray-200 w-12 h-12 mb-4" />
+                <p className="text-gray-700 text-[15px] leading-relaxed mb-6 italic">
+                  "{t.quote}"
+                </p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-base">{t.author}</h4>
+                    <p className="text-gray-500 text-xs">{t.role} | {t.firm}</p>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className={`w-3.5 h-3.5 ${i < t.stars ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== VALUE POSITIONING ========== */}
+      <section className="bg-gray-950 py-24 text-center overflow-hidden relative">
+        <div className="max-w-[720px] mx-auto px-6 relative z-10">
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-10 leading-tight">
+            You're <span className="text-red-500">Not New</span> to the Project Anymore.
+          </h2>
+          
+          <div className="space-y-8 mb-16">
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Every professional walks into a client engagement carrying some degree of uncertainty — a tool they haven't used, a domain they're still learning, a crisis they've never seen before. That's not a weakness. That's the reality of consulting.
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              When you work with GapAnchor, you're not just getting a quick fix. You're building a bridge. Our practitioners step in as your silent backbone — finishing the task with you, coaching the skill into you, and anchoring you as the confident, capable resource your client already believes you are.
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              By the time the engagement ends, you're not the consultant who needed help. You're the one who delivered — and who knows exactly how to do it again.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 mb-16">
+            {[
+              { label: '510+ Clients Supported' },
+              { label: '20+ IT Domains Covered' },
+              { label: 'Avg. 4.7★ Rating' },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-white/20 rounded-full px-6 py-2">
+                <span className="text-white text-sm font-medium">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <Link href="#booking" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-full px-10 py-5 text-base font-semibold transition-all hover:scale-105 no-underline">
+            Get Consulting Firm Support
+            <ChevronRight className="w-5 h-5" />
+          </Link>
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-red-600 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px]" />
+        </div>
+      </section>
+
       {/* ========== WHO WE ARE ========== */}
       <section className="bg-white py-16">
         <div className="max-w-[800px] mx-auto px-6 text-center">
@@ -156,9 +331,13 @@ export default function JobSupportContent() {
       </section>
 
       {/* ========== BOOKING FORM ========== */}
-      <section id="booking" className="bg-white py-16">
+      <section id="booking" className="bg-white py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <BookingForm defaultService="Job Support" />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Ready to Anchor Your Career?</h2>
+            <p className="text-gray-600">Fill the form below and our consulting specialists will reach out within 2-4 hours.</p>
+          </div>
+          <BookingForm defaultService="Consulting Firm Support" />
         </div>
       </section>
     </>

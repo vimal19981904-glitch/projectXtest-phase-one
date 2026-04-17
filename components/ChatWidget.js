@@ -9,7 +9,7 @@ export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [messages, setMessages] = useState([
-    { from: 'bot', text: "Hi! I'm Catalina. How can I help you today? 👋" },
+    { from: 'bot', text: "Hi! I'm Catalina. Let's bridge the gap together! How can I help you today? 👋" },
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
@@ -58,8 +58,7 @@ export default function ChatWidget() {
           }}
         >
           <div>
-            <p className="text-white font-bold text-[15px] m-0 leading-snug">Need help?</p>
-            <p className="text-[#94a3b8] text-[13px] m-0 leading-snug mt-0.5">Chat with our support team.</p>
+            <p className="text-white font-bold text-[14px] m-0 leading-snug">Let’s bridge the gap together.</p>
           </div>
         </div>
       )}
@@ -77,10 +76,10 @@ export default function ChatWidget() {
           width: 60,
           height: 60,
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%)',
+          background: 'linear-gradient(135deg, #0077ED 0%, #005bb5 100%)',
           boxShadow: hovered
-            ? '0 8px 32px rgba(99,102,241,0.7), 0 0 0 5px rgba(99,102,241,0.15)'
-            : '0 4px 20px rgba(99,102,241,0.5)',
+            ? '0 8px 32px rgba(0,113,227,0.5), 0 0 0 5px rgba(0,113,227,0.15)'
+            : '0 4px 20px rgba(0,113,227,0.4)',
           transition: 'box-shadow 0.3s ease, transform 0.3s ease',
           transform: hovered ? 'scale(1.06)' : 'scale(1)',
         }}
@@ -100,12 +99,12 @@ export default function ChatWidget() {
               opacity="0.95"
             />
             {/* Eyes */}
-            <ellipse cx="35" cy="48" rx="7" ry="9" fill="#4f46e5" />
-            <ellipse cx="65" cy="48" rx="7" ry="9" fill="#4f46e5" />
+            <ellipse cx="35" cy="48" rx="7" ry="9" fill="#0071E3" />
+            <ellipse cx="65" cy="48" rx="7" ry="9" fill="#0071E3" />
             {/* Smile */}
             <path
               d="M 35 65 Q 50 76 65 65"
-              stroke="#4f46e5"
+              stroke="#0071E3"
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"
@@ -121,9 +120,9 @@ export default function ChatWidget() {
               opacity="0.95"
             />
             {/* Dots */}
-            <circle cx="33" cy="46" r="6" fill="#4f46e5" />
-            <circle cx="50" cy="46" r="6" fill="#4f46e5" />
-            <circle cx="67" cy="46" r="6" fill="#4f46e5" />
+            <circle cx="33" cy="46" r="6" fill="#0071E3" />
+            <circle cx="50" cy="46" r="6" fill="#0071E3" />
+            <circle cx="67" cy="46" r="6" fill="#0071E3" />
           </svg>
         )}
       </button>
@@ -148,7 +147,7 @@ export default function ChatWidget() {
           {/* Header */}
           <div
             style={{
-              background: 'linear-gradient(135deg, #6366f1 0%, #4338ca 100%)',
+              background: 'linear-gradient(135deg, #1D1D1F 0%, #313136 100%)',
               padding: '16px 20px',
               display: 'flex',
               alignItems: 'center',
@@ -196,7 +195,7 @@ export default function ChatWidget() {
                     padding: '10px 14px',
                     borderRadius: msg.from === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
                     background: msg.from === 'user'
-                      ? 'linear-gradient(135deg, #6366f1, #4338ca)'
+                      ? 'linear-gradient(135deg, #0077ED, #005bb5)'
                       : '#ffffff',
                     color: msg.from === 'user' ? '#ffffff' : '#0f172a',
                     boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
@@ -243,7 +242,7 @@ export default function ChatWidget() {
                 width: 42,
                 height: 42,
                 borderRadius: 12,
-                background: 'linear-gradient(135deg, #6366f1, #4338ca)',
+                background: 'linear-gradient(135deg, #0077ED, #005bb5)',
                 border: 'none',
                 cursor: 'pointer',
                 display: 'flex',

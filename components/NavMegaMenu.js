@@ -10,9 +10,12 @@ import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import { avatarData } from '@/data/avatarData';
 
 const MegaMenuDropdown = dynamic(() => import('./MegaMenuDropdown'), { ssr: false });
 const MegaMenuSearch = dynamic(() => import('./MegaMenuSearch'), { ssr: false });
+
+
 
 export default function NavMegaMenu() {
   const pathname = usePathname();
@@ -55,7 +58,7 @@ export default function NavMegaMenu() {
   };
 
   const navLinks = [
-    { label: 'On-Job Support', href: '/job-support' },
+    { label: 'Consulting Firm Support', href: '/consulting-firm-support' },
     { label: 'Work With Us', href: '/work-with-us' },
     { label: 'Blog', href: '/blog' },
   ];
@@ -74,7 +77,7 @@ export default function NavMegaMenu() {
     return pathname.startsWith(href);
   };
 
-  // Special check for "Project Training" (domains)
+  // Special check for "Job Support & Training" (domains)
   const isTrainingActive = pathname.includes('/domains') || pathname === '/manhattan-wms';
 
   return (
@@ -85,16 +88,22 @@ export default function NavMegaMenu() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline z-50 relative group font-heading">
-            GapAnchor
-            {pathname === '/' && (
-              <motion.div 
-                layoutId="nav-glow"
-                className="absolute -inset-x-3 -inset-y-1.5 bg-accent/5 rounded-lg -z-10"
-              />
-            )}
-          </Link>
+          {/* Logo & Slogan */}
+          <div className="flex items-center z-50">
+            <Link href="/" className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline relative group font-heading">
+              GapAnchor
+              {pathname === '/' && (
+                <motion.div 
+                  layoutId="nav-glow"
+                  className="absolute -inset-x-3 -inset-y-1.5 bg-accent/5 rounded-lg -z-10"
+                />
+              )}
+            </Link>
+            <div className="hidden lg:block w-[1.5px] h-[22px] bg-border/60 mx-4" />
+            <span className="text-[12px] md:text-[14px] font-semibold text-text-secondary/80 tracking-tight translate-y-[1px] opacity-0 md:opacity-100 md:block">
+              Let’s bridge the gap together.
+            </span>
+          </div>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8 h-full">
@@ -109,7 +118,7 @@ export default function NavMegaMenu() {
                   megaMenuOpen || isTrainingActive ? 'text-accent' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
                 }`}
               >
-                Project Training
+                Job Support & Training
                 <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${megaMenuOpen ? 'rotate-180' : ''}`} />
                 {isTrainingActive && !megaMenuOpen && (
                    <motion.div 
@@ -161,10 +170,21 @@ export default function NavMegaMenu() {
                 {user ? (
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="w-[32px] h-[32px] rounded-full overflow-hidden border border-border cursor-pointer p-0 relative"
+                    className={`w-[32px] h-[32px] rounded-full overflow-hidden border border-border cursor-pointer p-0 relative transition-all ${dropdownOpen ? 'ring-4 ring-accent/10 opacity-80' : 'hover:opacity-80'}`}
+                    aria-label="Account options"
                   >
                     <Image
-                      src={user.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${user.email}`}
+                      src={user.user_metadata?.avatar_url || (() => {
+                        // Deterministic random avatar based on user ID or email
+                        const seed = user.id || user.email || 'guest';
+                        let hash = 0;
+                        for (let i = 0; i < seed.length; i++) {
+                          hash = ((hash << 5) - hash) + seed.charCodeAt(i);
+                          hash |= 0;
+                        }
+                        const index = Math.abs(hash) % avatarData.length;
+                        return avatarData[index].image;
+                      })()}
                       alt="Profile"
                       fill
                       className="object-cover"
@@ -182,30 +202,75 @@ export default function NavMegaMenu() {
 
                 {/* Profile Dropdown */}
                 {dropdownOpen && user && (
-                  <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-lg border border-border py-2 animate-[slideUp_0.2s_ease]">
-                    <div className="px-4 py-2 border-b border-border mb-1">
-                      <p className="text-[12px] text-text-secondary truncate">{user.email}</p>
+                  <div className="absolute right-0 mt-3 w-56 bg-[#0d1a2e]/95 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 py-3 animate-[slideUp_0.3s_cubic-bezier(0.16,1,0.3,1)] z-[60] ring-1 ring-white/5 overflow-hidden">
+                    <div className="px-5 py-3 border-b border-white/5 mb-2 bg-white/[0.02]">
+                       <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Account</p>
+                       <p className="text-[14px] font-medium text-white truncate">{user.email}</p>
                     </div>
-                    <button
-                      onClick={handleSignOut}
-                      className="w-full text-left px-4 py-2 text-[14px] text-accent-red hover:bg-secondary-bg border-none bg-transparent cursor-pointer"
-                    >
-                      Sign Out
-                    </button>
+                    
+                    <div className="px-2">
+                      <button
+                        onClick={handleSignOut}
+                        className="w-full flex items-center justify-between px-4 py-2.5 text-[14px] font-semibold text-red-400 hover:text-white hover:bg-red-500/20 rounded-xl border-none bg-transparent cursor-pointer transition-all duration-200 group"
+                      >
+                        <span>Sign Out</span>
+                        <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      </button>
+                    </div>
+
+                    <div className="mt-2 px-5 py-2 bg-accent/5">
+                        <p className="text-[10px] text-accent/80 font-medium text-center">Bridge the gap together</p>
+                    </div>
                   </div>
                 )}
               </div>
             </div>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="lg:hidden bg-transparent border-none cursor-pointer p-1 touch-target z-50 relative text-text-primary"
-            onClick={handleMobileMenuClick}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Right Icons */}
+          <div className="flex lg:hidden items-center gap-4 z-50">
+            {/* Mobile Search Icon */}
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Search" 
+              className="text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
+            {/* Mobile Auth/Profile */}
+            {user ? (
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className={`w-[30px] h-[30px] rounded-full overflow-hidden border border-border cursor-pointer p-0 relative transition-all ${dropdownOpen ? 'ring-2 ring-accent' : ''}`}
+                aria-label="Account options"
+              >
+                <Image
+                  src={user.user_metadata?.avatar_url || avatarData[Math.abs((user.id || user.email || 'guest').split('').reduce((a,b) => (a<<5)-a+b.charCodeAt(0),0)) % avatarData.length].image}
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
+              </button>
+            ) : (
+              <Link
+                href="/sign-in"
+                aria-label="Login"
+                className="text-text-primary hover:text-accent transition-colors p-0 flex items-center"
+              >
+                 <User className="w-5 h-5" />
+              </Link>
+            )}
+
+            {/* Mobile hamburger */}
+            <button
+              className="bg-transparent border-none cursor-pointer p-1 touch-target relative text-text-primary"
+              onClick={handleMobileMenuClick}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mega Menu Flyout (Desktop) Lazy Loaded */}
@@ -223,6 +288,12 @@ export default function NavMegaMenu() {
             className="fixed inset-0 z-40 bg-white lg:hidden flex flex-col pt-[56px] h-screen overflow-hidden"
           >
             <div className="flex-1 overflow-y-auto px-6 py-6 pb-24">
+              {/* Mobile Branding Area */}
+              <div className="mb-8 flex flex-col items-center justify-center text-center">
+                <span className="text-[24px] font-bold text-text-primary mb-1">GapAnchor</span>
+                <span className="text-[13px] font-medium text-text-secondary/70">Let’s bridge the gap together.</span>
+              </div>
+
               {/* Mobile Links */}
               <div className="flex flex-col gap-5 border-b border-border/60 pb-6 mb-6">
                 <button 
@@ -305,13 +376,13 @@ export default function NavMegaMenu() {
               </div>
 
               {/* Auth Mobile */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 mt-6">
                 {!user ? (
-                   <Link href="/sign-in" onClick={() => setMobileOpen(false)} className="mx-auto btn-primary w-full text-center py-3">
+                   <Link href="/sign-in" onClick={() => setMobileOpen(false)} className="mx-auto btn-primary w-full text-center py-3 no-underline">
                      Sign In
                    </Link>
                 ) : (
-                  <button onClick={handleSignOut} className="btn-secondary w-full py-3 text-accent-red border-accent-red hover:bg-accent-red cursor-pointer">
+                  <button onClick={handleSignOut} className="w-full py-3 text-accent-red bg-white border border-accent-red rounded-xl hover:bg-accent-red hover:text-white transition-colors cursor-pointer font-medium">
                     Sign Out
                   </button>
                 )}

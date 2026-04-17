@@ -53,10 +53,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-6 h-[48px] flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="text-[20px] font-bold tracking-tight text-text-primary no-underline">
-          GapAnchor
-        </Link>
+        {/* Logo & Slogan */}
+        <div className="flex flex-col justify-center pt-0.5">
+          <Link href="/" className="text-[20px] font-bold tracking-tight text-text-primary no-underline leading-none">
+            GapAnchor
+          </Link>
+          <span className="hidden md:block text-[9px] font-medium text-text-secondary uppercase tracking-[0.15em] mt-1 opacity-90">
+            Let’s bridge the gap together.
+          </span>
+        </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-7">

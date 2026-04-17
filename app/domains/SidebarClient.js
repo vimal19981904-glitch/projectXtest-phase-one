@@ -30,7 +30,7 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
         const hasActiveSub = d.sub_domains.some(sub => pathname === sub.href);
 
         return (
-          <div key={d.category} className="flex flex-col">
+          <div key={`cat-${d.category}`} className="flex flex-col">
             <button
               onClick={() => toggleCategory(d.category)}
               className={`sidebar-category-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border-none cursor-pointer transition-all duration-200 relative group ${
@@ -67,7 +67,7 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
             {!collapsed && (
               <div
                 className={`sidebar-subdomain-list overflow-hidden transition-all duration-300 ease-in-out ${
-                  isOpen ? 'max-h-[2000px] opacity-100 mt-1 mb-2' : 'max-h-0 opacity-0'
+                  isOpen ? 'max-h-[9999px] opacity-100 mt-1 mb-2' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="flex flex-col gap-0.5 pl-2 ml-5 border-l border-white/[0.06]">
@@ -75,7 +75,7 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
                     const isActive = pathname === sub.href;
                     return (
                       <Link
-                        key={sub.name}
+                        key={`${d.category}::${sub.name}`}
                         href={sub.href}
                         onClick={() => setMobileSidebarOpen(false)}
                         className={`sidebar-subdomain-link px-3 py-[7px] rounded-lg text-[13px] no-underline transition-all duration-200 ${
@@ -176,7 +176,7 @@ export default function SidebarClient({ domainData }) {
                 <X className="w-5 h-5 text-white/60" />
               </button>
             </div>
-            <div className="h-[calc(100vh-64px)] overflow-y-auto">
+            <div className="h-[calc(100vh-64px)]">
               <SidebarContent
                 domainData={domainData}
                 openCategories={openCategories}

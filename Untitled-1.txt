@@ -1,0 +1,106 @@
+[GapAnchor](http://localhost:3000/)
+[On-Job Support](http://localhost:3000/job-support)
+[Work With Us](http://localhost:3000/work-with-us)
+[Blog](http://localhost:3000/blog)
+
+# Build Your Career withGlobal IT Leaders:From Foundation toOn-the-Job Mastery
+
+Connect with active IT professionals. Get real-world training and on-the-job support across all major enterprise technologies.
+[Explore Training Programs](http://localhost:3000/domains)
+[Get Job Support](http://localhost:3000/job-support)
+Connect with active IT professionals. Get real-world training and on-the-job support across all major enterprise technologies.
+500+
+Happy Clients
+100%
+Satisfaction
+24/7
+Support
+
+## Train for Your Next Project
+
+Discover our industry-validated curriculum across 250+ specialized domains. From legacy systems to AI-driven automation, we bridge the skill gap.
+
+### ERP & Supply Chain
+
+End-to-end enterprise resource planning and supply chain execution systems
+[Manhattan WMSWarehouse Management System — pick, pack, ship workflowsView Details Updated 2024](http://localhost:3000/manhattan-wms)
+
+#### Manhattan WMS
+Warehouse Management System — pick, pack, ship workflows
+[SAP SCMSAP Supply Chain Management modules and configurationView Details Updated 2024](http://localhost:3000/domains/sap-scm)
+
+#### SAP SCM
+SAP Supply Chain Management modules and configuration
+[Oracle SCM CloudOracle's cloud-native supply chain suiteView Details Updated 2024](http://localhost:3000/domains/oracle-scm-cloud)
+
+#### Oracle SCM Cloud
+Oracle's cloud-native supply chain suite
+[Blue Yonder WMSLuminate platform — formerly JDA WMSView Details Updated 2024](http://localhost:3000/domains/blue-yonder-wms)
+
+#### Blue Yonder WMS
+Luminate platform — formerly JDA WMS
+[TMS — Transport ManagementRoute planning, carrier management, freight billingView Details Updated 2024](http://localhost:3000/domains/tms-transport-management)
+
+#### TMS — Transport Management
+Route planning, carrier management, freight billing
+[OMS — Order ManagementOmnichannel order lifecycle and fulfillmentView Details Updated 2024](http://localhost:3000/domains/oms-order-management)
+
+#### OMS — Order Management
+Omnichannel order lifecycle and fulfillment
+[Warehouse OperationsSlotting, labor management, yard managementView Details Updated 2024](http://localhost:3000/domains/warehouse-operations)
+
+#### Warehouse Operations
+Slotting, labor management, yard management
+[PLM — Product LifecycleProduct data management and lifecycle workflowsView Details Updated 2024](http://localhost:3000/domains/plm-product-lifecycle)
+
+#### PLM — Product Lifecycle
+Product data management and lifecycle workflows
+[RedPrairieRedPrairie configurations, troubleshooting, and best practices.View Details Updated 2024](http://localhost:3000/domains/redprairie-online-job-support)
+
+#### RedPrairie
+RedPrairie configurations, troubleshooting, and best practices.
+[Manhattan WMS Job SupportManhattan WMS configurations, troubleshooting, and best practices.View Details Updated 2024](http://localhost:3000/domains/manhattan-wms-online-job-support)
+
+#### Manhattan WMS Job Support
+Manhattan WMS configurations, troubleshooting, and best practices.
+[Flex PlmFlex Plm configurations, troubleshooting, and best practices.View Details Updated 2024](http://localhost:3000/domains/flex-plm-job-support)
+
+#### Flex Plm
+Flex Plm configurations, troubleshooting, and best practices.
+[Teamcenter PlmTeamcenter Plm configurations, troubleshooting, and best practices.View Details Updated 2024](http://localhost:3000/domains/teamcenter-plm-job-support)
+
+#### Teamcenter Plm
+Teamcenter Plm configurations, troubleshooting, and best practices.
+
+### Monthly Plan
+Daily 1–2 hours of expert support. Get consistent guidance from working professionals who understand real-world challenges.
+
+### Task-Based Plan
+Specific assignment or task help. Pay per task and get expert assistance for your immediate project needs.
+
+### Book a Free Demo
+Fill in your details and our consultant will reach out to you.
+
+### GapAnchor
+The unified Skill Training & On-Job Support Platform. Building careers, one skill at a time.
+
+#### Quick Links
+- [Home](http://localhost:3000/)
+- [Job Support](http://localhost:3000/job-support)
+- [Manhattan WMS](http://localhost:3000/manhattan-wms)
+- [Work With Us](http://localhost:3000/work-with-us)
+[Home](http://localhost:3000/)
+[Job Support](http://localhost:3000/job-support)
+[Manhattan WMS](http://localhost:3000/manhattan-wms)
+[Work With Us](http://localhost:3000/work-with-us)
+
+#### Courses
+- Manhattan WMS
+- SAP Training
+- Oracle Cloud
+- Cloud Computing
+
+#### Contact Us
+[Chat on WhatsApp](https://wa.me/919025968918)
+📧 avpartners.consultants@outlook.com
+© 2026 GapAnchor. All rights reserved.

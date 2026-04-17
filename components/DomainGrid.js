@@ -110,24 +110,29 @@ export default function DomainGrid() {
 
         {/* Categorized Tabs UI & Search */}
         <div className="mb-10 flex flex-col items-center gap-8">
-          <div className="flex flex-wrap justify-center gap-2 max-w-full px-2">
-             {domainData.map((domain) => {
-               const Icon = getDomainIcon(domain.category);
-               return (
-                <button
-                  key={domain.category}
-                  onClick={() => handleTabClick(domain.category)}
-                  className={`px-4 py-2.5 rounded-xl text-[13px] font-bold transition-all duration-300 border cursor-pointer flex items-center gap-2 backdrop-blur-sm ${
-                    activeCategory === domain.category 
-                      ? 'bg-text-primary text-white border-text-primary shadow-lg scale-105 z-10'
-                      : 'bg-white/60 text-text-secondary border-border/40 hover:border-accent/40 hover:bg-white hover:shadow-sm'
-                  }`}
-                >
-                  <Icon size={16} strokeWidth={activeCategory === domain.category ? 2.5 : 2} />
-                  {domain.category}
-                </button>
-               );
-             })}
+          <div className="w-full relative overflow-hidden">
+            <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 px-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth touch-pan-x">
+               {domainData.map((domain) => {
+                 const Icon = getDomainIcon(domain.category);
+                 return (
+                  <button
+                    key={domain.category}
+                    onClick={() => handleTabClick(domain.category)}
+                    className={`px-5 py-3 rounded-2xl text-[14px] font-bold transition-all duration-300 border cursor-pointer flex items-center gap-2 backdrop-blur-sm whitespace-nowrap flex-shrink-0 ${
+                      activeCategory === domain.category 
+                        ? 'bg-text-primary text-white border-text-primary shadow-lg scale-105 z-10'
+                        : 'bg-white/60 text-text-secondary border-border/40 hover:border-accent/40 hover:bg-white hover:shadow-sm'
+                    }`}
+                  >
+                    <Icon size={18} strokeWidth={activeCategory === domain.category ? 2.5 : 2} />
+                    {domain.category}
+                  </button>
+                 );
+               })}
+            </div>
+            {/* Horizontal scroll indicators for mobile */}
+            <div className="md:hidden absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-secondary-bg to-transparent pointer-events-none" />
+            <div className="md:hidden absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-secondary-bg to-transparent pointer-events-none" />
           </div>
           
           <div className="w-full max-w-[500px] px-4">
@@ -173,7 +178,7 @@ export default function DomainGrid() {
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white" style={{ backgroundColor: activeData.color_accent }}>
                         {(() => { const Icon = getDomainIcon(activeData.category); return <Icon size={32} strokeWidth={2.5} />; })()}
                       </div>
-                      <h3 className="text-[32px] md:text-[40px] font-black text-text-primary tracking-tight">
+                      <h3 className="text-[24px] md:text-[40px] font-black text-text-primary tracking-tight">
                         {activeData.category}
                       </h3>
                     </div>

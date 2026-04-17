@@ -211,7 +211,18 @@ export default function HeroSection() {
         @media (max-width: 480px) {
           .hero-grid { padding: 40px 16px !important; }
           .globe-wrapper { --globe-scale: 0.46; height: 280px !important; }
-          h1 { font-size: 32px !important; }
+          h1 { 
+            font-size: 28px !important; 
+            line-height: 1.15 !important;
+            margin-bottom: 20px !important;
+          }
+          .hero-grid p {
+            font-size: 15px !important;
+            margin-bottom: 30px !important;
+          }
+          .hero-grid .flex-col.md:flex-row {
+            gap: 10px !important;
+          }
         }
       `}</style>
     </section>
