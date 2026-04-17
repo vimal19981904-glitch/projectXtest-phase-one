@@ -72,7 +72,7 @@ domainData.forEach(category => {
   });
 });
 
-const fileContent = `export const domainContentMap = ${JSON.stringify(contentMap, null, 2)};\n`;
+const fileContent = `export const domainContentMap = ${JSON.stringify(contentMap, null, 2)};\n\nexport default domainContentMap;\n`;
 
 fs.writeFileSync('./lib/domainContentMap.js', fileContent, 'utf8');
 console.log('Successfully generated domainContentMap.js with ' + Object.keys(contentMap).length + ' entries.');
