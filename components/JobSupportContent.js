@@ -105,7 +105,7 @@ export default function JobSupportContent() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">You raise the task. We step in.</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Facing an escalation, a deadline you don't own yet, or a tool you've never touched? Connect with a practitioner who has solved this exact problem — live, today.
+                Facing an escalation, a deadline you don&apos;t own yet, or a tool you&apos;ve never touched? Connect with a practitioner who has solved this exact problem — live, today.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function JobSupportContent() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">You'll never hit this wall again.</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                After each session, you get a tailored action guide — a reference you own — so the next time this situation arises, you're the expert in the room.
+                After each session, you get a tailored action guide — a reference you own — so the next time this situation arises, you&apos;re the expert in the room.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function JobSupportContent() {
               Trusted by IT Professionals Across Industries
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our clients work inside consulting firms and enterprise IT teams spanning these domains. Here's what they say.
+              Our clients work inside consulting firms and enterprise IT teams spanning these domains. Here&apos;s what they say.
             </p>
           </div>
 
@@ -207,7 +207,7 @@ export default function JobSupportContent() {
                 </span>
                 <Quote className="text-gray-200 w-12 h-12 mb-4" />
                 <p className="text-gray-700 text-[15px] leading-relaxed mb-6 italic">
-                  "{t.quote}"
+                  &quot;{t.quote}&quot;
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
@@ -230,18 +230,18 @@ export default function JobSupportContent() {
       <section className="bg-gray-950 py-24 text-center overflow-hidden relative">
         <div className="max-w-[720px] mx-auto px-6 relative z-10">
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-10 leading-tight">
-            You're <span className="text-red-500">Not New</span> to the Project Anymore.
+            You&apos;re <span className="text-red-500">Not New</span> to the Project Anymore.
           </h2>
           
           <div className="space-y-8 mb-16">
             <p className="text-gray-400 text-lg leading-relaxed">
-              Every professional walks into a client engagement carrying some degree of uncertainty — a tool they haven't used, a domain they're still learning, a crisis they've never seen before. That's not a weakness. That's the reality of consulting.
+              Every professional walks into a client engagement carrying some degree of uncertainty — a tool they haven&apos;t used, a domain they&apos;re still learning, a crisis they&apos;ve never seen before. That&apos;s not a weakness. That&apos;s the reality of consulting.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              When you work with GapAnchor, you're not just getting a quick fix. You're building a bridge. Our practitioners step in as your silent backbone — finishing the task with you, coaching the skill into you, and anchoring you as the confident, capable resource your client already believes you are.
+              When you work with GapAnchor, you&apos;re not just getting a quick fix. You&apos;re building a bridge. Our practitioners step in as your silent backbone — finishing the task with you, coaching the skill into you, and anchoring you as the confident, capable resource your client already believes you are.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              By the time the engagement ends, you're not the consultant who needed help. You're the one who delivered — and who knows exactly how to do it again.
+              By the time the engagement ends, you&apos;re not the consultant who needed help. You&apos;re the one who delivered — and who knows exactly how to do it again.
             </p>
           </div>
 
