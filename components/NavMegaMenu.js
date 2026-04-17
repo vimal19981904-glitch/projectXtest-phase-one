@@ -174,17 +174,7 @@ export default function NavMegaMenu() {
                     aria-label="Account options"
                   >
                     <Image
-                      src={user.user_metadata?.avatar_url || (() => {
-                        // Deterministic random avatar based on user ID or email
-                        const seed = user.id || user.email || 'guest';
-                        let hash = 0;
-                        for (let i = 0; i < seed.length; i++) {
-                          hash = ((hash << 5) - hash) + seed.charCodeAt(i);
-                          hash |= 0;
-                        }
-                        const index = Math.abs(hash) % avatarData.length;
-                        return avatarData[index].image;
-                      })()}
+                      src={user.user_metadata?.avatar_url || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&q=80"}
                       alt="Profile"
                       fill
                       className="object-cover"
@@ -246,7 +236,7 @@ export default function NavMegaMenu() {
                 aria-label="Account options"
               >
                 <Image
-                  src={user.user_metadata?.avatar_url || avatarData[Math.abs((user.id || user.email || 'guest').split('').reduce((a,b) => (a<<5)-a+b.charCodeAt(0),0)) % avatarData.length].image}
+                  src={user.user_metadata?.avatar_url || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&q=80"}
                   alt="Profile"
                   fill
                   className="object-cover"
