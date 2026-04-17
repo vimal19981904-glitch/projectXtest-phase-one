@@ -1,0 +1,11 @@
+scripts/
+.code-crawler/
+.vscode/
+Screenshot*.png
+Untitled-1.txt
+Users/
+dev_server.log
+test2.mjs
+test_email.mjs
+final_keys.txt
+changes.md
