@@ -1,4 +1,4 @@
-import { domainContentMap } from '@/lib/domainContentMap';
+import domainContentMap from '@/lib/domainContentMap';
 
 export default async function sitemap() {
   const baseUrl = 'https://gapanchor.com';
