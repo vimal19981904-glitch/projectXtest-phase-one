@@ -288,12 +288,6 @@ export default function NavMegaMenu() {
             className="fixed inset-0 z-40 bg-white lg:hidden flex flex-col pt-[56px] h-screen overflow-hidden"
           >
             <div className="flex-1 overflow-y-auto px-6 py-6 pb-24">
-              {/* Mobile Branding Area */}
-              <div className="mb-8 flex flex-col items-center justify-center text-center">
-                <span className="text-[24px] font-bold text-text-primary mb-1">GapAnchor</span>
-                <span className="text-[13px] font-medium text-text-secondary/70">Let’s bridge the gap together.</span>
-              </div>
-
               {/* Mobile Links */}
               <div className="flex flex-col gap-5 border-b border-border/60 pb-6 mb-6">
                 <button 
