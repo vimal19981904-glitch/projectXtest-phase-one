@@ -84,9 +84,9 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   </div>
               </div>
 
-              {/* Multi-column Grid - Limited to 18 items for performance */}
+              {/* Multi-column Grid - Display all items */}
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
-                {activeSubDomains.slice(0, 18).map((sub, idx) => (
+                {activeSubDomains.map((sub, idx) => (
                   <motion.div
                     key={sub.name}
                     initial={{ opacity: 0, y: 5 }}
@@ -112,20 +112,6 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   </motion.div>
                 ))}
                 
-                {activeSubDomains.length > 18 && (
-                   <motion.div
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     className="col-span-full pt-4"
-                   >
-                     <Link 
-                       href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`}
-                       className="text-accent font-bold text-[14px] hover:underline flex items-center gap-2"
-                     >
-                        + View {activeSubDomains.length - 18} more specialized programs in this category
-                     </Link>
-                   </motion.div>
-                )}
               </div>
 
               

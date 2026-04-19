@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { sendPartnerInquiry } from '@/lib/emailjs';
+import { domainData } from '@/lib/domainData';
+
 
 export default function PartnerContactForm() {
   const [form, setForm] = useState({
@@ -17,6 +19,7 @@ export default function PartnerContactForm() {
     targetMarket: '',
     mutualCustomers: '',
     annualRevenue: '',
+    primaryDomain: '',
     primaryServiceOffering: '',
     productInterest: [],
     businessDescription: '',
@@ -37,6 +40,9 @@ export default function PartnerContactForm() {
     const options = Array.from(e.target.selectedOptions, option => option.value);
     setForm((prev) => ({ ...prev, productInterest: options }));
   };
+
+  const activeSubDomains = domainData.find(d => d.category === form.primaryDomain)?.sub_domains || [];
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -170,23 +176,31 @@ export default function PartnerContactForm() {
         </div>
 
         <div className="pt-6">
-          <label className={labelClass}>Product Interest: *</label>
+          <label className={labelClass}>Primary Domain: *</label>
+          <select required value={form.primaryDomain} onChange={(e) => {
+            update('primaryDomain')(e);
+            setForm(prev => ({ ...prev, productInterest: [] })); // Reset sub-domains when primary changes
+          }} className={inputClass}>
+            <option value="" disabled>Select Primary Domain...</option>
+            {domainData.map(d => (
+              <option key={d.category} value={d.category}>{d.category}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="pt-4">
+          <label className={labelClass}>Specific Programs / Sub-domains: *</label>
           <select 
             multiple 
             required 
             value={form.productInterest} 
             onChange={handleMultiSelect} 
             className="w-full bg-gray-200/40 border border-gray-300 rounded-sm p-2 text-[14px] text-black h-40 outline-none focus:border-black"
+            disabled={!form.primaryDomain}
           >
-            <option value="Carrier Management">Carrier Management</option>
-            <option value="Distribution Management">Distribution Management</option>
-            <option value="Inventory Management">Inventory Management</option>
-            <option value="Labor Management">Labor Management</option>
-            <option value="Omnichannel Management">Omnichannel Management</option>
-            <option value="Point of Sale">Point of Sale</option>
-            <option value="Transportation Management">Transportation Management</option>
-            <option value="Warehouse Management">Warehouse Management</option>
-            <option value="Supply Chain Planning">Supply Chain Planning</option>
+            {activeSubDomains.map(sub => (
+              <option key={sub.name} value={sub.name}>{sub.name}</option>
+            ))}
           </select>
           <p className="text-[11px] text-gray-500 mt-1">Hold Ctrl (Windows) or Cmd (Mac) to select multiple</p>
         </div>
