@@ -352,6 +352,66 @@ export default function JobSupportContent() {
         </div>
       </section>
 
+      {/* ========== ENTERPRISE OUTSOURCING ========== */}
+      <section className="bg-white py-20 border-t border-border/30">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 mb-6 leading-tight">
+                Scale Your Delivery with <span className="text-red-500">Mass Contract Resourcing</span>
+              </h2>
+              <p className="text-[18px] text-gray-600 mb-6 leading-relaxed">
+                Win the project and manage the client. Leave the heavy lifting of execution and resourcing to us.
+              </p>
+              <ul className="space-y-5 text-gray-700">
+                <li className="flex items-start gap-4">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0 text-sm">✓</div>
+                  <p><strong className="text-gray-900">Mass Contract Deployment:</strong> We provide highly-skilled, job-ready practitioners in bulk for your large-scale implementations.</p>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0 text-sm">✓</div>
+                  <p><strong className="text-gray-900">We Manage The Resources:</strong> You focus on client relationships and project milestones while our internal leads manage the outsourced team&apos;s daily output.</p>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="mt-1 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-600 flex-shrink-0 text-sm">✓</div>
+                  <p><strong className="text-gray-900">Built-in Job Support:</strong> Every resource we deploy is backed by our senior network, guaranteeing zero technical roadblocks on your client&apos;s floor.</p>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="md:w-1/2 w-full bg-gray-50 rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">The Consulting Partnership</h3>
+              <p className="text-gray-600 mb-8 relative z-10">We operate as your silent, scalable backend for WMS, Supply Chain, and Enterprise IT delivery.</p>
+              
+              <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">1</div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-base">You Win the Project</h4>
+                    <p className="text-sm text-gray-500">Secure large contracts with confidence.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">2</div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-base">We Provide the Talent</h4>
+                    <p className="text-sm text-gray-500">Mass deployment of supported experts.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="w-12 h-12 bg-[#34C759] rounded-lg flex items-center justify-center text-white font-bold text-xl">3</div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-base">Joint Success</h4>
+                    <p className="text-sm text-gray-500">Flawless execution, happy clients.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== PARTNER FORM ========== */}
       <section id="booking" className="bg-[#f2f2f2] py-24">
         <div className="max-w-[800px] mx-auto px-6">
