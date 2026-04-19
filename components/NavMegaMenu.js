@@ -83,8 +83,8 @@ export default function NavMegaMenu() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || megaMenuOpen ? 'bg-white/95 backdrop-blur-2xl border-b border-border/40 shadow-[0_4px_20px_rgba(0,0,0,0.03)]' : 'bg-white/70 backdrop-blur-lg border-b border-transparent'
+        className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
+          scrolled || megaMenuOpen ? 'bg-white border-b border-border shadow-[0_10px_30px_rgba(0,0,0,0.08)]' : 'bg-white/80 backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
@@ -109,13 +109,13 @@ export default function NavMegaMenu() {
           <div className="hidden lg:flex items-center gap-8 h-full">
             {/* Mega Menu Trigger element */}
             <div 
-              className="h-full flex items-center relative group"
+              className="h-full flex items-center relative"
               onMouseEnter={() => setMegaMenuOpen(true)}
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
               <button 
-                className={`text-[14px] font-semibold bg-transparent border-none cursor-pointer flex items-center gap-1 transition-all duration-300 relative py-1 ${
-                  megaMenuOpen || isTrainingActive ? 'text-accent' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
+                className={`text-[14px] font-semibold bg-transparent border-none cursor-pointer flex items-center gap-1.5 transition-all duration-300 relative py-2 px-3 rounded-xl ${
+                  megaMenuOpen || isTrainingActive ? 'text-accent bg-accent/5' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
                 }`}
               >
                 Job Support & Training
@@ -128,11 +128,13 @@ export default function NavMegaMenu() {
                 )}
               </button>
               
-              {/* Invisible full-height bridge to keep hover active */}
+              {/* Invisible full-height bridge to keep hover active - Larger and better positioned */}
               {megaMenuOpen && (
-                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1200px] bg-transparent h-[40px]" />
+                 <div className="absolute top-[60%] left-[-100px] w-[600px] bg-transparent h-[80px] z-[9998]" />
               )}
             </div>
+
+
 
             {navLinks.map((l) => {
               const active = isLinkActive(l.href);

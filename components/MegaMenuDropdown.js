@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { domainData } from '@/lib/domainData';
+import { domainData, domainVersion } from '@/lib/domainData';
 import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -15,14 +15,16 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
     <AnimatePresence>
       {megaMenuOpen && (
         <motion.div 
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, transition: { duration: 0.15, ease: "easeIn" } }}
+          exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="absolute top-full left-0 w-full bg-white border-b border-border shadow-[0_10px_30px_rgba(0,0,0,0.06)] overflow-hidden hidden lg:block"
+          className="absolute top-full left-0 w-full bg-[#ffffff] border-b border-border shadow-[0_40px_80px_rgba(0,0,0,0.15)] overflow-hidden hidden lg:block z-[9999]"
+          style={{ isolation: 'isolate' }}
           onMouseEnter={() => setMegaMenuOpen(true)}
           onMouseLeave={() => setMegaMenuOpen(false)}
         >
+
           <div className="max-w-[1400px] mx-auto flex h-[520px]">
             {/* Left Panel - Categories */}
             <div className="w-[320px] bg-[#F8F9FB] border-r border-border/40 py-8 flex flex-col overflow-y-auto custom-scrollbar">
@@ -82,14 +84,14 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   </div>
               </div>
 
-              {/* Multi-column Grid */}
+              {/* Multi-column Grid - Limited to 18 items for performance */}
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
-                {activeSubDomains.map((sub, idx) => (
+                {activeSubDomains.slice(0, 18).map((sub, idx) => (
                   <motion.div
                     key={sub.name}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: idx * 0.02 }}
+                    transition={{ duration: 0.2, delay: Math.min(idx * 0.01, 0.1) }} // Cap the delay
                   >
                     <Link 
                       href={sub.href}
@@ -109,13 +111,32 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                     </Link>
                   </motion.div>
                 ))}
+                
+                {activeSubDomains.length > 18 && (
+                   <motion.div
+                     initial={{ opacity: 0 }}
+                     animate={{ opacity: 1 }}
+                     className="col-span-full pt-4"
+                   >
+                     <Link 
+                       href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`}
+                       className="text-accent font-bold text-[14px] hover:underline flex items-center gap-2"
+                     >
+                        + View {activeSubDomains.length - 18} more specialized programs in this category
+                     </Link>
+                   </motion.div>
+                )}
               </div>
+
               
               <div className="mt-12 pt-8 border-t border-border/30 flex items-center justify-between">
                   <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
                     Explore all {activeCategory} courses <ChevronRight className="w-4 h-4" />
                   </Link>
-                  <p className="text-[12px] text-text-secondary italic">Trusted by 500+ corporate clients worldwide</p>
+                  <div className="flex flex-col items-end">
+                    <p className="text-[12px] text-text-secondary italic">Trusted by 500+ corporate clients worldwide</p>
+                    <p className="text-[10px] text-text-secondary/50 font-mono mt-1">Registry v{domainVersion}</p>
+                  </div>
               </div>
             </div>
           </div>
