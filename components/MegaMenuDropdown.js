@@ -12,15 +12,16 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
   const activeSubDomains = domainData.find(d => d.category === activeCategory)?.sub_domains || [];
 
   return (
-    <AnimatePresence>
-      {megaMenuOpen && (
         <motion.div 
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
+          initial={false}
+          animate={{ 
+            opacity: megaMenuOpen ? 1 : 0,
+            y: megaMenuOpen ? 0 : -8,
+            pointerEvents: megaMenuOpen ? 'auto' : 'none'
+          }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           className="absolute top-full left-0 w-full bg-[#ffffff] border-b border-border shadow-[0_40px_80px_rgba(0,0,0,0.15)] overflow-hidden hidden lg:block z-[9999]"
-          style={{ isolation: 'isolate' }}
+          style={{ isolation: 'isolate', visibility: megaMenuOpen ? 'visible' : 'hidden' }}
           onMouseEnter={() => setMegaMenuOpen(true)}
           onMouseLeave={() => setMegaMenuOpen(false)}
         >
@@ -121,7 +122,5 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
             </div>
           </div>
         </motion.div>
-      )}
-    </AnimatePresence>
   );
 }
