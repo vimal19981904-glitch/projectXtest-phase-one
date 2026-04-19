@@ -91,6 +91,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                     <Link 
                       key={sub.name}
                       href={sub.href}
+                      prefetch={false}
                       className="group flex flex-col gap-1.5 no-underline p-4 -mx-4 rounded-xl hover:bg-[#F8F9FB] transition-all duration-300 border border-transparent hover:border-border/20"
                       onClick={() => setMegaMenuOpen(false)}
                     >

@@ -343,6 +343,7 @@ export default function NavMegaMenu() {
                               <Link 
                                 key={sub.name}
                                 href={sub.href}
+                                prefetch={false}
                                 onClick={() => setMobileOpen(false)}
                                 className="flex flex-col gap-1 no-underline"
                               >
