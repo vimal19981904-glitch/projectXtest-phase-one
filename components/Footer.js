@@ -20,7 +20,7 @@ export default function Footer() {
             <ul className="space-y-3 list-none p-0 m-0">
               {[
                 { label: 'Home', href: '/' },
-                { label: 'Job Support', href: '/job-support' },
+                { label: 'Consulting Firm Support', href: '/consulting-firm-support' },
                 { label: 'Manhattan WMS', href: '/manhattan-wms' },
                 { label: 'Work With Us', href: '/work-with-us' },
               ].map((l) => (
@@ -33,19 +33,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Courses */}
+          {/* Job & IT Firm Support */}
           <div>
-            <h4 className="text-[14px] font-semibold mb-6 text-white uppercase tracking-wider font-heading opacity-80">Courses</h4>
+            <h4 className="text-[14px] font-semibold mb-6 text-white uppercase tracking-wider font-heading opacity-80">Job & IT Firm Support</h4>
             <ul className="space-y-1 list-none p-0 m-0">
-              {['Manhattan WMS', 'Oracle Cloud', 'IBM technologies', 'Salesforce', 'DevOps & Cloud'].map((c) => (
+              {['4SIGHT Group', 'enVista', 'Veridian', 'Everest Tech', 'Deloitte', 'IBM Consulting'].map((c) => (
                 <li key={c}>
-                  <Link href="/domains" className="inline-flex items-center min-h-[44px] text-[15px] md:text-[14px] text-text-secondary hover:text-white transition-colors cursor-pointer no-underline">
+                  <Link href="/consulting-firm-support" className="inline-flex items-center min-h-[44px] text-[15px] md:text-[14px] text-text-secondary hover:text-white transition-colors cursor-pointer no-underline">
                     {c}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
+
+
+
 
           {/* Contact */}
           <div>

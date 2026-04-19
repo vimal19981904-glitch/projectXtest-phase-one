@@ -83,9 +83,9 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Course pill */}
-          <Link href="/manhattan-wms" className="btn-primary !py-[6px] !px-[16px] !text-[13px]">
-            Course
+          {/* Firm Support pill */}
+          <Link href="/consulting-firm-support" className="btn-primary !py-[6px] !px-[16px] !text-[13px]">
+            Firm Support
           </Link>
 
           {/* Auth Menu */}
@@ -172,9 +172,10 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link href="/manhattan-wms" onClick={() => setMobileOpen(false)} className="btn-primary !text-[13px] w-full text-center">
-            Course
+          <Link href="/consulting-firm-support" onClick={() => setMobileOpen(false)} className="btn-primary !text-[13px] w-full text-center">
+            Firm Support
           </Link>
+
           {!user && (
             <Link href="/sign-in" onClick={() => setMobileOpen(false)} className="block text-[15px] text-text-primary hover:text-accent no-underline py-1">
               Login

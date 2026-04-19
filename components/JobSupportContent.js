@@ -95,6 +95,27 @@ export default function JobSupportContent() {
         </div>
       </section>
 
+      {/* ========== PARTNERS / CLIENTS ========== */}
+      <section className="bg-gray-50/50 py-12 border-b border-border/20">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <p className="text-[11px] font-bold text-text-secondary uppercase tracking-[0.2em] mb-8 text-center opacity-60 font-heading">
+            Trusted by Consultants at Leading WMS & Supply Chain Firms
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+             {/* We use stylized text-based brand representation for a premium architectural feel */}
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">4SIGHT</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">enVista</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">Veridian</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">Everest Tech</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">Deloitte.</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">IBM Consulting</span>
+             <span className="text-[18px] md:text-[22px] font-bold font-heading text-[#1D1D1F]">Zebra</span>
+          </div>
+
+        </div>
+      </section>
+
+
       {/* ========== HOW IT WORKS ========== */}
       <section className="bg-white py-20">
         <div className="max-w-[1200px] mx-auto px-6">
