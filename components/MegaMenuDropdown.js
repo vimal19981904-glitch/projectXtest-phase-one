@@ -87,13 +87,8 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
               {/* Multi-column Grid - Display all items */}
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
                 {activeSubDomains.map((sub, idx) => (
-                  <motion.div
-                    key={sub.name}
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2, delay: Math.min(idx * 0.01, 0.1) }} // Cap the delay
-                  >
                     <Link 
+                      key={sub.name}
                       href={sub.href}
                       className="group flex flex-col gap-1.5 no-underline p-4 -mx-4 rounded-xl hover:bg-[#F8F9FB] transition-all duration-300 border border-transparent hover:border-border/20"
                       onClick={() => setMegaMenuOpen(false)}
@@ -109,7 +104,6 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                           {sub.description}
                         </span>
                     </Link>
-                  </motion.div>
                 ))}
                 
               </div>
