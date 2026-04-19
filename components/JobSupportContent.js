@@ -1,10 +1,11 @@
 'use client';
 
-import BookingForm from '@/components/BookingForm';
+import PartnerContactForm from '@/components/PartnerContactForm';
 import Link from 'next/link';
 import { Zap, GraduationCap, Anchor, Star, Quote, ChevronRight } from 'lucide-react';
 
 export default function JobSupportContent() {
+
   return (
     <>
       {/* ========== HERO ========== */}
@@ -351,14 +352,10 @@ export default function JobSupportContent() {
         </div>
       </section>
 
-      {/* ========== BOOKING FORM ========== */}
-      <section id="booking" className="bg-white py-24">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Ready to Anchor Your Career?</h2>
-            <p className="text-gray-600">Fill the form below and our consulting specialists will reach out within 2-4 hours.</p>
-          </div>
-          <BookingForm defaultService="Consulting Firm Support" />
+      {/* ========== PARTNER FORM ========== */}
+      <section id="booking" className="bg-[#f2f2f2] py-24">
+        <div className="max-w-[800px] mx-auto px-6">
+          <PartnerContactForm />
         </div>
       </section>
     </>
