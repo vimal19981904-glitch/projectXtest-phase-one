@@ -36,6 +36,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   <button
                     key={d.category}
                     onMouseEnter={() => setActiveCategory(d.category)}
+                    onClick={() => setActiveCategory(d.category)}
                     className={`text-left px-8 py-4 border-l-[3px] transition-all duration-300 bg-transparent cursor-pointer flex items-center justify-between group/cat ${
                       activeCategory === d.category 
                         ? 'border-accent bg-white text-accent font-bold shadow-[4px_0_15px_rgba(0,0,0,0.02)]' 
@@ -87,7 +88,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
 
               {/* Multi-column Grid - Display all items */}
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
-                {activeSubDomains.map((sub, idx) => (
+                {activeSubDomains.slice(0, 24).map((sub, idx) => (
                     <Link 
                       key={sub.name}
                       href={sub.href}
@@ -107,13 +108,12 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                         </span>
                     </Link>
                 ))}
-                
               </div>
 
               
               <div className="mt-12 pt-8 border-t border-border/30 flex items-center justify-between">
                   <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
-                    Explore all {activeCategory} courses <ChevronRight className="w-4 h-4" />
+                    Explore all {activeSubDomains.length > 0 ? activeSubDomains.length : ''} {activeCategory} courses <ChevronRight className="w-4 h-4" />
                   </Link>
                   <div className="flex flex-col items-end">
                     <p className="text-[12px] text-text-secondary italic">Trusted by 500+ corporate clients worldwide</p>

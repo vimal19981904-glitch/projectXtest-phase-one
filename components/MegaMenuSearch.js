@@ -31,7 +31,7 @@ export default function MegaMenuSearch({ isSearchOpen, setIsSearchOpen }) {
               <input
                 autoFocus
                 type="text"
-                placeholder="Search domains, courses, or categories..."
+                placeholder="Search domains, support & training, or categories..."
                 className="w-full bg-transparent border-none outline-none pl-10 text-[24px] md:text-[32px] font-bold text-text-primary placeholder:text-text-secondary/30"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -57,7 +57,7 @@ export default function MegaMenuSearch({ isSearchOpen, setIsSearchOpen }) {
                       }
                       cat.sub_domains.forEach(sub => {
                         if (sub.name.toLowerCase().includes(lowerQuery) || sub.description.toLowerCase().includes(lowerQuery)) {
-                          results.push({ type: 'Course', name: sub.name, href: sub.href, desc: sub.description, category: cat.category });
+                          results.push({ type: 'Support & Training', name: sub.name, href: sub.href, desc: sub.description, category: cat.category });
                         }
                       });
                     });

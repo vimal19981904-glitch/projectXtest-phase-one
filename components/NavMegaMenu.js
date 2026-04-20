@@ -114,6 +114,7 @@ export default function NavMegaMenu() {
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
               <button 
+                onClick={() => setMegaMenuOpen(!megaMenuOpen)}
                 className={`text-[14px] font-semibold bg-transparent border-none cursor-pointer flex items-center gap-1.5 transition-all duration-300 relative py-2 px-3 rounded-xl ${
                   megaMenuOpen || isTrainingActive ? 'text-accent bg-accent/5' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
                 }`}
