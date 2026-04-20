@@ -75,7 +75,7 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
                     const isActive = pathname === sub.href;
                     return (
                       <Link
-                        key={`${d.category}::${sub.name}`}
+                        key={`sidebar-${d.category}-${sub.href}`}
                         href={sub.href}
                         onClick={() => setMobileSidebarOpen(false)}
                         className={`sidebar-subdomain-link px-3 py-[7px] rounded-lg text-[13px] no-underline transition-all duration-200 ${

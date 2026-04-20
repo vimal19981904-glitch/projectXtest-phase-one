@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-hero-bg text-hero-text">
+    <footer className="text-hero-text" style={{ background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)' }}>
       {/* Main footer */}
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -21,7 +21,7 @@ export default function Footer() {
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Consulting Firm Support', href: '/consulting-firm-support' },
-                { label: 'Manhattan WMS', href: '/manhattan-wms' },
+                { label: 'Manhattan WMS', href: '/domains/manhattan-wms-training' },
                 { label: 'Work With Us', href: '/work-with-us' },
               ].map((l) => (
                 <li key={l.label}>

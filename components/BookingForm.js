@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { saveBooking } from '@/lib/supabase';
 import { sendTrainingRequest, sendJobSupportRequest, getWhatsAppUrl } from '@/lib/emailjs';
 
-export default function BookingForm({ defaultService = 'Training' }) {
+export default function BookingForm({ defaultService = 'Training', theme = 'light' }) {
   const [form, setForm] = useState({
     fullName: '',
     phone: '',
@@ -50,16 +50,18 @@ export default function BookingForm({ defaultService = 'Training' }) {
     }
   };
 
+  const isDark = theme === 'dark';
+
   if (submitted) {
     return (
-      <div className="apple-card p-10 text-center max-w-[560px] mx-auto animate-[slideUp_0.4s_ease]">
-        <div className="w-[64px] h-[64px] bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+      <div className={`${isDark ? 'bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl' : 'apple-card'} p-10 text-center max-w-[560px] mx-auto rounded-[32px] animate-[slideUp_0.4s_ease]`}>
+        <div className={`w-[64px] h-[64px] ${isDark ? 'bg-[#34C759]/20' : 'bg-green-100'} rounded-full flex items-center justify-center mx-auto mb-5`}>
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#34C759" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="text-[24px] font-semibold text-text-primary mb-2">Thank You!</h3>
-        <p className="text-[15px] text-text-secondary mb-6">
+        <h3 className={`text-[24px] font-semibold ${isDark ? 'text-white' : 'text-text-primary'} mb-2`}>Thank You!</h3>
+        <p className={`text-[15px] ${isDark ? 'text-white/70' : 'text-text-secondary'} mb-6`}>
           A consultant will call you shortly.
         </p>
         <a
@@ -78,9 +80,9 @@ export default function BookingForm({ defaultService = 'Training' }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="apple-card p-8 max-w-[560px] mx-auto">
-      <h3 className="text-[22px] font-semibold text-text-primary mb-1">Book a Free Demo</h3>
-      <p className="text-[14px] text-text-secondary mb-6">
+    <form onSubmit={handleSubmit} className={`${isDark ? 'bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl' : 'apple-card'} p-8 max-w-[560px] mx-auto rounded-[32px]`}>
+      <h3 className={`text-[22px] font-semibold ${isDark ? 'text-white' : 'text-text-primary'} mb-1`}>Book a Free Demo</h3>
+      <p className={`text-[14px] ${isDark ? 'text-white/60' : 'text-text-secondary'} mb-6`}>
         Fill in your details and our consultant will reach out to you.
       </p>
 
@@ -90,7 +92,7 @@ export default function BookingForm({ defaultService = 'Training' }) {
           value={form.fullName}
           onChange={update('fullName')}
           placeholder="Full Name"
-          className="apple-input"
+          className={`${isDark ? 'w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#38bdf8]/50 focus:border-[#38bdf8]' : 'apple-input'}`}
           required
         />
         <input
@@ -98,13 +100,13 @@ export default function BookingForm({ defaultService = 'Training' }) {
           value={form.phone}
           onChange={update('phone')}
           placeholder="Phone Number"
-          className="apple-input"
+          className={`${isDark ? 'w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#38bdf8]/50 focus:border-[#38bdf8]' : 'apple-input'}`}
           required
         />
         <select
           value={form.serviceType}
           onChange={update('serviceType')}
-          className="apple-input appearance-none cursor-pointer"
+          className={`${isDark ? 'w-full px-5 py-4 rounded-2xl bg-[#121214] border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-[#38bdf8]/50 focus:border-[#38bdf8]' : 'apple-input'} appearance-none cursor-pointer`}
         >
           <option>Training</option>
           <option>Job Support</option>
@@ -113,7 +115,7 @@ export default function BookingForm({ defaultService = 'Training' }) {
           value={form.message}
           onChange={update('message')}
           placeholder="Message (optional)"
-          className="apple-input resize-none"
+          className={`${isDark ? 'w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#38bdf8]/50 focus:border-[#38bdf8]' : 'apple-input'} resize-none`}
           rows={3}
         />
         {error && (
@@ -125,7 +127,7 @@ export default function BookingForm({ defaultService = 'Training' }) {
         <button
           type="submit"
           disabled={loading}
-          className="btn-primary w-full disabled:opacity-50"
+          className={`${isDark ? 'w-full px-6 py-4 bg-[#38bdf8] hover:bg-[#38bdf8]/90 text-black font-bold rounded-2xl transition-colors disabled:opacity-50' : 'btn-primary w-full disabled:opacity-50'}`}
         >
           {loading ? 'Submitting...' : 'Submit Request'}
         </button>

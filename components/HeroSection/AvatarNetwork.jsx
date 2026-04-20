@@ -1,12 +1,13 @@
 'use client';
 
 import { avatarData } from '@/data/avatarData';
-import { useRef } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CONTAINER = 600;
-const CENTER = 300;
-const RING_RADIUS = 220;
 
+// Perfectly aligned 8-person ring
 const positions = [
   { x: 300, y: 60 },
   { x: 470, y: 140 },
@@ -35,7 +36,7 @@ function getCurvePath(p1, p2) {
 export default function AvatarNetwork() {
   return (
     <div 
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-visible"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto overflow-visible group/network"
       style={{ width: CONTAINER, height: CONTAINER }}
     >
       {/* Dynamic Glow */}
@@ -50,7 +51,7 @@ export default function AvatarNetwork() {
         }}
       />
 
-      {/* SVG Mesh - Restoring the original curved network */}
+      {/* SVG Mesh */}
       <svg 
         className="absolute inset-0 w-full h-full opacity-30" 
         style={{ zIndex: 10 }}
@@ -78,7 +79,7 @@ export default function AvatarNetwork() {
         />
       ))}
 
-      {/* Central Branding Badge - Premium floating text */}
+      {/* Central Branding Badge */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100]"
         style={{ width: 'auto' }}
@@ -100,50 +101,97 @@ export default function AvatarNetwork() {
 }
 
 function AvatarNode({ avatar, x, y }) {
-  const imgRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
   const fallbackImg = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&q=80';
 
   return (
-    <div
-      className="absolute group pointer-events-auto"
+    <motion.div
+      className="absolute pointer-events-auto cursor-pointer"
       style={{
         left: x,
         top: y,
-        transform: 'translate(-50%, -50%)',
-        zIndex: 50
+        zIndex: isHovered ? 200 : 50
       }}
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={{ 
+        scale: 1.1, 
+        transition: { type: 'spring', stiffness: 300, damping: 20 }
+      }}
+      whileTap={{ 
+        scale: 0.95,
+        transition: { type: 'spring', stiffness: 400, damping: 10 }
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
       <div
-        className="relative rounded-full overflow-hidden transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg]"
+        className="relative rounded-full overflow-hidden transition-all duration-700 ease-out"
         style={{
           width: 52,
           height: 52,
-          border: '2px solid rgba(56, 189, 248, 0.8)',
+          border: isHovered ? '1.5px solid #60a5fa' : '1px solid rgba(56, 189, 248, 0.3)',
           background: '#0a192f',
-          boxShadow: '0 0 20px rgba(56, 189, 248, 0.3)'
+          boxShadow: isHovered 
+            ? '0 0 30px rgba(56, 189, 248, 0.4)' 
+            : '0 0 15px rgba(56, 189, 248, 0.05)'
         }}
       >
-        <img
-          ref={imgRef}
+        <Image
           src={avatar.image || fallbackImg}
           alt={avatar.name}
-          onError={() => { if(imgRef.current) imgRef.current.src = fallbackImg; }}
-          className="w-full h-full object-cover"
+          width={52}
+          height={52}
+          className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}
+          unoptimized
         />
+        <div className={`absolute inset-0 bg-gradient-to-t from-sky-500/10 to-transparent opacity-0 transition-opacity duration-700 ${isHovered ? 'opacity-100' : ''}`} />
       </div>
 
-      {/* Tooltip on Hover */}
-      <div
-        className="absolute bottom-[125%] left-1/2 mb-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0"
-        style={{ transform: 'translateX(-50%)', whiteSpace: 'nowrap', zIndex: 110 }}
-      >
-        <div className="bg-slate-900/95 backdrop-blur-xl border border-sky-500/30 rounded-xl px-4 py-2 text-center shadow-2xl">
-          <p className="text-white text-[14px] font-bold m-0 leading-tight">{avatar.name}</p>
-          <p className="text-sky-400 text-[11px] font-semibold m-0 uppercase tracking-widest">{avatar.nickname || avatar.title}</p>
+      <AnimatePresence>
+        {/* Simple Name Tag - Always show if global hover OR local hover */}
+        <div className="absolute top-[110%] left-1/2 -translate-x-1/2 pointer-events-none">
+            <div 
+              className={`
+                bg-[#0f172a]/80 backdrop-blur-md text-white/90 px-3 py-1 rounded-full text-[10px] font-medium border border-white/5 shadow-xl
+                transition-all duration-700 ease-out whitespace-nowrap tracking-wide
+                ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1 group-hover/network:opacity-100 group-hover/network:translate-y-0'}
+              `}
+              style={{ fontFamily: 'var(--font-outfit), sans-serif' }}
+            >
+              {avatar.name}
+            </div>
         </div>
-        {/* Tooltip tail */}
-        <div className="w-3 h-3 bg-slate-900 rotate-45 border-r border-b border-sky-500/30 absolute -bottom-1.5 left-1/2 -translate-x-1/2" />
-      </div>
-    </div>
+
+        {/* Refined Sharp Rectangle Code Snippet Card - ONLY on local hover */}
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="absolute bottom-[125%] left-1/2 -translate-x-1/2 mb-1 pointer-events-none"
+            style={{ zIndex: 210 }}
+          >
+            <div 
+              className="bg-[#0f172a]/95 backdrop-blur-2xl border border-white/20 px-2 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.7)] ring-1 ring-white/10"
+              style={{ fontFamily: 'monospace', fontSize: '9px', minWidth: '110px' }}
+            >
+              <div className="space-y-0 leading-[1.2]">
+                <p className="m-0 text-gray-500">
+                  <span className="text-purple-400">const</span> expert = {'{'}
+                </p>
+                <p className="m-0 pl-2">
+                  <span className="text-blue-400">name</span>: <span className="text-green-400">"{avatar.name}"</span>,
+                </p>
+                <p className="m-0 pl-2">
+                  <span className="text-blue-400">role</span>: <span className="text-yellow-400">"{avatar.title}"</span>
+                </p>
+                <p className="m-0 text-gray-500">{'}'};</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }

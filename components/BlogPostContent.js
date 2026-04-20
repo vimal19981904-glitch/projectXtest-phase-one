@@ -78,7 +78,7 @@ export default function BlogPostContent({ params }) {
             Book a free demo today and learn how our expert-led programs and job support can help you succeed.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Link href="/manhattan-wms" className="btn-primary no-underline flex items-center justify-center">
+            <Link href="/domains/manhattan-wms-training" className="btn-primary no-underline flex items-center justify-center">
               Explore Courses
             </Link>
             <Link href="/#booking" className="btn-secondary no-underline flex items-center justify-center">

@@ -24,6 +24,11 @@ const nextConfig = {
         destination: '/consulting-firm-support',
         permanent: true,
       },
+      {
+        source: '/manhattan-wms',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };

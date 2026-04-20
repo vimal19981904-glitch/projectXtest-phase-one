@@ -9,7 +9,6 @@ export default async function sitemap() {
     '/job-support',
     '/work-with-us',
     '/blog',
-    '/manhattan-wms',
     '/sign-in',
   ].map((route) => ({
     url: `${baseUrl}${route}`,

@@ -80,7 +80,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   })}
                   
                   <div className="hidden xl:block">
-                     <Link href="/domains" className="btn-secondary whitespace-nowrap !py-2.5 !px-5 !text-[13px]">
+                     <Link href="/domains" onClick={() => setMegaMenuOpen(false)} className="btn-secondary whitespace-nowrap !py-2.5 !px-5 !text-[13px]">
                         View All Courses
                      </Link>
                   </div>
@@ -90,7 +90,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-6">
                 {activeSubDomains.slice(0, 24).map((sub, idx) => (
                     <Link 
-                      key={sub.name}
+                      key={`${activeCategory}-${sub.href}-${idx}`}
                       href={sub.href}
                       prefetch={false}
                       className="group flex flex-col gap-1.5 no-underline p-4 -mx-4 rounded-xl hover:bg-[#F8F9FB] transition-all duration-300 border border-transparent hover:border-border/20"
@@ -112,7 +112,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
 
               
               <div className="mt-12 pt-8 border-t border-border/30 flex items-center justify-between">
-                  <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
+                  <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} onClick={() => setMegaMenuOpen(false)} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
                     Explore all {activeSubDomains.length > 0 ? activeSubDomains.length : ''} {activeCategory} courses <ChevronRight className="w-4 h-4" />
                   </Link>
                   <div className="flex flex-col items-end">

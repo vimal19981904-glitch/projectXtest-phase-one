@@ -225,7 +225,7 @@ export default function PartnerContactForm() {
             className="mt-1 w-4 h-4 rounded-sm border-2 border-black text-black focus:ring-0 cursor-pointer accent-black" 
           />
           <label htmlFor="subscribe" className="text-[13px] font-bold text-black cursor-pointer leading-tight">
-            I'd like to receive additional information from GapAnchor, including product, service and event information.
+            I&apos;d like to receive additional information from GapAnchor, including product, service and event information.
           </label>
         </div>
 

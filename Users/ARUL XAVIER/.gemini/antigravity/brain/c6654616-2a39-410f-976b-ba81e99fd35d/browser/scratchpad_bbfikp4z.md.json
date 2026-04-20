@@ -1,0 +1,146 @@
+{
+  "filePath": "..\\..\\Users\\ARUL XAVIER\\.gemini\\antigravity\\brain\\c6654616-2a39-410f-976b-ba81e99fd35d\\browser\\scratchpad_bbfikp4z.md",
+  "lines": [
+    {
+      "line": 2,
+      "author": "ai",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 1,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715632729,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 3,
+      "author": "ai",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 1,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715632729,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 4,
+      "author": "ai",
+      "confidence": 0.6541176470588237,
+      "aiEdits": 1,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715741383,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.88,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 5,
+      "author": "ai",
+      "confidence": 0.6541176470588237,
+      "aiEdits": 2,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715741383,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.88,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 6,
+      "author": "ai",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 1,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715710308,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 7,
+      "author": "ai",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 1,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776715710308,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    }
+  ],
+  "summary": {
+    "totalLines": 6,
+    "aiLines": 6,
+    "humanLines": 0,
+    "mixedLines": 0,
+    "aiPercentage": 100,
+    "humanPercentage": 0
+  },
+  "lastUpdated": 1776716451629
+}

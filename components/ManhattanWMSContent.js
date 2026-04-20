@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import BookingForm from '@/components/BookingForm';
 import EmailGateModal from '@/components/EmailGateModal';
@@ -79,7 +80,7 @@ export default function ManhattanWMSContent() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="bg-hero-bg relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#000000]">
         <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <div className="flex items-center gap-2 text-[13px] text-hero-text/50 mb-6">
             <Link href="/" className="hover:text-white transition-colors no-underline text-hero-text/50">Home</Link>
@@ -91,7 +92,7 @@ export default function ManhattanWMSContent() {
             <div className="md:w-1/2 text-hero-text">
               <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.1] mb-5">
                 Manhattan WMS{' '}
-                <span className="text-accent-red">Training</span>{' '}
+                <span className="text-[#38bdf8]">Training</span>{' '}
                 & Certification
               </h1>
               <p className="text-[17px] text-hero-text/70 mb-8 max-w-[480px]">
@@ -132,6 +133,72 @@ export default function ManhattanWMSContent() {
                 <circle cx="95" cy="183" r="5" fill="#555" />
                 <circle cx="115" cy="183" r="5" fill="#555" />
               </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== RELATED SOLUTIONS ========== */}
+      <section className="relative py-24 bg-[#0a0a0c] overflow-hidden">
+        {/* Background Image with heavy dark overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/80 to-[#000000] z-0" />
+        
+        <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-[36px] md:text-[44px] font-bold text-white mb-5 leading-[1.1] tracking-tight">
+              Everything Works Better With<br />Manhattan Solutions
+            </h2>
+            <p className="text-[16px] md:text-[18px] text-white/80 max-w-[800px] mx-auto font-light">
+              Manhattan offers a complete breadth of solutions that when unified, provides total coverage for your supply chain commerce needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
+              <div className="h-[220px] w-full overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?w=800&q=80" alt="Transportation" width={800} height={220} className="w-full h-full object-cover" unoptimized />
+              </div>
+              <div className="p-8 flex-1">
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Transportation Management</h3>
+                <p className="text-[15px] text-gray-600 leading-relaxed font-light">
+                  Manage every carrier, rate, route, and load with Manhattan Active® Transportation Management.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
+              <div className="h-[220px] w-full overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Labor" width={800} height={220} className="w-full h-full object-cover" unoptimized />
+              </div>
+              <div className="p-8 flex-1">
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Labor Management</h3>
+                <p className="text-[15px] text-gray-600 leading-relaxed font-light">
+                  Empower employees to be more productive — and happier with their work — using Manhattan Active® Labor Management&apos;s AI-enabled software.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
+              <div className="h-[220px] w-full overflow-hidden">
+                <Image src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&q=80" alt="Order" width={800} height={220} className="w-full h-full object-cover" unoptimized />
+              </div>
+              <div className="p-8 flex-1">
+                <h3 className="text-[20px] font-bold text-gray-900 mb-3">Order Management</h3>
+                <p className="text-[15px] text-gray-600 leading-relaxed font-light">
+                  Manhattan Active® Order Management provides stores with visibility into available inventory held anywhere, supporting endless aisle selling.
+                </p>
+              </div>
             </div>
           </div>
         </div>

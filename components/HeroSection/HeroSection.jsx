@@ -2,6 +2,7 @@
 
 import { useState, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import AvatarNetwork from './AvatarNetwork';
 
@@ -18,7 +19,7 @@ export default function HeroSection() {
     <section
       className="relative w-full overflow-hidden flex flex-col justify-center"
       style={{
-        background: 'linear-gradient(135deg, #060d1b 0%, #0d1a2e 40%, #0f2040 100%)',
+        background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)',
         minHeight: '100vh',
       }}
     >
@@ -59,10 +60,10 @@ export default function HeroSection() {
           {/* Mobile-only connection avatars (Replaces Globe visual weight) */}
           <div className="md:hidden flex flex-col items-center justify-center w-full mb-8">
             <div className="flex -space-x-4 mb-4">
-              <img className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&q=80" alt="Expert 1" />
-              <img className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&q=80" alt="Expert 2" />
-              <img className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&q=80" alt="Expert 3" />
-              <img className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="Expert 4" />
+              <Image className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&q=80" alt="Expert 1" width={48} height={48} unoptimized />
+              <Image className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&q=80" alt="Expert 2" width={48} height={48} unoptimized />
+              <Image className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&q=80" alt="Expert 3" width={48} height={48} unoptimized />
+              <Image className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80" alt="Expert 4" width={48} height={48} unoptimized />
               <div className="w-12 h-12 rounded-full border-2 border-[#1D1D1F] bg-[#38bdf8] flex items-center justify-center text-[13px] font-black text-white z-10 shadow-lg shadow-[#38bdf8]/20">+1k</div>
             </div>
             <p className="text-[#94a3b8] text-[14px] font-medium tracking-wide m-0 text-center">
@@ -156,7 +157,7 @@ export default function HeroSection() {
 
         {/* ── RIGHT: Globe + Avatars + Network ── */}
         <div
-          className="globe-wrapper hidden md:block relative w-full z-0 overflow-visible mx-auto"
+          className="globe-wrapper hidden md:block relative w-full z-0 overflow-visible mx-auto group"
           style={{ height: 600 }}
         >
           {/* 
@@ -164,18 +165,20 @@ export default function HeroSection() {
             This ensures concentric alignment between the 3D globe and the Avatar ring.
           */}
           <div 
-            className="absolute top-1/2 left-1/2 w-[600px] h-[600px]"
+            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] transition-all duration-700 group-hover:drop-shadow-[0_0_50px_rgba(56,189,248,0.4)] pointer-events-none"
             style={{ 
               transform: 'translate(-50%, -50%) scale(var(--globe-scale, 1))', 
             }}
           >
-            {/* 3D Globe Layer */}
-            <div className="absolute inset-0 z-10 pointer-events-auto">
+            {/* 3D Globe Layer - Lower Z */}
+            <div className="absolute inset-0 z-0 pointer-events-auto">
               <GlobeCanvas />
             </div>
 
-            {/* Avatar & Mesh Layer */}
-            <AvatarNetwork />
+            {/* Avatar & Mesh Layer - Higher Z for interaction */}
+            <div className="absolute inset-0 z-20">
+              <AvatarNetwork />
+            </div>
           </div>
         </div>
       </div>

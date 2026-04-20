@@ -9,8 +9,8 @@ export default function GlobeMesh() {
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
-    // Rotate smoothly
-    groupRef.current.rotation.y += 0.15 * delta;
+    // Rotate smoothly - 5% faster than original 0.15
+    groupRef.current.rotation.y += 0.1575 * delta;
     
     // Beautiful tilt
     groupRef.current.rotation.x = 0.2;
@@ -102,4 +102,3 @@ export default function GlobeMesh() {
     </group>
   );
 }
-

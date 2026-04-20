@@ -25,23 +25,26 @@ const outfit = Outfit({
 
 export const metadata = {
   title: 'GapAnchor — Online Training & Job Support Platform',
-  description:
-    'The unified Skill Training & On-Job Support Platform. Manhattan WMS, SAP, Oracle, Cloud Computing courses with expert trainers and 24/7 support.',
-  keywords: 'online training, job support, Manhattan WMS, SAP training, Oracle, cloud computing, corporate training',
+  description: 'The global leader in online IT training and real-time project assistance. We provide 24/7 on-job support for consultants and professionals across 100+ domains. Let\'s bridge the gap together.',
+  keywords: 'job support, online training, IT consulting support, Oracle EPM support, SAP job support, Manhattan WMS training, corporate training, remote project assistance',
 };
 
 import PageTransition from '@/components/PageTransition';
+import CookieConsent from '@/components/CookieConsent';
+import AnalyticsClient from '@/components/AnalyticsClient';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${outfit.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${poppins.variable} ${outfit.variable}`}>
       <body className="antialiased">
+        <AnalyticsClient />
         <NavMegaMenu />
         <PageTransition>
           <main className="pt-[64px]">{children}</main>
         </PageTransition>
         <Footer />
         <ChatWidget />
+        <CookieConsent />
       </body>
     </html>
   );

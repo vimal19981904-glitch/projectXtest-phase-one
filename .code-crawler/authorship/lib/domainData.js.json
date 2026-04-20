@@ -2,13 +2,13 @@
   "filePath": "lib\\domainData.js",
   "lines": [
     {
-      "line": 4689,
+      "line": 11,
       "author": "ai",
-      "confidence": 0.8999999999999999,
+      "confidence": 0.7529411764705882,
       "aiEdits": 1,
       "humanEdits": 0,
       "lastEditType": "ai",
-      "lastEditTimestamp": 1776420667159,
+      "lastEditTimestamp": 1776712301842,
       "signals": {
         "typingRhythm": 0.5,
         "editSize": 0.95,
@@ -17,7 +17,51 @@
         "undoFrequency": 0.5,
         "extensionSource": 0.5,
         "velocityProfile": 0.5,
-        "selectionPattern": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 12,
+      "author": "human",
+      "confidence": 0.3999999999999997,
+      "aiEdits": 0,
+      "humanEdits": 1,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1776712314919,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.5,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 13,
+      "author": "mixed",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 1,
+      "humanEdits": 1,
+      "lastEditType": "human",
+      "lastEditTimestamp": 1776712314919,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
         "pastePattern": 0.5,
         "deletionPattern": 0.5,
         "pausePattern": 0.5
@@ -158,11 +202,11 @@
     {
       "line": 4696,
       "author": "ai",
-      "confidence": 0.7529411764705882,
+      "confidence": 0.8999999999999999,
       "aiEdits": 1,
       "humanEdits": 0,
       "lastEditType": "ai",
-      "lastEditTimestamp": 1776421443284,
+      "lastEditTimestamp": 1776420667159,
       "signals": {
         "typingRhythm": 0.5,
         "editSize": 0.95,
@@ -171,7 +215,7 @@
         "undoFrequency": 0.5,
         "extensionSource": 0.5,
         "velocityProfile": 0.5,
-        "selectionPattern": 0.7,
+        "selectionPattern": 0.5,
         "pastePattern": 0.5,
         "deletionPattern": 0.5,
         "pausePattern": 0.5
@@ -2645,7 +2689,7 @@
       "line": 4809,
       "author": "ai",
       "confidence": 0.7529411764705882,
-      "aiEdits": 2,
+      "aiEdits": 1,
       "humanEdits": 0,
       "lastEditType": "ai",
       "lastEditTimestamp": 1776421443284,
@@ -2665,6 +2709,28 @@
     },
     {
       "line": 4810,
+      "author": "ai",
+      "confidence": 0.7529411764705882,
+      "aiEdits": 2,
+      "humanEdits": 0,
+      "lastEditType": "ai",
+      "lastEditTimestamp": 1776421443284,
+      "signals": {
+        "typingRhythm": 0.5,
+        "editSize": 0.95,
+        "cursorMovement": 0.5,
+        "editSequence": 0.5,
+        "undoFrequency": 0.5,
+        "extensionSource": 0.5,
+        "velocityProfile": 0.5,
+        "selectionPattern": 0.7,
+        "pastePattern": 0.5,
+        "deletionPattern": 0.5,
+        "pausePattern": 0.5
+      }
+    },
+    {
+      "line": 4811,
       "author": "ai",
       "confidence": 0.8999999999999999,
       "aiEdits": 1,
@@ -2687,12 +2753,12 @@
     }
   ],
   "summary": {
-    "totalLines": 122,
-    "aiLines": 122,
-    "humanLines": 0,
-    "mixedLines": 0,
-    "aiPercentage": 100,
-    "humanPercentage": 0
+    "totalLines": 125,
+    "aiLines": 123,
+    "humanLines": 1,
+    "mixedLines": 1,
+    "aiPercentage": 98,
+    "humanPercentage": 1
   },
-  "lastUpdated": 1776427214757
+  "lastUpdated": 1776716451612
 }

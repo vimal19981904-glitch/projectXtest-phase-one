@@ -16,7 +16,7 @@ export default function MegaMenuSearch({ isSearchOpen, setIsSearchOpen }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-white/95 backdrop-blur-xl flex flex-col items-center pt-[100px] px-6"
+          className="fixed inset-0 top-[56px] md:top-[64px] z-[999] bg-white/95 backdrop-blur-xl flex flex-col items-center pt-20 px-6"
         >
           <button 
             onClick={() => setIsSearchOpen(false)}
@@ -73,7 +73,7 @@ export default function MegaMenuSearch({ isSearchOpen, setIsSearchOpen }) {
                     // show top 50 results at most to prevent lag
                     return results.slice(0, 50).map((res, i) => (
                       <Link
-                        key={i}
+                        key={`search-res-${res.type}-${res.name}-${i}`}
                         href={res.href}
                         onClick={() => {
                           setIsSearchOpen(false);

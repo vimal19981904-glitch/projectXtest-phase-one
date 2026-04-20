@@ -69,7 +69,7 @@ export default function DomainGrid() {
   ) : [];
 
   return (
-    <section className="bg-secondary-bg py-24 min-h-screen relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-[#0a0a0c]">
       {/* Background Decor */}
       <div className="absolute top-0 right-10 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -93,7 +93,7 @@ export default function DomainGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[34px] md:text-[52px] font-black text-text-primary mb-6 tracking-tight leading-tight"
+            className="text-[36px] md:text-[56px] font-black text-white tracking-tight mb-6 leading-tight"
           >
             Train for Your <span className="text-accent underline decoration-accent/20 underline-offset-8">Next Project</span>
           </motion.h2>
@@ -102,7 +102,7 @@ export default function DomainGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-[18px] text-text-secondary max-w-[700px] mx-auto leading-relaxed font-light"
+            className="text-[18px] text-white/60 max-w-[700px] mx-auto leading-relaxed font-light"
           >
             Discover our industry-validated curriculum across 250+ specialized domains. From legacy systems to AI-driven automation, we bridge the skill gap.
           </motion.p>
@@ -120,8 +120,8 @@ export default function DomainGrid() {
                     onClick={() => handleTabClick(domain.category)}
                     className={`px-5 py-3 rounded-2xl text-[14px] font-bold transition-all duration-300 border cursor-pointer flex items-center gap-2 backdrop-blur-sm whitespace-nowrap flex-shrink-0 ${
                       activeCategory === domain.category 
-                        ? 'bg-text-primary text-white border-text-primary shadow-lg scale-105 z-10'
-                        : 'bg-white/60 text-text-secondary border-border/40 hover:border-accent/40 hover:bg-white hover:shadow-sm'
+                        ? 'bg-[#38bdf8] text-black border-[#38bdf8] shadow-lg scale-105 z-10'
+                        : 'bg-white/5 text-white/60 border-white/10 hover:border-[#38bdf8]/40 hover:bg-white/10 hover:shadow-sm'
                     }`}
                   >
                     <Icon size={18} strokeWidth={activeCategory === domain.category ? 2.5 : 2} />
@@ -131,8 +131,8 @@ export default function DomainGrid() {
                })}
             </div>
             {/* Horizontal scroll indicators for mobile */}
-            <div className="md:hidden absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-secondary-bg to-transparent pointer-events-none" />
-            <div className="md:hidden absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-secondary-bg to-transparent pointer-events-none" />
+            <div className="md:hidden absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-[#000000] to-transparent pointer-events-none" />
+            <div className="md:hidden absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-[#000000] to-transparent pointer-events-none" />
           </div>
           
           <div className="w-full max-w-[500px] px-4">
@@ -146,9 +146,9 @@ export default function DomainGrid() {
                     setVisibleCount(12);
                     setIsAutoPlaying(false);
                  }}
-                 className="w-full px-5 py-3.5 pl-12 rounded-2xl border border-border/80 bg-white/80 backdrop-blur-md text-[16px] shadow-sm focus:outline-none focus:ring-4 focus:ring-accent/10 focus:border-accent transition-all"
+                 className="w-full px-5 py-3.5 pl-12 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-md text-[16px] text-white placeholder-white/40 shadow-sm focus:outline-none focus:ring-4 focus:ring-[#38bdf8]/20 focus:border-[#38bdf8] transition-all"
                />
-               <Search className="w-5 h-5 text-text-secondary absolute left-4 top-1/2 -translate-y-1/2" />
+               <Search className="w-5 h-5 text-white/40 absolute left-4 top-1/2 -translate-y-1/2" />
                
                {/* Auto Play Toggle */}
                <button 
@@ -170,7 +170,7 @@ export default function DomainGrid() {
               animate="visible"
               exit="exit"
               variants={containerVariants}
-              className="bg-white/80 backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-border shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+              className="bg-white/5 backdrop-blur-xl rounded-[40px] p-8 md:p-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
             >
                <div className="mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
                   <div className="flex-1">
@@ -178,11 +178,11 @@ export default function DomainGrid() {
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white" style={{ backgroundColor: activeData.color_accent }}>
                         {(() => { const Icon = getDomainIcon(activeData.category); return <Icon size={32} strokeWidth={2.5} />; })()}
                       </div>
-                      <h3 className="text-[24px] md:text-[40px] font-black text-text-primary tracking-tight">
+                      <h3 className="text-[24px] md:text-[40px] font-black text-white tracking-tight">
                         {activeData.category}
                       </h3>
                     </div>
-                    <p className="text-[18px] text-text-secondary leading-relaxed max-w-3xl font-light">
+                    <p className="text-[18px] text-white/70 leading-relaxed max-w-3xl font-light">
                       {activeData.description}
                     </p>
                   </div>
@@ -197,10 +197,10 @@ export default function DomainGrid() {
                {/* Course Cards Grid */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                  {filteredSubDomains.slice(0, visibleCount).map((sub) => (
-                   <motion.div key={sub.name} variants={itemVariants}>
+                   <motion.div key={`${activeCategory}-${sub.href}`} variants={itemVariants}>
                      <Link
                        href={sub.href}
-                       className="group relative bg-white p-7 rounded-3xl border border-border/60 flex flex-col h-full overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 no-underline hover:-translate-y-2 block"
+                       className="group relative bg-white/5 backdrop-blur-md p-7 rounded-3xl border border-white/10 flex flex-col h-full overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/20 transition-all duration-500 no-underline hover:-translate-y-2 block"
                      >
                        {/* Brand Accent Bar */}
                        <div 
@@ -210,21 +210,21 @@ export default function DomainGrid() {
 
                        <div className="flex flex-col h-full mt-2">
                          <div className="flex items-start justify-between mb-4">
-                           <h4 className="text-[18px] font-extrabold text-text-primary leading-tight group-hover:text-accent transition-colors duration-300">
+                           <h4 className="text-[18px] font-extrabold text-white leading-tight group-hover:text-accent transition-colors duration-300">
                              {sub.name}
                            </h4>
-                           <div className="p-1.5 rounded-full bg-secondary-bg opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-4 group-hover:translate-x-0">
+                           <div className="p-1.5 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-4 group-hover:translate-x-0">
                              <ChevronRight className="w-4 h-4 text-accent" />
                            </div>
                          </div>
-                         <p className="text-[14px] text-text-secondary line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
+                         <p className="text-[14px] text-white/70 line-clamp-3 mb-6 flex-1 font-light leading-relaxed">
                            {sub.description}
                          </p>
-                         <div className="mt-auto pt-4 border-t border-border/30 flex items-center justify-between">
+                         <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
                            <span className="text-[13px] font-bold text-accent uppercase tracking-wider flex items-center gap-1.5 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                              View Details <ArrowRight size={14} />
                            </span>
-                           <span className="text-[12px] text-text-secondary/50 font-medium">Updated 2024</span>
+                           <span className="text-[12px] text-white/50 font-medium">Updated 2024</span>
                          </div>
                        </div>
                      </Link>
@@ -237,7 +237,7 @@ export default function DomainGrid() {
                  <div className="mt-16 flex justify-center">
                    <button 
                      onClick={() => setVisibleCount(prev => prev + 12)}
-                     className="group relative px-10 py-4 bg-text-primary text-white rounded-2xl text-[15px] font-black hover:bg-accent transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-accent/30 overflow-hidden"
+                     className="group relative px-10 py-4 bg-white text-black rounded-2xl text-[15px] font-black hover:bg-[#38bdf8] transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-[#38bdf8]/30 overflow-hidden"
                    >
                      <span className="relative z-10 flex items-center gap-2">
                        Load More Specialized Programs <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

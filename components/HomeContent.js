@@ -41,7 +41,7 @@ export default function HomeContent() {
       <HeroSection />
 
       {/* ========== TRUST BAR ========== */}
-      <section className="bg-white py-12 border-b border-border/30 overflow-hidden">
+      <section className="py-12 border-b border-white/10 overflow-hidden bg-[#000000]">
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center gap-10 text-center">
           {/* Reviews */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
@@ -57,7 +57,7 @@ export default function HomeContent() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center gap-1"
               >
-                <span className="text-[13px] font-bold text-text-primary tracking-tight">{r.name}</span>
+                <span className="text-[13px] font-bold text-white tracking-tight">{r.name}</span>
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <span key={i} className={`text-[14px] ${i < r.stars ? 'star' : 'text-border'}`}>★</span>
@@ -69,10 +69,10 @@ export default function HomeContent() {
 
           {/* Company logos - Simplified for mobile */}
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[13px] text-text-secondary font-medium italic opacity-70">Trusted by industry leaders</span>
+            <span className="text-[13px] text-white/60 font-medium italic opacity-70">Trusted by industry leaders</span>
             <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
               {['Infosys', 'Gartner', 'Pfizer', 'TCS'].map((c) => (
-                <span key={c} className="text-[16px] md:text-[18px] font-black text-text-primary/30 tracking-tighter">
+                <span key={c} className="text-[16px] md:text-[18px] font-black text-white/30 tracking-tighter">
                   {c}
                 </span>
               ))}
@@ -81,44 +81,17 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ========== STATS BAR ========== */}
-      <section className="bg-secondary-bg py-16 md:py-20">
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {[
-            { num: '500+', label: 'Happy Clients', icon: <Users className="w-8 h-8 text-accent" /> },
-            { num: '100%', label: 'Satisfaction', icon: <CheckCircle className="w-8 h-8 text-accent" /> },
-            { num: '24/7', label: 'Support', icon: <Activity className="w-8 h-8 text-accent" /> },
-          ].map((s) => (
-            <motion.div key={s.label} variants={itemVariants}>
-              <ParallaxCard className="apple-card p-8 md:p-10 text-center flex flex-col items-center justify-center h-full group">
-                <div className="mb-4 p-4 rounded-2xl bg-accent/5 group-hover:bg-accent/10 transition-colors">
-                  {s.icon}
-                </div>
-                <p className="text-[32px] md:text-[36px] font-black text-text-primary mb-1 tracking-tighter">{s.num}</p>
-                <p className="text-[13px] md:text-[15px] text-text-secondary font-medium uppercase tracking-widest">{s.label}</p>
-              </ParallaxCard>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
       {/* ========== COURSES ========== */}
       <DomainGrid />
 
       {/* ========== SERVICE CARDS ========== */}
-      <section className="bg-secondary-bg py-24">
+      <section className="py-24 bg-[#050505]">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <motion.h2 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-[34px] md:text-[44px] font-black text-text-primary mb-16 tracking-tight"
+            className="text-[34px] md:text-[44px] font-black text-white mb-16 tracking-tight"
           >
             Our <span className="text-accent underline decoration-accent/20 underline-offset-8">Support</span> Plans
           </motion.h2>
@@ -133,7 +106,7 @@ export default function HomeContent() {
             {/* Monthly Plan */}
             <motion.div variants={itemVariants}>
               <ParallaxCard className="h-full">
-                <div className="apple-card p-10 text-left h-full border border-border/50 hover:border-accent/40 transition-colors">
+                <div className="p-10 text-left h-full border border-white/10 hover:border-accent/40 transition-colors bg-white/5 rounded-3xl backdrop-blur-md">
                   <div className="w-[56px] h-[56px] bg-accent/10 rounded-2xl flex items-center justify-center mb-8">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071E3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
@@ -142,8 +115,8 @@ export default function HomeContent() {
                       <line x1="3" x2="21" y1="10" y2="10" />
                     </svg>
                   </div>
-                  <h3 className="text-[24px] font-bold text-text-primary mb-4">Monthly Plan</h3>
-                  <p className="text-[16px] text-text-secondary leading-relaxed font-light mb-8">
+                  <h3 className="text-[24px] font-bold text-white mb-4">Monthly Plan</h3>
+                  <p className="text-[16px] text-white/70 leading-relaxed font-light mb-8">
                     Daily 1–2 hours of expert support. Get consistent guidance from working professionals who understand real-world challenges.
                   </p>
                   <button onClick={() => handleGatedClick('pricing')} className="btn-primary w-full py-4 !text-[16px] font-bold rounded-2xl shadow-lg shadow-accent/25">
@@ -156,15 +129,15 @@ export default function HomeContent() {
             {/* Task-Based */}
             <motion.div variants={itemVariants}>
               <ParallaxCard className="h-full">
-                <div className="apple-card p-10 text-left h-full border border-border/50 hover:border-accent/40 transition-colors">
+                <div className="p-10 text-left h-full border border-white/10 hover:border-accent/40 transition-colors bg-white/5 rounded-3xl backdrop-blur-md">
                   <div className="w-[56px] h-[56px] bg-accent/10 rounded-2xl flex items-center justify-center mb-8">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071E3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                   </div>
-                  <h3 className="text-[24px] font-bold text-text-primary mb-4">Task-Based Plan</h3>
-                  <p className="text-[16px] text-text-secondary leading-relaxed font-light mb-8">
+                  <h3 className="text-[24px] font-bold text-white mb-4">Task-Based Plan</h3>
+                  <p className="text-[16px] text-white/70 leading-relaxed font-light mb-8">
                     Specific assignment or task help. Pay per task and get expert assistance for your immediate project needs.
                   </p>
                   <button onClick={() => handleGatedClick('pricing')} className="btn-primary w-full py-4 !text-[16px] font-bold rounded-2xl shadow-lg shadow-accent/25">
@@ -178,9 +151,9 @@ export default function HomeContent() {
       </section>
 
       {/* ========== BOOKING FORM ========== */}
-      <section className="bg-white py-24">
+      <section className="py-24 bg-[#000000]">
         <div className="max-w-[1200px] mx-auto px-6">
-          <BookingForm />
+          <BookingForm theme="dark" />
         </div>
       </section>
 
@@ -191,7 +164,7 @@ export default function HomeContent() {
           onSuccess={(email) => {
             setEmailGateOpen(false);
             if (gatedContent === 'syllabus') {
-              window.location.href = '/manhattan-wms?unlocked=true';
+              window.location.href = '/domains/manhattan-wms-training?unlocked=true';
             }
           }}
         />

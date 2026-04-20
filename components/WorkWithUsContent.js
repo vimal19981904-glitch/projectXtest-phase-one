@@ -18,7 +18,7 @@ export default function WorkWithUsContent() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="bg-hero-bg relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#000000]">
         <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-hero-text">
             <div className="flex items-center gap-2 text-[13px] text-hero-text/50 mb-6">
@@ -29,9 +29,9 @@ export default function WorkWithUsContent() {
 
             <h1 className="text-[36px] md:text-[48px] font-bold leading-[1.1] mb-5">
               Corporate{' '}
-              <span className="text-accent-red">Training</span> &{' '}
+              <span className="text-[#38bdf8]">Training</span> &{' '}
               <br className="hidden md:block" />
-              Talent <span className="text-accent-red">Solutions</span>
+              Talent <span className="text-[#38bdf8]">Solutions</span>
             </h1>
             <p className="text-[17px] text-hero-text/70 mb-8 max-w-[480px]">
               GapAnchor offers comprehensive upskilling and talent solutions to organizations across the globe — small to big and across various industries.

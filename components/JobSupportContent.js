@@ -9,7 +9,7 @@ export default function JobSupportContent() {
   return (
     <>
       {/* ========== HERO ========== */}
-      <section className="bg-hero-bg relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#000000]">
         <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-hero-text">
             {/* Breadcrumb */}
@@ -20,9 +20,9 @@ export default function JobSupportContent() {
             </div>
 
             <h1 className="text-[36px] md:text-[56px] font-bold leading-[1.1] mb-6">
-              GapAnchor <span className="text-red-500">Consulting</span> /
+              GapAnchor <span className="text-[#38bdf8]">Consulting</span> /
               <br />
-              Firm <span className="text-red-500">Support</span>
+              Firm <span className="text-[#38bdf8]">Support</span>
             </h1>
             <p className="text-[18px] text-hero-text/70 mb-8 max-w-[540px] leading-relaxed">
               Active industry practitioners step into your project alongside you — resolving on-the-job tasks, overcoming work crises, and coaching you to handle the same situations confidently in the future.
@@ -145,7 +145,7 @@ export default function JobSupportContent() {
               <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-6 text-green-500">
                 <Anchor className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">You'll never hit this wall again.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">You&apos;ll never hit this wall again.</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 After each session, you get a tailored action guide — a reference you own — so the next time this situation arises, you&apos;re the expert in the room.
               </p>
@@ -189,7 +189,7 @@ export default function JobSupportContent() {
               {
                 domain: "Cloud Infrastructure",
                 badgeColor: "bg-purple-100 text-purple-800",
-                quote: "I was a junior DevOps engineer put on a production incident. GapAnchor's support call was the most practical help I've received — not generic docs, actual hands-on guidance for my exact AWS setup.",
+                quote: "I was a junior DevOps engineer put on a production incident. GapAnchor&apos;s support call was the most practical help I&apos;ve received — not generic docs, actual hands-on guidance for my exact AWS setup.",
                 author: "Sathish Kumar",
                 role: "Cloud Engineer",
                 firm: "IT Services Firm, Hyderabad",
@@ -198,7 +198,7 @@ export default function JobSupportContent() {
               {
                 domain: "Supply Chain",
                 badgeColor: "bg-orange-100 text-orange-800",
-                quote: "Our consulting team was stuck on a demand planning model for a FMCG client. The practitioner from GapAnchor didn't just help with the model — they helped us document the approach for future engagements.",
+                quote: "Our consulting team was stuck on a demand planning model for a FMCG client. The practitioner from GapAnchor didn&apos;t just help with the model — they helped us document the approach for future engagements.",
                 author: "Divya Suresh",
                 role: "Supply Chain Analyst",
                 firm: "Big 4 Advisory Practice, Mumbai",
@@ -207,7 +207,7 @@ export default function JobSupportContent() {
               {
                 domain: "Data & Analytics",
                 badgeColor: "bg-teal-100 text-teal-800",
-                quote: "I was building a Power BI dashboard for a client I'd never worked with before. The GapAnchor session gave me not just the DAX fix but a pattern I've reused in three projects since.",
+                quote: "I was building a Power BI dashboard for a client I&apos;d never worked with before. The GapAnchor session gave me not just the DAX fix but a pattern I&apos;ve reused in three projects since.",
                 author: "Karthik Ramesh",
                 role: "BI Developer",
                 firm: "Analytics Consulting Startup, Coimbatore",

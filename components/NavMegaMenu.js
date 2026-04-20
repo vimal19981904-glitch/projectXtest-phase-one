@@ -78,7 +78,7 @@ export default function NavMegaMenu() {
   };
 
   // Special check for "Job Support & Training" (domains)
-  const isTrainingActive = pathname.includes('/domains') || pathname === '/manhattan-wms';
+  const isTrainingActive = pathname.includes('/domains');
 
   return (
     <>
@@ -90,7 +90,11 @@ export default function NavMegaMenu() {
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
           {/* Logo & Slogan */}
           <div className="flex items-center z-50">
-            <Link href="/" className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline relative group font-heading">
+            <Link 
+              href="/" 
+              onClick={() => setIsSearchOpen(false)}
+              className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline relative group font-heading"
+            >
               GapAnchor
               {pathname === '/' && (
                 <motion.div 
@@ -114,7 +118,10 @@ export default function NavMegaMenu() {
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
               <button 
-                onClick={() => setMegaMenuOpen(!megaMenuOpen)}
+                onClick={() => {
+                  setMegaMenuOpen(!megaMenuOpen);
+                  setIsSearchOpen(false);
+                }}
                 className={`text-[14px] font-semibold bg-transparent border-none cursor-pointer flex items-center gap-1.5 transition-all duration-300 relative py-2 px-3 rounded-xl ${
                   megaMenuOpen || isTrainingActive ? 'text-accent bg-accent/5' : 'text-text-primary hover:text-accent opacity-90 hover:opacity-100'
                 }`}
@@ -143,6 +150,7 @@ export default function NavMegaMenu() {
                 <Link
                   key={l.label}
                   href={l.href}
+                  onClick={() => setIsSearchOpen(false)}
                   className={`text-[14px] font-semibold transition-all duration-300 no-underline relative py-1 opacity-90 hover:opacity-100 ${
                     active ? 'text-accent' : 'text-text-primary hover:text-accent'
                   }`}
@@ -317,7 +325,7 @@ export default function NavMegaMenu() {
               
               <div className="flex flex-col border-b border-border/60 mb-6 pb-4">
                 {mobileDomainData.map((d) => (
-                  <div key={d.category} className="border-b border-border/40 last:border-0">
+                  <div key={`mobile-nav-${d.category}`} className="border-b border-border/40 last:border-0">
                     <button
                       onClick={() => setMobileAccordion(mobileAccordion === d.category ? null : d.category)}
                       className="w-full flex items-center justify-between py-4 bg-transparent border-none text-[16px] font-medium text-text-primary relative cursor-pointer"
@@ -342,7 +350,7 @@ export default function NavMegaMenu() {
                           <div className="pl-9 pr-2 pb-4 pt-1 flex flex-col gap-4">
                             {d.sub_domains.map(sub => (
                               <Link 
-                                key={sub.name}
+                                key={`mobile-nav-${d.category}-${sub.href}`}
                                 href={sub.href}
                                 prefetch={false}
                                 onClick={() => setMobileOpen(false)}

@@ -75,7 +75,7 @@ export default function DomainClient({ content }) {
     <PageTransition>
       <div className="w-full h-full overflow-y-auto bg-white">
         {/* Dynamic Hero Section */}
-        <div className="bg-[#1D1D1F] text-white py-24 md:py-32 px-8 relative overflow-hidden flex items-center min-h-[500px]">
+        <div className="text-white py-24 md:py-32 px-8 relative overflow-hidden flex items-center min-h-[500px]" style={{ background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)' }}>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.15, scale: 1 }}
@@ -98,8 +98,28 @@ export default function DomainClient({ content }) {
               </div>
               
               <h1 className="text-[40px] md:text-[64px] font-bold tracking-tight mb-8 leading-[1.1] text-white">
-                {content.title}
+                {content.title} <span className="block text-[0.6em] opacity-80">Online Training & Job Support</span>
               </h1>
+              
+              {/* SEO Schema */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Course",
+                    "name": `${content.title} Training & Job Support`,
+                    "description": content.heroDescription,
+                    "provider": {
+                      "@type": "Organization",
+                      "name": "GapAnchor",
+                      "sameAs": "https://gapanchor.com"
+                    },
+                    "courseMode": "Online",
+                    "occupationalCategory": content.category
+                  })
+                }}
+              />
               
               <p className="text-[20px] md:text-[22px] text-[#A1A1A6] leading-relaxed max-w-3xl mb-12 font-light">
                 {content.heroDescription}
@@ -134,7 +154,7 @@ export default function DomainClient({ content }) {
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               <div className="lg:col-span-8 space-y-8">
-                <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight">Expert Domain Insights</h2>
+                <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight">Mastering {content.title}: Training & Career Support</h2>
                 {content.overviewParagraphs && content.overviewParagraphs.length > 0 ? (
                   content.overviewParagraphs.map((p, i) => (
                     <p key={i} className="text-[18px] text-[#424245] leading-relaxed font-normal">
@@ -409,7 +429,7 @@ export default function DomainClient({ content }) {
             <div className="flex flex-wrap justify-center gap-4">
               {content.relatedTraining?.map((path, i) => (
                 <Link 
-                  key={i} 
+                  key={`related-${path}-${i}`} 
                   href={`/domains/${path.toLowerCase().replace(/\s+/g, '-')}`}
                   className="px-6 py-3 rounded-full border border-[#D2D2D7] text-[15px] font-medium text-[#1D1D1F] hover:bg-black hover:text-white transition-all no-underline"
                 >
