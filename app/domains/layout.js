@@ -8,7 +8,7 @@ export default function DomainsLayout({ children }) {
       <SidebarClient domainData={domainData} />
       
       {/* Main Content Area */}
-      <main className="flex-1 bg-white ml-0 md:ml-0 md:border-l border-[#D2D2D7] min-h-[calc(100vh-64px)] overflow-hidden">
+      <main className="flex-1 bg-white ml-0 md:ml-0 min-h-[calc(100vh-64px)] overflow-hidden">
         {children}
       </main>
     </div>

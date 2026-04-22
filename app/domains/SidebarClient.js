@@ -10,16 +10,7 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
   <div className="sidebar-premium py-6 px-3 h-full flex flex-col">
     {/* Header */}
     <div className="flex items-center justify-between mb-6 px-2">
-      {!collapsed && (
-        <h2 className="text-[11px] font-bold text-[#808090] uppercase tracking-[0.15em]">Domains</h2>
-      )}
-      <button
-        onClick={() => setCollapsed(!collapsed)}
-        className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg bg-transparent border-none cursor-pointer text-[#808090] hover:text-white hover:bg-white/5 transition-all duration-200"
-        aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-      >
-        {collapsed ? <PanelLeft size={18} strokeWidth={1.75} /> : <PanelLeftClose size={18} strokeWidth={1.75} />}
-      </button>
+      <h2 className="text-[11px] font-bold text-[#808090] uppercase tracking-[0.15em]">Domains</h2>
     </div>
 
     {/* Domain list */}
@@ -102,7 +93,6 @@ export default function SidebarClient({ domainData }) {
   const pathname = usePathname();
   const [openCategories, setOpenCategories] = useState({});
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const [collapsed, setCollapsed] = useState(false);
 
   // Auto-expand the category that contains the currently active subdomain
   useEffect(() => {
@@ -115,12 +105,6 @@ export default function SidebarClient({ domainData }) {
   }, [pathname, domainData]);
 
   const toggleCategory = (categoryName) => {
-    // If collapsed, expand first then open category
-    if (collapsed) {
-      setCollapsed(false);
-      setOpenCategories(prev => ({ ...prev, [categoryName]: true }));
-      return;
-    }
     setOpenCategories(prev => ({
       ...prev,
       [categoryName]: !prev[categoryName]
@@ -145,18 +129,14 @@ export default function SidebarClient({ domainData }) {
 
       {/* Desktop Persistent Sidebar */}
       <aside
-        className={`hidden md:flex flex-col bg-[#0e0e12] sticky top-[64px] h-[calc(100vh-64px)] flex-shrink-0 z-10 border-r border-white/[0.06] transition-all duration-300 ${
-          collapsed ? 'w-[64px]' : 'w-[280px]'
-        }`}
+        className="hidden md:flex flex-col bg-[#0e0e12] sticky top-[64px] h-[calc(100vh-64px)] flex-shrink-0 z-10 border-r border-white/[0.06] w-[280px]"
       >
         <SidebarContent
           domainData={domainData}
-          openCategories={collapsed ? {} : openCategories}
+          openCategories={openCategories}
           toggleCategory={toggleCategory}
           pathname={pathname}
           setMobileSidebarOpen={setMobileSidebarOpen}
-          collapsed={collapsed}
-          setCollapsed={setCollapsed}
         />
       </aside>
 

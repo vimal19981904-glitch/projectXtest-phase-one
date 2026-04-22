@@ -3,6 +3,9 @@ import './globals.css';
 import NavMegaMenu from '@/components/NavMegaMenu';
 import Footer from '@/components/Footer';
 import ChatWidget from '@/components/ChatWidget';
+import PageTransition from '@/components/PageTransition';
+import CookieConsent from '@/components/CookieConsent';
+import AnalyticsClient from '@/components/AnalyticsClient';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,13 +28,20 @@ const outfit = Outfit({
 
 export const metadata = {
   title: 'GapAnchor — Online Training & Job Support Platform',
-  description: 'The global leader in online IT training and real-time project assistance. We provide 24/7 on-job support for consultants and professionals across 100+ domains. Let\'s bridge the gap together.',
+  description: "The global leader in online IT training and real-time project assistance. We provide 24/7 on-job support for consultants and professionals across 100+ domains. Let's bridge the gap together.",
   keywords: 'job support, online training, IT consulting support, Oracle EPM support, SAP job support, Manhattan WMS training, corporate training, remote project assistance',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: 'https://gapanchor.com',
+  },
 };
-
-import PageTransition from '@/components/PageTransition';
-import CookieConsent from '@/components/CookieConsent';
-import AnalyticsClient from '@/components/AnalyticsClient';
 
 export default function RootLayout({ children }) {
   return (

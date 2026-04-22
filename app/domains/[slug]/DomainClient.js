@@ -1,13 +1,13 @@
 'use client';
 
-import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Users, ChevronDown, ChevronRight, HelpCircle, BookOpen, Star, Mail, LayoutGrid, Table2, Award } from 'lucide-react';
+import { CheckCircle2, ArrowRight, ShieldCheck, Clock, Users, ChevronDown, ChevronRight, ChevronLeft, HelpCircle, BookOpen, Star, Mail, LayoutGrid, Table2, Award, Layers, Box } from 'lucide-react';
 import PageTransition from '@/components/PageTransition';
 import ParallaxCard from '@/components/ParallaxCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -68,14 +68,51 @@ function buildCurriculum(content) {
 export default function DomainClient({ content }) {
   const [activeFaq, setActiveFaq] = useState(null);
   const [viewMode, setViewMode] = useState('cards'); // 'cards' or 'table'
+  const [activeStream, setActiveStream] = useState(null);
+  const [streamPage, setStreamPage] = useState(0);
+  const streamContentRef = useRef(null);
+  
+  // Precision Auto-scroll for Mobile & Website (Desktop)
+  useEffect(() => {
+    if (activeStream !== null && streamContentRef.current) {
+      const isMobile = window.innerWidth < 768;
+      
+      // 350ms delay to allow AnimatePresence height transition to complete
+      const timer = setTimeout(() => {
+        const element = streamContentRef.current;
+        // Different offsets for perfect alignment:
+        // Mobile: 56px header + 24px padding = 80px
+        // Desktop: 64px header + 36px padding = 100px
+        const offset = isMobile ? 80 : 100; 
+        
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 350);
+      return () => clearTimeout(timer);
+    }
+  }, [activeStream]);
+
+  const streamsPerPage = 6;
+  const streams = content.streams || [];
+  const totalStreamPages = Math.ceil(streams.length / streamsPerPage);
+  const visibleStreams = streams.slice(streamPage * streamsPerPage, (streamPage + 1) * streamsPerPage);
 
   const curriculum = buildCurriculum(content);
+  const { getDomainIcon } = require('@/lib/iconMap');
+  const IconComponent = getDomainIcon(content.category);
 
   return (
     <PageTransition>
-      <div className="w-full h-full overflow-y-auto bg-white">
+      <div className="w-full h-full overflow-y-auto bg-white scroll-smooth">
         {/* Dynamic Hero Section */}
-        <div className="text-white py-24 md:py-32 px-8 relative overflow-hidden flex items-center min-h-[500px]" style={{ background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)' }}>
+        <div className="w-full text-white py-24 md:py-32 px-8 relative overflow-hidden flex items-center min-h-[500px]" style={{ background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)' }}>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.15, scale: 1 }}
@@ -94,7 +131,7 @@ export default function DomainClient({ content }) {
                 className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full text-[13px] font-bold uppercase tracking-[0.15em] border backdrop-blur-md"
                 style={{ color: content.color, borderColor: `${content.color}40`, backgroundColor: `${content.color}10` }}
               >
-                {content.icon} {content.category}
+                <IconComponent size={16} /> {content.category}
               </div>
               
               <h1 className="text-[40px] md:text-[64px] font-bold tracking-tight mb-8 leading-[1.1] text-white">
@@ -120,24 +157,24 @@ export default function DomainClient({ content }) {
                   })
                 }}
               />
-              
+
               <p className="text-[20px] md:text-[22px] text-[#A1A1A6] leading-relaxed max-w-3xl mb-12 font-light">
                 {content.heroDescription}
               </p>
               
               <div className="flex gap-5 flex-wrap">
-                <Link 
-                  href="/book-demo" 
-                  className="bg-white text-[#1D1D1F] px-10 py-4 rounded-full text-[16px] font-bold hover:scale-105 active:scale-95 transition-all shadow-[0_10px_20px_rgba(255,255,255,0.1)] no-underline"
+                <button 
+                  onClick={() => document.getElementById('enroll-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-[#1D1D1F] px-10 py-4 rounded-full text-[16px] font-bold hover:scale-105 active:scale-95 transition-all shadow-[0_10px_20px_rgba(255,255,255,0.1)] border-none cursor-pointer"
                 >
                   Book a Free Demo
-                </Link>
-                <Link 
-                   href="#curriculum"
-                   className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-full text-[16px] font-semibold hover:bg-white/5 transition-all no-underline"
+                </button>
+                <button 
+                   onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
+                   className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-full text-[16px] font-semibold hover:bg-white/5 transition-all cursor-pointer"
                 >
                   View Curriculum
-                </Link>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -150,10 +187,10 @@ export default function DomainClient({ content }) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            className="py-24 border-b border-[#D2D2D7]/30"
+            className="py-16 pb-12"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-              <div className="lg:col-span-8 space-y-8">
+            <div className="max-w-4xl">
+              <div className="space-y-8">
                 <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight">Mastering {content.title}: Training & Career Support</h2>
                 {content.overviewParagraphs && content.overviewParagraphs.length > 0 ? (
                   content.overviewParagraphs.map((p, i) => (
@@ -167,29 +204,168 @@ export default function DomainClient({ content }) {
                   </p>
                 )}
               </div>
-              
-              <div className="lg:col-span-4 sticky top-24">
-                <ParallaxCard className="bg-[#F5F5F7] p-8 rounded-[2rem] border border-[#D2D2D7]/30">
-                  <h3 className="text-[20px] font-bold text-[#1D1D1F] mb-6 flex items-center gap-2">
-                    <Star className="text-[#FF9500] w-5 h-5 fill-[#FF9500]" /> Career Impact
-                  </h3>
-                  <div className="space-y-6">
-                    <div className="p-4 bg-white rounded-2xl shadow-sm border border-[#D2D2D7]/20">
-                      <p className="text-[13px] text-[#86868B] uppercase font-bold tracking-wider mb-1">Average Salary</p>
-                      <p className="text-[24px] font-bold text-[#1D1D1F] tracking-tight">$95,000 - $145,000</p>
-                    </div>
-                    <div className="p-4 bg-white rounded-2xl shadow-sm border border-[#D2D2D7]/20">
-                      <p className="text-[13px] text-[#86868B] uppercase font-bold tracking-wider mb-1">Market Demand</p>
-                      <p className="text-[24px] font-bold text-[#34C759] tracking-tight">High Velocity</p>
-                    </div>
-                    <button className="w-full btn-primary py-4 rounded-2xl shadow-lg shadow-[#0071E3]/20">
-                      Get Career Consultation
-                    </button>
-                  </div>
-                </ParallaxCard>
-              </div>
             </div>
           </motion.section>
+
+          {/* Streams — Clickable Cards with Expandable Content */}
+          {streams.length > 0 && (
+            <section className="py-20 pb-40 bg-white border-t border-[#D2D2D7]/30">
+              <div className="max-w-6xl mx-auto">
+                <div className="mb-12">
+                  <h2 className="text-[32px] md:text-[42px] font-bold text-[#1D1D1F] tracking-tight mb-4">Specialized Training Streams</h2>
+                  <p className="text-[19px] text-[#86868B] max-w-2xl">Select a module below to explore detailed curriculum and specialized job support options.</p>
+                </div>
+                {/* Pagination */}
+                {totalStreamPages > 1 && (
+                  <div className="flex items-center justify-end gap-3 mb-6">
+                    <button
+                      onClick={() => { setStreamPage(p => Math.max(0, p - 1)); setActiveStream(null); }}
+                      disabled={streamPage === 0}
+                      className="w-9 h-9 rounded-full border border-[#D2D2D7] bg-white flex items-center justify-center text-[#1D1D1F] hover:bg-[#F5F5F7] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <span className="text-[13px] text-[#86868B] font-mono tabular-nums">
+                      {streamPage + 1}/{totalStreamPages}
+                    </span>
+                    <button
+                      onClick={() => { setStreamPage(p => Math.min(totalStreamPages - 1, p + 1)); setActiveStream(null); }}
+                      disabled={streamPage >= totalStreamPages - 1}
+                      className="w-9 h-9 rounded-full border border-[#D2D2D7] bg-white flex items-center justify-center text-[#1D1D1F] hover:bg-[#F5F5F7] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={streamPage}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
+                    transition={{ duration: 0.25 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                  >
+                    {visibleStreams.map((stream, i) => {
+                      const globalIdx = streamPage * streamsPerPage + i;
+                      const isActive = activeStream === globalIdx;
+                      const accentColor = content.color || '#2563eb';
+                      return (
+                        <button
+                          key={`stream-${globalIdx}`}
+                          onClick={() => setActiveStream(isActive ? null : globalIdx)}
+                          className={cn(
+                            "relative rounded-2xl p-5 text-left transition-all duration-300 border-2 cursor-pointer group",
+                            isActive
+                              ? "shadow-lg scale-[1.02]"
+                              : "shadow-sm hover:shadow-md hover:scale-[1.01]"
+                          )}
+                          style={{
+                            backgroundColor: isActive ? `${accentColor}08` : '#F8F9FA',
+                            borderColor: isActive ? accentColor : 'transparent',
+                          }}
+                        >
+                          <div className="flex items-start gap-3">
+                            <div
+                              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform group-hover:scale-110"
+                              style={{ backgroundColor: `${accentColor}15` }}
+                            >
+                              <Box className="w-4 h-4" style={{ color: accentColor }} />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-[14px] font-bold text-[#1D1D1F] leading-snug mb-1">
+                                {stream.name}
+                              </h4>
+                              <p className="text-[12px] text-[#86868B] leading-relaxed line-clamp-2">
+                                {stream.description}
+                              </p>
+                            </div>
+                            <ChevronDown
+                              className={cn(
+                                "w-4 h-4 shrink-0 mt-0.5 transition-transform duration-300",
+                                isActive ? "rotate-180" : "text-[#86868B]"
+                              )}
+                              style={{ color: isActive ? accentColor : undefined }}
+                            />
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Expanded Content Panel */}
+                <AnimatePresence>
+                  {activeStream !== null && streams[activeStream] && (
+                      <motion.div
+                        key={`content-${activeStream}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.35, ease: 'easeInOut' }}
+                        className="overflow-hidden mb-12"
+                      >
+                        <div
+                          ref={streamContentRef}
+                          className="mt-8 rounded-[2.5rem] border-2 overflow-hidden shadow-2xl shadow-black/5 scroll-mt-32"
+                        style={{ borderColor: `${content.color || '#2563eb'}15` }}
+                      >
+                        {/* Header */}
+                        <div
+                          className="flex items-center justify-between px-10 py-8"
+                          style={{ backgroundColor: `${content.color || '#2563eb'}05` }}
+                        >
+                          <div className="flex items-center gap-5">
+                            <div
+                              className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm"
+                              style={{ backgroundColor: 'white', border: `1px solid ${content.color || '#2563eb'}20` }}
+                            >
+                              <BookOpen className="w-6 h-6" style={{ color: content.color || '#2563eb' }} />
+                            </div>
+                            <div>
+                              <p className="text-[12px] font-bold uppercase tracking-widest text-accent mb-1" style={{ color: content.color || '#2563eb' }}>Module Detailed Overview</p>
+                              <h3 className="text-[28px] md:text-[32px] font-bold text-[#1D1D1F] tracking-tight">{streams[activeStream].name}</h3>
+                            </div>
+                          </div>
+                          <button
+                            onClick={() => setActiveStream(null)}
+                            className="w-10 h-10 rounded-full flex items-center justify-center text-[18px] text-[#86868B] hover:text-[#1D1D1F] hover:bg-[#F5F5F7] transition-all bg-transparent border-none cursor-pointer"
+                          >
+                            ✕
+                          </button>
+                        </div>
+
+                        {/* Article body */}
+                        <div className="px-8 py-8 space-y-5 max-w-3xl bg-white">
+                          {streams[activeStream].body ? (
+                            streams[activeStream].body.map((paragraph, pi) => (
+                              <p key={pi} className="text-[16px] text-[#424245] leading-[1.8] font-normal">
+                                {paragraph}
+                              </p>
+                            ))
+                          ) : (
+                            <p className="text-[16px] text-[#424245] leading-[1.8]">
+                              {streams[activeStream].description}
+                            </p>
+                          )}
+                          <div className="pt-4">
+                            <Link
+                              href="/book-demo"
+                              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-bold text-white no-underline transition-all hover:brightness-110"
+                              style={{ backgroundColor: content.color || '#2563eb' }}
+                            >
+                              Book a Free Demo <ArrowRight className="w-4 h-4" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </section>
+          )}
 
           {/* Section B: Curriculum Section */}
           <section id="curriculum" className="py-24">
@@ -253,21 +429,12 @@ export default function DomainClient({ content }) {
                           {item.name}
                         </h3>
                         <div className="space-y-2 mb-6">
-                          {Array.isArray(item.topics) ? (
-                             item.topics.map((topic, idx) => (
-                               <div key={idx} className="flex items-center gap-2 text-[15px] text-[#424245]">
-                                 <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
-                                 {topic}
-                               </div>
-                             ))
-                          ) : (
-                            item.topics.split(',').map((topic, idx) => (
-                              <div key={idx} className="flex items-center gap-2 text-[15px] text-[#424245]">
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
-                                {topic.trim()}
-                              </div>
-                            ))
-                          )}
+                          {(Array.isArray(item.topics) ? item.topics : item.topics.split(',')).map((topic, idx) => (
+                            <div key={idx} className="flex items-center gap-2 text-[15px] text-[#424245]">
+                              <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+                              {typeof topic === 'string' ? topic.trim() : topic}
+                            </div>
+                          ))}
                         </div>
                       </div>
 
