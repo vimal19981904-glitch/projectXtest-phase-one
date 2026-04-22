@@ -200,7 +200,7 @@ export default function DomainGrid() {
                    <motion.div key={`${activeCategory}-${sub.href}`} variants={itemVariants}>
                      <Link
                        href={sub.href}
-                       className="group relative bg-white/5 backdrop-blur-md p-7 rounded-3xl border border-white/10 flex flex-col h-full overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/20 transition-all duration-500 no-underline hover:-translate-y-2 block"
+                       className="group relative bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 flex flex-col h-full overflow-hidden hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] hover:border-white/20 transition-all duration-500 no-underline hover:-translate-y-1 block"
                      >
                        {/* Brand Accent Bar */}
                        <div 
@@ -237,7 +237,7 @@ export default function DomainGrid() {
                  <div className="mt-16 flex justify-center">
                    <button 
                      onClick={() => setVisibleCount(prev => prev + 12)}
-                     className="group relative px-10 py-4 bg-white text-black rounded-2xl text-[15px] font-black hover:bg-[#38bdf8] transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-[#38bdf8]/30 overflow-hidden"
+                     className="group relative px-8 py-3 bg-white text-black rounded-xl text-[14px] font-black hover:bg-[#38bdf8] transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-[#38bdf8]/30 overflow-hidden"
                    >
                      <span className="relative z-10 flex items-center gap-2">
                        Load More Specialized Programs <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

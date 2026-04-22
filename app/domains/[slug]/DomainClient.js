@@ -72,7 +72,9 @@ export default function DomainClient({ content }) {
   const [streamPage, setStreamPage] = useState(0);
   const streamContentRef = useRef(null);
   
-  // Precision Auto-scroll for Mobile & Website (Desktop)
+  // [PROTECTED] Precision Auto-scroll Logic - DO NOT REMOVE OR MODIFY WITHOUT TESTING
+  // This logic ensures perfect alignment with sticky headers on both Mobile & Desktop.
+  // Breaks in this logic will cause inconsistent "jumping" during stream expansion.
   useEffect(() => {
     if (activeStream !== null && streamContentRef.current) {
       const isMobile = window.innerWidth < 768;
@@ -209,11 +211,11 @@ export default function DomainClient({ content }) {
 
           {/* Streams — Clickable Cards with Expandable Content */}
           {streams.length > 0 && (
-            <section className="py-20 pb-40 bg-white border-t border-[#D2D2D7]/30">
+            <section className="py-12 pb-24 bg-white border-t border-[#D2D2D7]/30">
               <div className="max-w-6xl mx-auto">
-                <div className="mb-12">
-                  <h2 className="text-[32px] md:text-[42px] font-bold text-[#1D1D1F] tracking-tight mb-4">Specialized Training Streams</h2>
-                  <p className="text-[19px] text-[#86868B] max-w-2xl">Select a module below to explore detailed curriculum and specialized job support options.</p>
+                <div className="md:w-3/5">
+                  <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-4">Specialized Training Streams</h2>
+                  <p className="text-[17px] text-[#424245] leading-relaxed mb-8">Select a module below to explore detailed curriculum and specialized job support options.</p>
                 </div>
                 {/* Pagination */}
                 {totalStreamPages > 1 && (
@@ -274,10 +276,10 @@ export default function DomainClient({ content }) {
                               <Box className="w-4 h-4" style={{ color: accentColor }} />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-[14px] font-bold text-[#1D1D1F] leading-snug mb-1">
+                              <h4 className="text-[13px] font-bold text-[#1D1D1F] leading-tight mb-0.5">
                                 {stream.name}
                               </h4>
-                              <p className="text-[12px] text-[#86868B] leading-relaxed line-clamp-2">
+                              <p className="text-[11px] text-[#86868B] leading-tight line-clamp-1 opacity-70">
                                 {stream.description}
                               </p>
                             </div>
@@ -337,13 +339,36 @@ export default function DomainClient({ content }) {
                         </div>
 
                         {/* Article body */}
-                        <div className="px-8 py-8 space-y-5 max-w-3xl bg-white">
+                        <div className="px-10 py-10 space-y-4 max-w-4xl bg-white">
                           {streams[activeStream].body ? (
-                            streams[activeStream].body.map((paragraph, pi) => (
-                              <p key={pi} className="text-[16px] text-[#424245] leading-[1.8] font-normal">
-                                {paragraph}
-                              </p>
-                            ))
+                            streams[activeStream].body.map((paragraph, pi) => {
+                              const isClientList = paragraph.includes('|');
+                              const isClientIntro = paragraph.toLowerCase().includes('few of the clients');
+                              
+                              if (isClientList) {
+                                const clients = paragraph.split('|').map(c => c.trim()).filter(Boolean);
+                                return (
+                                  <div key={pi} className="pt-6 pb-2">
+                                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3 opacity-60">
+                                      {clients.map((client, ci) => (
+                                        <span key={ci} className="text-[13px] font-black tracking-tighter text-[#1D1D1F] whitespace-nowrap">
+                                          {client.replace('and many more.', '')}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <p key={pi} className={cn(
+                                  "text-[15px] text-[#424245] leading-[1.6] font-normal",
+                                  isClientIntro ? "text-[12px] font-bold uppercase tracking-widest text-[#86868B] mt-8 mb-2" : ""
+                                )}>
+                                  {paragraph}
+                                </p>
+                              );
+                            })
                           ) : (
                             <p className="text-[16px] text-[#424245] leading-[1.8]">
                               {streams[activeStream].description}
@@ -368,11 +393,11 @@ export default function DomainClient({ content }) {
           )}
 
           {/* Section B: Curriculum Section */}
-          <section id="curriculum" className="py-24">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <section id="curriculum" className="py-20">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
               <div>
-                <h2 className="text-[32px] md:text-[42px] font-bold text-[#1D1D1F] tracking-tight mb-4">Course Curriculum</h2>
-                <p className="text-[19px] text-[#86868B] max-w-2xl">Standardized training paths from foundational to advanced mastery.</p>
+                <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-3">Course Curriculum</h2>
+                <p className="text-[17px] text-[#86868B] max-w-2xl">Standardized training paths from foundational to advanced mastery.</p>
               </div>
               
               {/* Layout Toggle UI */}
@@ -505,8 +530,8 @@ export default function DomainClient({ content }) {
           </section>
 
           {/* Section C: Features & Benefits */}
-          <section className="py-24 bg-[#F5F5F7] -mx-8 px-16 rounded-[4rem] mb-24">
-            <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight mb-16 text-center">Platform Benefits</h2>
+          <section className="py-20 bg-[#F5F5F7] -mx-8 px-16 rounded-[3rem] mb-20">
+            <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-12 text-center">Platform Benefits</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {(content.benefits || content.features || curriculum.map(m => ({ title: m.name, desc: Array.isArray(m.topics) ? m.topics[0] : m.topics }))).map((benefit, i) => (
                 <div key={i} className="bg-white p-8 rounded-3xl border border-[#D2D2D7]/20 shadow-sm hover:shadow-lg transition-all duration-500 group">
@@ -523,8 +548,8 @@ export default function DomainClient({ content }) {
           </section>
 
           {/* Section D: FAQ Section */}
-          <section className="py-24 max-w-4xl mx-auto">
-            <h2 className="text-[32px] md:text-[40px] font-bold text-[#1D1D1F] tracking-tight mb-12 flex items-center gap-3">
+          <section className="py-20 max-w-4xl mx-auto">
+            <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-10 flex items-center gap-3">
               <HelpCircle className="text-accent" /> Frequently Asked Questions
             </h2>
             <div className="space-y-4">

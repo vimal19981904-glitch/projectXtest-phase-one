@@ -111,7 +111,7 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="flex flex-col md:flex-row items-center gap-[12px] md:gap-4 w-full md:w-auto mt-6">
             <Link
-              href="/domains"
+              href="/domains/manhattan-wms-training"
               className="text-[#0f172a] font-bold no-underline flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.03] w-full md:w-auto"
               style={{
                 background: '#ffffff',

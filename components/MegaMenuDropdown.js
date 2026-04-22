@@ -80,7 +80,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
                   })}
                   
                   <div className="hidden xl:block">
-                     <Link href="/domains" onClick={() => setMegaMenuOpen(false)} className="btn-secondary whitespace-nowrap !py-2.5 !px-5 !text-[13px]">
+                     <Link href="/domains/manhattan-wms-training" onClick={() => setMegaMenuOpen(false)} className="btn-secondary whitespace-nowrap !py-2.5 !px-5 !text-[13px]">
                         View All Courses
                      </Link>
                   </div>
@@ -112,7 +112,7 @@ export default function MegaMenuDropdown({ megaMenuOpen, setMegaMenuOpen }) {
 
               
               <div className="mt-12 pt-8 border-t border-border/30 flex items-center justify-between">
-                  <Link href={`/domains/${activeCategory.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and')}`} onClick={() => setMegaMenuOpen(false)} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
+                  <Link href="/domains/manhattan-wms-training" onClick={() => setMegaMenuOpen(false)} className="text-accent font-bold text-[14px] flex items-center gap-2 hover:gap-3 transition-all font-heading">
                     Explore all {activeSubDomains.length > 0 ? activeSubDomains.length : ''} {activeCategory} courses <ChevronRight className="w-4 h-4" />
                   </Link>
                   <div className="flex flex-col items-end">

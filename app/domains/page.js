@@ -1,23 +1,18 @@
 'use client';
 
-import DomainGrid from '@/components/DomainGrid';
-import PageTransition from '@/components/PageTransition';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function DomainsIndex() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/domains/manhattan-wms-training');
+  }, [router]);
+
   return (
-    <PageTransition>
-      <div className="bg-[#F5F5F7] min-h-screen pt-20">
-        <div className="max-w-[1400px] mx-auto px-6 py-12">
-          <h1 className="text-[40px] md:text-[56px] font-black text-text-primary tracking-tight mb-4">
-            Our Training <span className="text-accent">Domains</span>
-          </h1>
-          <p className="text-[19px] text-text-secondary max-w-2xl mb-12 font-light">
-            Expert-led instruction across 60+ niche IT domains. Select a category below to explore specific job support and training modules.
-          </p>
-          
-          <DomainGrid />
-        </div>
-      </div>
-    </PageTransition>
+    <div className="min-h-screen bg-[#F5F5F7] flex items-center justify-center">
+      <div className="animate-pulse text-[#86868B] font-medium">Redirecting...</div>
+    </div>
   );
 }
