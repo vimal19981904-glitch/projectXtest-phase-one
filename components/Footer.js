@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getWhatsAppUrl } from '@/lib/emailjs';
 
 export default function Footer() {
   return (
@@ -55,7 +56,7 @@ export default function Footer() {
             <h4 className="text-[14px] font-semibold mb-6 text-white uppercase tracking-wider font-heading opacity-80">Contact Us</h4>
             <div className="space-y-4">
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919025968918'}`}
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 rounded-lg bg-[#25d366]/10 text-white min-h-[48px] text-[15px] hover:bg-[#25d366]/20 transition-all no-underline gap-3 group w-full md:w-auto md:bg-transparent md:justify-start md:p-0 md:text-text-secondary"
