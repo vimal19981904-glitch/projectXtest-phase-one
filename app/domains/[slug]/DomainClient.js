@@ -82,6 +82,7 @@ export default function DomainClient({ content }) {
       // 350ms delay to allow AnimatePresence height transition to complete
       const timer = setTimeout(() => {
         const element = streamContentRef.current;
+        if (!element) return; // guard: element may have unmounted before timer fires
         // Different offsets for perfect alignment:
         // Mobile: 56px header + 24px padding = 80px
         // Desktop: 64px header + 36px padding = 100px
