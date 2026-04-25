@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useCookieConsent } from '@/hooks/useCookieConsent';
 
 export default function CookieConsent() {
-  const { consent, acceptAll, acceptEssential } = useCookieConsent();
+  const { consent, acceptAll, acceptEssential, declineAll } = useCookieConsent();
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -56,6 +56,12 @@ export default function CookieConsent() {
               {/* Actions */}
               <div className="flex items-center gap-3 w-full md:w-auto">
                 <button
+                  onClick={declineAll}
+                  className="hidden md:flex px-4 py-2 text-[13px] text-[rgba(255,255,255,0.5)] hover:text-white transition-all hover:bg-white/5 rounded-lg"
+                >
+                  Ignore
+                </button>
+                <button
                   onClick={acceptEssential}
                   className="flex-1 md:flex-none px-5 py-2 rounded-[8px] text-[#4a9eff] border border-[rgba(74,158,255,0.2)] text-[14px] font-semibold hover:bg-[#4a9eff]/5 transition-all whitespace-nowrap"
                 >
@@ -68,6 +74,14 @@ export default function CookieConsent() {
                   Accept All
                 </button>
               </div>
+
+              {/* Close Button for Mobile/Desktop */}
+              <button 
+                onClick={declineAll}
+                className="absolute top-2 right-2 p-2 text-[rgba(255,255,255,0.3)] hover:text-white transition-all md:hidden"
+              >
+                ✕
+              </button>
             </div>
           </div>
         </motion.div>

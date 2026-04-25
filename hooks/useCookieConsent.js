@@ -27,5 +27,11 @@ export function useCookieConsent() {
     window.dispatchEvent(new Event('cookieConsentUpdated'));
   };
 
-  return { consent, acceptAll, acceptEssential };
+  const declineAll = () => {
+    localStorage.setItem('cookieConsent', 'declined');
+    setConsent('declined');
+    window.dispatchEvent(new Event('cookieConsentUpdated'));
+  };
+
+  return { consent, acceptAll, acceptEssential, declineAll };
 }

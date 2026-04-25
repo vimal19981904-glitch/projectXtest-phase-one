@@ -3,7 +3,7 @@ import { getWhatsAppUrl } from '@/lib/emailjs';
 
 export default function Footer() {
   return (
-    <footer className="text-hero-text" style={{ background: 'linear-gradient(115deg, #000000 0%, #000000 55%, #18181b 55%, #18181b 100%)' }}>
+    <footer className="text-hero-text bg-[#000000]">
       {/* Main footer */}
       <div className="max-w-[1200px] mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
