@@ -62,11 +62,11 @@ const SidebarContent = ({ domainData, openCategories, toggleCategory, pathname, 
                 }`}
               >
                 <div className="flex flex-col gap-0.5 pl-2 ml-5 border-l border-white/[0.06]">
-                  {d.sub_domains.map(sub => {
+                  {d.sub_domains.map((sub, idx) => {
                     const isActive = pathname === sub.href;
                     return (
                       <Link
-                        key={`sidebar-${d.category}-${sub.href}`}
+                        key={`sidebar-${d.category}-${sub.href}-${idx}`}
                         href={sub.href}
                         onClick={() => setMobileSidebarOpen(false)}
                         className={`sidebar-subdomain-link px-3 py-[7px] rounded-lg text-[13px] no-underline transition-all duration-200 ${
@@ -164,7 +164,6 @@ export default function SidebarClient({ domainData }) {
                 pathname={pathname}
                 setMobileSidebarOpen={setMobileSidebarOpen}
                 collapsed={false}
-                setCollapsed={setCollapsed}
               />
             </div>
           </div>

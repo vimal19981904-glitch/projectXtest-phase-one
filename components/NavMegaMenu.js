@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { avatarData } from '@/data/avatarData';
+import { domainData } from '@/lib/domainData';
 
 const MegaMenuDropdown = dynamic(() => import('./MegaMenuDropdown'), { ssr: false });
 const MegaMenuSearch = dynamic(() => import('./MegaMenuSearch'), { ssr: false });
@@ -27,9 +28,6 @@ export default function NavMegaMenu() {
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const router = useRouter();
-
-  // Load domainData dynamically only when needed for mobile, otherwise it's lazy-loaded by MegaMenuDropdown
-  const [mobileDomainData, setMobileDomainData] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -63,11 +61,7 @@ export default function NavMegaMenu() {
     { label: 'Blog', href: '/blog' },
   ];
 
-  const handleMobileMenuClick = async () => {
-    if (mobileDomainData.length === 0) {
-      const { domainData } = await import('@/lib/domainData');
-      setMobileDomainData(domainData);
-    }
+  const handleMobileMenuClick = () => {
     setMobileOpen(!mobileOpen);
   };
 
@@ -324,7 +318,7 @@ export default function NavMegaMenu() {
               </div>
               
               <div className="flex flex-col border-b border-border/60 mb-6 pb-4">
-                {mobileDomainData.map((d) => (
+                {domainData.map((d) => (
                   <div key={`mobile-nav-${d.category}`} className="border-b border-border/40 last:border-0">
                     <button
                       onClick={() => setMobileAccordion(mobileAccordion === d.category ? null : d.category)}
@@ -348,9 +342,9 @@ export default function NavMegaMenu() {
                           className="overflow-hidden"
                         >
                           <div className="pl-9 pr-2 pb-4 pt-1 flex flex-col gap-4">
-                            {d.sub_domains.map(sub => (
+                            {d.sub_domains.map((sub, idx) => (
                               <Link 
-                                key={`mobile-nav-${d.category}-${sub.href}`}
+                                key={`mobile-nav-${d.category}-${sub.href}-${idx}`}
                                 href={sub.href}
                                 prefetch={false}
                                 onClick={() => setMobileOpen(false)}
