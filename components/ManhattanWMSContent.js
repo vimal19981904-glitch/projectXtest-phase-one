@@ -208,7 +208,7 @@ export default function ManhattanWMSContent() {
       <section className="bg-white py-16">
         <div className="max-w-[800px] mx-auto px-6">
           <h2 className="text-[28px] md:text-[34px] font-bold text-center mb-3">
-            Course <span className="text-accent">Syllabus</span>
+            Training <span className="text-accent">Syllabus</span>
           </h2>
           <p className="text-[15px] text-text-secondary text-center mb-10">
             Comprehensive curriculum from basics to advanced WMS configuration
@@ -223,7 +223,7 @@ export default function ManhattanWMSContent() {
                 </svg>
               </div>
               <h3 className="text-[20px] font-semibold text-text-primary mb-2">Syllabus is locked</h3>
-              <p className="text-[14px] text-text-secondary mb-6">Enter your email to unlock the full course syllabus</p>
+              <p className="text-[14px] text-text-secondary mb-6">Enter your email to unlock the full training syllabus</p>
               <button
                 onClick={() => setEmailGateOpen(true)}
                 className="btn-primary"

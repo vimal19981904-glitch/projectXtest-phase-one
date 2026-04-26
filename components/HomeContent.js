@@ -81,7 +81,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* ========== COURSES ========== */}
+      {/* ========== TRAINING ========== */}
       <DomainGrid />
 
       {/* ========== SERVICE CARDS ========== */}

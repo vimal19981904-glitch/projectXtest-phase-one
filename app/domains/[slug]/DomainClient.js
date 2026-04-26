@@ -397,7 +397,7 @@ export default function DomainClient({ content }) {
           <section id="curriculum" className="py-20">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
               <div>
-                <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-3">Course Curriculum</h2>
+                <h2 className="text-[28px] md:text-[34px] font-bold text-[#1D1D1F] tracking-tight mb-3">Training Curriculum</h2>
                 <p className="text-[17px] text-[#86868B] max-w-2xl">Standardized training paths from foundational to advanced mastery.</p>
               </div>
               

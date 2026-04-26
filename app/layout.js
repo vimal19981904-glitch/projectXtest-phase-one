@@ -1,4 +1,4 @@
-import { Inter, Poppins, Outfit } from 'next/font/google';
+import { Inter, Poppins, Outfit, Josefin_Sans } from 'next/font/google';
 import './globals.css';
 import NavMegaMenu from '@/components/NavMegaMenu';
 import Footer from '@/components/Footer';
@@ -26,6 +26,13 @@ const outfit = Outfit({
   variable: '--font-outfit',
 });
 
+const josefinSans = Josefin_Sans({
+  weight: ['600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-josefin',
+});
+
 export const metadata = {
   title: 'GapAnchor — Online Training & Job Support Platform',
   description: "The global leader in online IT training and real-time project assistance. We provide 24/7 on-job support for consultants and professionals across 100+ domains. Let's bridge the gap together.",
@@ -45,7 +52,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${poppins.variable} ${outfit.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${poppins.variable} ${outfit.variable} ${josefinSans.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

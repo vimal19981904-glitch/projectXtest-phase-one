@@ -79,7 +79,7 @@ export default function BlogPostContent({ params }) {
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link href="/domains/manhattan-wms-training" className="btn-primary no-underline flex items-center justify-center">
-              Explore Courses
+              Explore Training
             </Link>
             <Link href="/#booking" className="btn-secondary no-underline flex items-center justify-center">
               Book Free Demo

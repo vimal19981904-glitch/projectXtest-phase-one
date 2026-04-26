@@ -193,7 +193,7 @@ export default function DomainGrid() {
                   </div>
                </div>
 
-               {/* Course Cards Grid */}
+               {/* Training Cards Grid */}
                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                  {filteredSubDomains.slice(0, visibleCount).map((sub) => (
                    <motion.div key={`${activeCategory}-${sub.href}`} variants={itemVariants}>

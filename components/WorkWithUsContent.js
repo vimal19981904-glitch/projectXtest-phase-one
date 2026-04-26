@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 
-const courseCategories = [
+const trainingCategories = [
   { name: 'AI & Machine Learning', category: 'AI & Machine Learning' },
   { name: 'Cloud & Infrastructure', category: 'Cloud & Infrastructure' },
   { name: 'ERP & Supply Chain', category: 'ERP & Supply Chain' },
@@ -112,7 +112,7 @@ export default function WorkWithUsContent() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {courseCategories.map((cat) => {
+            {trainingCategories.map((cat) => {
               const Icon = getDomainIcon(cat.category);
               return (
                 <div key={cat.name} className="apple-card p-10 text-center flex flex-col items-center">
