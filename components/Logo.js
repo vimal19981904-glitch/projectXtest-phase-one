@@ -67,13 +67,13 @@ export default function Logo({ variant = 'light' }) {
         }
         @keyframes grad-shift-start {
           0%   { stop-color: #00C2FF }
-          50%  { stop-color: #7B5EA7 }
+          50%  { stop-color: #4F46E5 }
           100% { stop-color: #00C2FF }
         }
         @keyframes grad-shift-end {
-          0%   { stop-color: #7B5EA7 }
+          0%   { stop-color: #4F46E5 }
           50%  { stop-color: #00C2FF }
-          100% { stop-color: #7B5EA7 }
+          100% { stop-color: #4F46E5 }
         }
 
         /* Separator line */
@@ -123,13 +123,9 @@ export default function Logo({ variant = 'light' }) {
                 x2="100%" y2="100%"
                 gradientUnits="objectBoundingBox"
               >
-                <stop offset="0%"   stopColor="#00F2FF" className="logo-grad-start">
-                   <animate attributeName="stop-color" values="#00F2FF; #FF00D4; #00F2FF" dur="4s" repeatCount="indefinite" />
-                </stop>
-                <stop offset="50%"  stopColor="#7B5EA7" />
-                <stop offset="100%" stopColor="#FF00D4" className="logo-grad-end">
-                   <animate attributeName="stop-color" values="#FF00D4; #00F2FF; #FF00D4" dur="4s" repeatCount="indefinite" />
-                </stop>
+                <stop offset="0%"   stopColor="#00C2FF" className="logo-grad-start" />
+                <stop offset="50%"  stopColor="#4F46E5" />
+                <stop offset="100%" stopColor="#00C2FF" className="logo-grad-end" />
               </linearGradient>
             </defs>
 
