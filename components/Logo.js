@@ -59,21 +59,14 @@ export default function Logo({ variant = 'light' }) {
         }
 
         /* Animated gradient on the "A" stop-colors */
-        .logo-container:hover .logo-grad-start {
-          animation: grad-shift-start 1.8s ease infinite;
+        /* Animated brightness on hover to make the spectrum pop */
+        .logo-container:hover .logo-svg text {
+          filter: drop-shadow(0 0 12px rgba(0, 210, 255, 0.3));
+          transition: filter 0.3s ease;
         }
-        .logo-container:hover .logo-grad-end {
-          animation: grad-shift-end 1.8s ease infinite;
-        }
-        @keyframes grad-shift-start {
-          0%   { stop-color: #00C2FF }
-          50%  { stop-color: #4F46E5 }
-          100% { stop-color: #00C2FF }
-        }
-        @keyframes grad-shift-end {
-          0%   { stop-color: #4F46E5 }
-          50%  { stop-color: #00C2FF }
-          100% { stop-color: #4F46E5 }
+        
+        .logo-container:hover .logo-svg tspan[fill="url(#logo-a-gradient)"] {
+           opacity: 0.9; /* Subtle shift to indicate interaction */
         }
 
         /* Separator line */
@@ -119,13 +112,15 @@ export default function Logo({ variant = 'light' }) {
             <defs>
               <linearGradient
                 id="logo-a-gradient"
-                x1="0%" y1="0%"
-                x2="100%" y2="100%"
+                x1="0%" y1="100%"
+                x2="0%" y2="0%"
                 gradientUnits="objectBoundingBox"
               >
-                <stop offset="0%"   stopColor="#00C2FF" className="logo-grad-start" />
-                <stop offset="50%"  stopColor="#4F46E5" />
-                <stop offset="100%" stopColor="#00C2FF" className="logo-grad-end" />
+                {/* Antigravity Logo Spectrum: Blue -> Cyan -> Yellow -> Orange/Red */}
+                <stop offset="0%"    stopColor="#1E40AF" /> {/* Deep Blue Base */}
+                <stop offset="35%"   stopColor="#00D2FF" /> {/* Vibrant Cyan */}
+                <stop offset="70%"   stopColor="#FACC15" /> {/* Golden Yellow */}
+                <stop offset="100%"  stopColor="#FF4D00" /> {/* Energy Red/Orange Peak */}
               </linearGradient>
             </defs>
 
