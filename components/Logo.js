@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Logo({ variant = 'light' }) {
   const isDark = variant === 'dark';
-  const textColor = isDark ? '#FFFFFF' : '#1A2332';
 
   return (
     <>
@@ -30,39 +29,60 @@ export default function Logo({ variant = 'light' }) {
           .sep, .tagline { display: none !important; }
         }
 
-        /* Glow underline — appears on hover, blue → purple */
+        /* Glow underline — blue → purple, appears on hover */
         .glow-line {
           position: absolute;
           bottom: 0px; left: 0px;
           width: 0%; height: 2px; border-radius: 2px;
-          background: linear-gradient(90deg, #00C2FF, #7B5EA7);
+          background: linear-gradient(90deg, #00C2FF, #7B5EA7, #00C2FF);
+          background-size: 200% 100%;
           opacity: 0;
           transition: width 0.7s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease;
         }
         .logo-container:hover .glow-line {
           width: 45%; opacity: 1;
+          animation: shimmer-logo 2s linear infinite;
+        }
+        @keyframes shimmer-logo {
+          0%   { background-position: 0% 50% }
+          100% { background-position: 200% 50% }
         }
 
-        /* SVG wrapper */
-        .logo-svg {
-          overflow: visible;
-          display: block;
+        /* Full wordmark — Century Gothic on Windows, Josefin Sans on mobile */
+        .wordmark {
+          font-family: 'Century Gothic', var(--font-josefin), 'Josefin Sans', 'Trebuchet MS', sans-serif;
+          font-size: 50px;
+          font-weight: 700;
+          letter-spacing: -1px;
+          display: inline-flex;
+          align-items: center;
           -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           text-rendering: optimizeLegibility;
         }
 
-        /*
-         * The letter "A":
-         *   Default  → steel blue  (#4A9FD4) — matches Image 1
-         *   Hover    → soft purple (#7B5EA7) — matches Image 2
-         * SVG fill supports CSS transitions natively.
-         */
-        .logo-letter-a {
-          fill: #4A9FD4;
-          transition: fill 0.4s ease;
+        /* "Gap" and "nchor" — solid dark navy */
+        .w-dark {
+          color: ${isDark ? '#FFFFFF' : '#1A2332'};
         }
-        .logo-container:hover .logo-letter-a {
-          fill: #7B5EA7;
+
+        /* "A" — diagonal cyan→purple→cyan gradient, exact user spec */
+        .w-multi {
+          background: linear-gradient(135deg, #00C2FF 0%, #7B5EA7 50%, #00C2FF 100%);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* On hover: the gradient breathes (slow 1.8s loop, not flashing) */
+        .logo-container:hover .w-multi {
+          animation: colorshift-logo 1.8s ease infinite;
+        }
+        @keyframes colorshift-logo {
+          0%   { background-position: 0% 50%; }
+          50%  { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         /* Separator line */
@@ -87,37 +107,11 @@ export default function Logo({ variant = 'light' }) {
         <div className="logo-container">
           <div className="glow-line"></div>
 
-          {/*
-           * SVG wordmark — font priority:
-           *   1. 'Century Gothic'     — Windows (unchanged desktop look)
-           *   2. var(--font-josefin)  — Google Fonts fallback for iOS/Android
-           *   3. 'Josefin Sans'       — explicit name fallback
-           *   4. sans-serif           — last resort
-           */}
-          <svg
-            height="60"
-            className="logo-svg"
-            role="img"
-            aria-label="GapAnchor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <text
-              y="50"
-              fontFamily="'Century Gothic', var(--font-josefin), 'Josefin Sans', 'Trebuchet MS', sans-serif"
-              fontWeight="700"
-              fontSize="50"
-              letterSpacing="-1"
-            >
-              {/* "Gap" — dark/white depending on variant */}
-              <tspan fill={textColor}>Gap</tspan>
-
-              {/* "A" — steel blue → soft purple on hover via CSS class */}
-              <tspan className="logo-letter-a">A</tspan>
-
-              {/* "nchor" — dark/white depending on variant */}
-              <tspan fill={textColor}>nchor</tspan>
-            </text>
-          </svg>
+          <span className="wordmark">
+            <span className="w-dark">Gap</span>
+            <span className="w-multi">A</span>
+            <span className="w-dark">nchor</span>
+          </span>
 
           <div className="sep"></div>
           <span className="tagline">Let's bridge the gap together.</span>
