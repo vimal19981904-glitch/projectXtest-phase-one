@@ -27,7 +27,7 @@ create table if not exists bookings (
   booked_at timestamp default now()
 );
 
--- Chat logs (Monalisa bot)
+-- Chat logs (Amy Spain bot)
 create table if not exists chats (
   id uuid default gen_random_uuid() primary key,
   user_message text,

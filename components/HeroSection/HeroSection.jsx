@@ -165,7 +165,7 @@ export default function HeroSection() {
             This ensures concentric alignment between the 3D globe and the Avatar ring.
           */}
           <div 
-            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] transition-all duration-700 pointer-events-none"
+            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] transition-all duration-700 group-hover:drop-shadow-[0_0_50px_rgba(56,189,248,0.4)] pointer-events-none"
             style={{ 
               transform: 'translate(-50%, -50%) scale(var(--globe-scale, 1))', 
             }}

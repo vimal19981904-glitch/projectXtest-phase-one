@@ -112,8 +112,16 @@ function AvatarNode({ avatar, x, y }) {
         top: y,
         zIndex: isHovered ? 200 : 50
       }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={{ 
+        scale: 1.1, 
+        transition: { type: 'spring', stiffness: 300, damping: 20 }
+      }}
+      whileTap={{ 
+        scale: 0.95,
+        transition: { type: 'spring', stiffness: 400, damping: 10 }
+      }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >

@@ -108,7 +108,7 @@ vercel
 │   ├── Navbar.js            # Apple-style frosted glass nav
 │   ├── Footer.js            # Site footer
 │   ├── BookingForm.js       # Booking form + thank-you screen
-│   ├── ChatWidget.js        # Monalisa FAQ chat bot
+│   ├── ChatWidget.js        # Amy Spain FAQ chat bot
 │   └── EmailGateModal.js    # Email capture modal
 ├── lib/
 │   ├── supabase.js          # Supabase client + helpers

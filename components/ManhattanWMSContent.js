@@ -278,13 +278,13 @@ export default function ManhattanWMSContent() {
           <div className="apple-card p-8 flex flex-col md:flex-row items-center gap-8">
             {/* Avatar */}
             <div className="w-[120px] h-[120px] rounded-full bg-gradient-to-br from-accent to-blue-400 flex items-center justify-center text-white text-[40px] font-bold shrink-0">
-              M
+              A
             </div>
             <div>
-              <h3 className="text-[22px] font-semibold text-text-primary mb-1">Monalisa</h3>
+              <h3 className="text-[22px] font-semibold text-text-primary mb-1">Amy Spain</h3>
               <p className="text-[14px] text-accent font-medium mb-3">Lead WMS Trainer & Consultant</p>
               <p className="text-[14px] text-text-secondary leading-relaxed mb-4">
-                With over 10+ years of Manhattan WMS implementation experience across global clients, Monalisa brings deep expertise in warehouse management, system configuration, and supply chain optimization. She has trained 500+ professionals across Fortune 500 companies.
+                With over 10+ years of Manhattan WMS implementation experience across global clients, Amy Spain brings deep expertise in warehouse management, system configuration, and supply chain optimization. She has trained 500+ professionals across Fortune 500 companies.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Manhattan WMS', 'Supply Chain', '10+ Years', 'Global Clients'].map((tag) => (
