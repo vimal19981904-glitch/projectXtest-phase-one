@@ -79,7 +79,7 @@ export default function NavMegaMenu() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
-          scrolled || megaMenuOpen ? 'bg-white border-b border-border shadow-[0_10px_30px_rgba(0,0,0,0.08)]' : 'bg-white/80 backdrop-blur-md border-b border-transparent'
+          scrolled || megaMenuOpen ? 'bg-white border-b border-border shadow-[0_10px_30px_rgba(0,0,0,0.08)]' : 'bg-white md:bg-white/80 md:backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
@@ -215,7 +215,7 @@ export default function NavMegaMenu() {
               aria-label="Search" 
               className="text-text-primary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-0"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-6 h-6" />
             </button>
 
             {/* Mobile Auth/Profile */}
@@ -238,7 +238,7 @@ export default function NavMegaMenu() {
                 aria-label="Login"
                 className="text-text-primary hover:text-accent transition-colors p-0 flex items-center"
               >
-                 <User className="w-5 h-5" />
+                 <User className="w-6 h-6" />
               </Link>
             )}
 
@@ -248,7 +248,7 @@ export default function NavMegaMenu() {
               onClick={handleMobileMenuClick}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
