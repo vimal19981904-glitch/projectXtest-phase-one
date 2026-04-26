@@ -1,3 +1,20 @@
+/**
+ * ============================================================
+ *  ✅ LOCKED — DO NOT MODIFY — APPROVED BY USER 2026-04-26
+ * ============================================================
+ *  Logo component — GapAnchor wordmark
+ *
+ *  APPROVED DESIGN:
+ *  - Font: 'Century Gothic' (Windows) → 'Josefin Sans' (mobile fallback)
+ *  - "Gap" + "nchor" → solid #1A2332 (dark variant: #FFFFFF)
+ *  - "A" → diagonal gradient: #00C2FF → #7B5EA7 → #00C2FF (135deg)
+ *  - Hover → gradient "breathes" in 1.8s ease loop (colorshift-logo)
+ *  - Underline glow: cyan→purple shimmer slides in on hover
+ *
+ *  DO NOT change colors, fonts, animations, or layout without
+ *  EXPLICIT instruction from the user.
+ * ============================================================
+ */
 import React from 'react';
 
 export default function Logo({ variant = 'light' }) {
