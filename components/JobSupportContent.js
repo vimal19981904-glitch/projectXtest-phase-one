@@ -121,7 +121,7 @@ export default function JobSupportContent() {
       <section className="bg-white py-20">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm transition-shadow">
               <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-6 text-red-500">
                 <Zap className="w-6 h-6" />
               </div>
@@ -131,7 +131,7 @@ export default function JobSupportContent() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm transition-shadow">
               <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-blue-500">
                 <GraduationCap className="w-6 h-6" />
               </div>
@@ -141,7 +141,7 @@ export default function JobSupportContent() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm transition-shadow">
               <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mb-6 text-green-500">
                 <Anchor className="w-6 h-6" />
               </div>
@@ -279,7 +279,7 @@ export default function JobSupportContent() {
             ))}
           </div>
 
-          <Link href="#booking" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-full px-10 py-5 text-base font-semibold transition-all hover:scale-105 no-underline">
+          <Link href="#booking" className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white rounded-full px-10 py-5 text-base font-semibold transition-all no-underline">
             Get Consulting Firm Support
             <ChevronRight className="w-5 h-5" />
           </Link>

@@ -8,7 +8,7 @@ import AvatarNetwork from './AvatarNetwork';
 
 const GlobeCanvas = dynamic(() => import('./GlobeCanvas'), {
   ssr: false,
-  loading: () => <div className="w-full h-full flex items-center justify-center animate-pulse rounded-full" style={{ background: 'radial-gradient(circle, #0f2040 60%, transparent 100%)' }} />
+  loading: () => <div className="w-full h-full flex items-center justify-center rounded-full" style={{ background: 'radial-gradient(circle, #0f2040 60%, transparent 100%)' }} />
 });
 
 // Globe container size (px) at various breakpoints
@@ -112,7 +112,7 @@ export default function HeroSection() {
           <div className="flex flex-col md:flex-row items-center gap-[12px] md:gap-4 w-full md:w-auto mt-6">
             <Link
               href="/domains/manhattan-wms-training"
-              className="text-[#0f172a] font-bold no-underline flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.03] w-full md:w-auto"
+              className="text-[#0f172a] font-bold no-underline flex items-center justify-center gap-2 transition-all duration-300 w-full md:w-auto"
               style={{
                 background: '#ffffff',
                 borderRadius: 999,
@@ -165,7 +165,7 @@ export default function HeroSection() {
             This ensures concentric alignment between the 3D globe and the Avatar ring.
           */}
           <div 
-            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] transition-all duration-700 group-hover:drop-shadow-[0_0_50px_rgba(56,189,248,0.4)] pointer-events-none"
+            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] transition-all duration-700 pointer-events-none"
             style={{ 
               transform: 'translate(-50%, -50%) scale(var(--globe-scale, 1))', 
             }}

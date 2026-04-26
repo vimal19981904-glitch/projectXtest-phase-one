@@ -27,8 +27,8 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.9, y: 10 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 20 } }
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
 };
 
 export default function DomainGrid() {
@@ -83,7 +83,6 @@ export default function DomainGrid() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-[12px] font-bold uppercase tracking-widest mb-6"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
             Explore Our Catalog
@@ -188,7 +187,7 @@ export default function DomainGrid() {
                   </div>
                   <div className="flex flex-col items-end gap-3">
                     <div className="px-5 py-2 bg-accent/5 text-accent rounded-full font-bold text-[14px] border border-accent/10 flex items-center gap-2">
-                       <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                       <span className="w-2 h-2 rounded-full bg-accent" />
                        {filteredSubDomains.length} Programs Available
                     </div>
                   </div>
@@ -237,12 +236,12 @@ export default function DomainGrid() {
                  <div className="mt-16 flex justify-center">
                    <button 
                      onClick={() => setVisibleCount(prev => prev + 12)}
-                     className="group relative px-8 py-3 bg-white text-black rounded-xl text-[14px] font-black hover:bg-[#38bdf8] transition-all duration-300 shadow-xl shadow-black/10 hover:shadow-[#38bdf8]/30 overflow-hidden"
+                     className="group relative px-8 py-3 bg-white text-black rounded-xl text-[14px] font-black hover:bg-[#38bdf8] transition-all duration-300 shadow-xl shadow-black/10 overflow-hidden"
                    >
                      <span className="relative z-10 flex items-center gap-2">
                        Load More Specialized Programs <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                      </span>
-                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
+                      <div className="absolute inset-0 bg-white/5 pointer-events-none" />
                    </button>
                  </div>
                )}

@@ -151,7 +151,7 @@ export default function BlogIndexContent() {
                   <ParallaxCard className="h-full">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="group flex flex-col h-full bg-white border border-[#D2D2D7]/50 rounded-[2rem] overflow-hidden hover:border-[#0071E3] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 no-underline"
+                      className="group flex flex-col h-full bg-white border border-[#D2D2D7]/50 rounded-[2rem] overflow-hidden hover:border-[#0071E3] transition-all duration-300 no-underline"
                     >
                       <div className="p-10 flex-1 flex flex-col relative z-10">
                         <div className="flex justify-between items-start mb-6">

@@ -10,6 +10,7 @@ import { getDomainIcon, ICON_PROPS } from '@/lib/iconMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Logo from './Logo';
 import { avatarData } from '@/data/avatarData';
 import { domainData } from '@/lib/domainData';
 
@@ -82,26 +83,10 @@ export default function NavMegaMenu() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 h-[56px] md:h-[64px] flex items-center justify-between">
-          {/* Logo & Slogan */}
-          <div className="flex items-center z-50">
-            <Link 
-              href="/" 
-              onClick={() => setIsSearchOpen(false)}
-              className="text-[24px] md:text-[32px] font-bold tracking-tight text-text-primary no-underline relative group font-heading"
-            >
-              GapAnchor
-              {pathname === '/' && (
-                <motion.div 
-                  layoutId="nav-glow"
-                  className="absolute -inset-x-3 -inset-y-1.5 bg-accent/5 rounded-lg -z-10"
-                />
-              )}
-            </Link>
-            <div className="hidden lg:block w-[1.5px] h-[22px] bg-border/60 mx-4" />
-            <span className="text-[12px] md:text-[14px] font-semibold text-text-secondary/80 tracking-tight translate-y-[1px] opacity-0 md:opacity-100 md:block">
-              Let’s bridge the gap together.
-            </span>
-          </div>
+          {/* Logo */}
+          <Link href="/" onClick={() => setIsSearchOpen(false)} className="z-50">
+            <Logo />
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8 h-full">

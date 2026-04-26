@@ -54,14 +54,21 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 h-[48px] flex items-center justify-between">
         {/* Logo & Slogan */}
-        <div className="flex flex-col justify-center pt-0.5">
-          <Link href="/" className="text-[20px] font-bold tracking-tight text-text-primary no-underline leading-none">
-            GapAnchor
-          </Link>
-          <span className="hidden md:block text-[9px] font-medium text-text-secondary uppercase tracking-[0.15em] mt-1 opacity-90">
-            Let’s bridge the gap together.
+        <Link href="/" className="group relative inline-flex items-center gap-2 md:gap-3 bg-transparent cursor-pointer select-none no-underline pt-0.5">
+          <div className="absolute bottom-[-4px] left-[0px] w-0 h-[2px] rounded-sm bg-gradient-to-r from-[#00C2FF] via-[#7B5EA7] to-[#00C2FF] bg-[length:200%_100%] opacity-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:w-[45%] group-hover:opacity-100 group-hover:animate-[shimmer_2s_linear_infinite]"></div>
+          
+          <span className="font-['Raleway','Century_Gothic',sans-serif] text-[20px] md:text-[22px] font-black tracking-[-0.5px] inline-flex items-center leading-none">
+            <span className="text-text-primary">Gap</span>
+            <span className="inline-block bg-gradient-to-br from-[#00C2FF] via-[#7B5EA7] to-[#00C2FF] bg-[length:200%_200%] bg-clip-text text-transparent group-hover:animate-[colorshift_1.8s_ease_infinite]">A</span>
+            <span className="text-text-primary">nchor</span>
           </span>
-        </div>
+          
+          <div className="w-[1.5px] h-[16px] md:h-[20px] bg-border shrink-0 transition-colors duration-400 ease-in-out group-hover:bg-[#7B5EA7] hidden sm:block"></div>
+          
+          <span className="font-['Inter',sans-serif] text-[10px] md:text-[11px] font-light text-text-secondary tracking-[0.2px] transition-colors duration-500 ease-in-out group-hover:text-text-primary hidden sm:block">
+            Let's bridge the gap together.
+          </span>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-7">

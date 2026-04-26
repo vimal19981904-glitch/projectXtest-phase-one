@@ -37,24 +37,11 @@ export default function ParallaxCard({ children, className }) {
   };
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateY,
-        rotateX,
-        transformStyle: "preserve-3d",
-      }}
-      className={className}
-    >
-      <div 
-        style={{
-          transform: "translateZ(50px)",
-          transformStyle: "preserve-3d",
-        }}
-      >
+    <div className={className}>
+      <div>
         {children}
       </div>
-    </motion.div>
+    </div>
   );
 }
+
